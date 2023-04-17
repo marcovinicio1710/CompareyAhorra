@@ -1,0 +1,31 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset=»utf-8»>
+
+    <title>Upload files</title>
+
+</head>
+
+    <body>
+        
+        {% extends 'base_1.html' %}
+        {% block content %}
+        <h1>Welcomee to Bookr!</h1>
+        <h2>{{ name|lower }}</h2>
+        <a href="{{ MEDIA_URL }}{{ name_1 }}">ACL {{ name_1 }}</a>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input type="file" name="file-upload-name">
+            <button type="submit">Submit</button>
+
+
+        </form>
+        {% endblock %}
+
+    </body>
+
+</html>

@@ -1,0 +1,63 @@
+{% load static %}
+<div class="d-flex flex-column flex-shrink-0 p-2 " >
+    <div class="row d-inline">
+        <i class="bi bi-shop "></i>
+        <span class="fs-3">Categoria</span>
+
+    </div>
+    <hr>
+    <ul class="nav nav-pills flex-column mb-auto">
+      {% for prod in lista_categoria %}
+        <li class="margen-cat">
+        
+          <a href="{% url 'search-producto/' %}?searched={{name}}&categoria={{prod.0}}" class="nav-link active categoria">
+            <div class="row">
+              <div class="col" ><span>{{ prod.0 }}</span></div>
+              <div class="col-4 text-end text-info "><span>{{ prod.1 }}</span></div>
+
+            </div>
+          </a>
+        </li>
+      {% endfor %}
+      <li class="nav-item">
+        
+        <a href="#" class="nav-link active categoria">
+            <i class="bi bi-egg-fried"></i>
+            Abarrotes
+        </a>
+      </li>
+      <li class="margen-cat">
+        <a href="#" class="nav-link active categoria " >
+            <i class="bi bi-egg"></i>
+            Lacteos
+        </a>
+      </li>
+      <li class="margen-cat">
+        <a href="#" class="nav-link active categoria " >
+            <i class="bi bi-capsule-pill"></i>
+            Farmacia
+        </a>
+      </li>
+      <li class="margen-cat">
+        <a href="#" class="nav-link active categoria " >
+            <i class="bi bi-earbuds"></i>
+            Electronica
+        </a>
+      </li>
+    </ul>
+    <hr>
+   
+    <div class="dropdown">
+      <a href="#" class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        <i class="bi bi-shop"></i>
+        <strong>Subcategoria</strong>
+      </a>
+      <ul class="dropdown-menu text-small shadow">
+        <li><a class="dropdown-item" href="#"><i class="bi bi-earbuds"></i>   Enlatados</a></li>
+        <li><a class="dropdown-item" href="#"><i class="bi bi-earbuds"></i>   Quesos</a></li>
+        <li><a class="dropdown-item" href="#"><i class="bi bi-earbuds"></i>   Granos</a></li>
+        <li><a class="dropdown-item" href="#"><i class="bi bi-earbuds"></i>   Frutas</a></li>
+        <li><a class="dropdown-item" href="#">Sign out</a></li>
+      </ul>
+    </div>
+</div>

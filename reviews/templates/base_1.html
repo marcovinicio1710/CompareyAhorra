@@ -1,0 +1,43 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset=»utf-8»>
+
+    <title>Home Page</title>
+    <link rel="stylesheet" href="{% static 'styles/main.css' %}">
+
+</head>
+
+    <body>
+        <nav class="nav_bar_main">
+            <ul>
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                <li>
+                    <a href="{% url 'search-product' %}">Search producto precio</a>
+                </li>
+                <li>
+                    <a href="{% url 'search-unity' %}">Search producto Unidad</a>
+                </li>
+                <li>
+                    <a href="{% url 'search-weight' %}">Search producto Peso</a>
+                </li>
+                <li>
+                    <a href="{% url 'search-volume' %}">Search producto Volumen</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="contenedor-columna">
+
+        </div>
+
+        {% block content %}
+        {% endblock %}
+        
+
+        
+    </body>
+
+</html>

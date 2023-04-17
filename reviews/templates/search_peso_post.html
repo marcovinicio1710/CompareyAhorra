@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search</title>
+</head>
+<body>
+    {% extends 'base_1.html' %}
+    {% load static %}
+    {% block content %}
+    
+    <h1>Hello1, {{ name }} </h1>
+    <h3>Se encontraron {{qty_prod}} productos.</h3>
+    <div>
+        <form class="search-flex" action="{% url 'search-weight' %}" method="POST">
+            {% csrf_token %}
+            <div class="container-categorias">
+                <div class="container-categoria-especificado">
+                    <input type="checkbox" name='todos' value="Todos" checked>
+                    <span class="string_catergoria">Todos los productos</span>
+                </div>
+
+                <div class="container-categoria-especificado">
+                    <input type="checkbox" name='ABARROTES' value="ABARROTES">
+                    <span>ABARROTES</span>
+                </div>
+
+                <div class="container-categoria-especificado">
+                    <input type="checkbox" name='ALIMENTOS CONGELADOS' value="ALIMENTOS CONGELADOS">
+                    <span>ALIMENTOS CONGELADOS</span>
+                </div>
+
+                <div class="container-categoria-especificado">
+                    <input type="checkbox" name='ALIMENTOS PREPARADOS ' value="ALIMENTOS PREPARADOS ">
+                    <span>ALIMENTOS PREPARADOS </span>
+                </div>
+
+                <div class="container-categoria-especificado">
+                    <input type="checkbox" name='ARTICULOS PARA EL HOGAR' value="ARTICULOS PARA EL HOGAR">
+                    <span>ARTICULOS PARA EL HOGAR</span>
+                </div>
+
+                <div class="container-categoria-especificado">
+                    <input type="checkbox" name='BEBES Y NINOS ' value="BEBES Y NINOS ">
+                    <span>BEBES Y NINOS </span>
+                </div>
+
+                <div class="container-categoria-especificado">
+                    <input type="checkbox" name='CARNES FRIAS' value="CARNES FRIAS">
+                    <span>CARNES FRIAS</span>
+                </div>
+
+                <div class="container-categoria-especificado">
+                    <input type="checkbox" name='CARNES Y PESCADOS' value="CARNES Y PESCADOS">
+                    <span>CARNES Y PESCADOS</span>
+                </div>
+
+                <div class="container-categoria-especificado">
+                    <input type="checkbox" name='ALIMENTOS CONGELADOS' value="ALIMENTOS CONGELADOS">
+                    <span>ALIMENTOS CONGELADOS</span>
+                </div>
+
+                <div class="container-categoria-especificado">
+                    <input type="checkbox" name='ELECTRONICA' value="ELECTRONICA">
+                    <span>ELECTRONICA</span>
+                </div>
+
+                <div class="container-categoria-especificado">
+                    <input type="checkbox" name='ALIMENTOS CONGELADOS' value="ALIMENTOS CONGELADOS">
+                    <span>ALIMENTOS CONGELADOS</span>
+                </div>
+
+                <div class="container-categoria-especificado">
+                    <input type="checkbox" name='FARMACIA' value="FARMACIA">
+                    <span>FARMACIA</span>
+                </div>
+
+                <div class="container-categoria-especificado">
+                    <input type="checkbox" name='FRUTAS Y VERDURAS' value="FRUTAS Y VERDURAS">
+                    <span>FRUTAS Y VERDURAS</span>
+                </div>
+
+                <div class="container-categoria-especificado">
+                    <input type="checkbox" name='HIGIENE Y BELLEZA ' value="HIGIENE Y BELLEZA ">
+                    <span>HIGIENE Y BELLEZA </span>
+                </div>
+
+                <div class="container-categoria-especificado">
+                    <input type="checkbox" name='JUGOS Y BEBIDAS' value="JUGOS Y BEBIDAS">
+                    <span>JUGOS Y BEBIDAS</span>
+                </div>
+
+                <div class="container-categoria-especificado">
+                    <input type="checkbox" name='LACTEOS' value="LACTEOS">
+                    <span>LACTEOS</span>
+                </div>
+                
+                <div class="container-categoria-especificado">
+                    <input type="checkbox" name='LICORES' value="LICORES">
+                    <span>LICORES</span>
+                </div>
+                <div class="container-categoria-especificado">
+                    <input type="checkbox" name='LIMPIEZA Y MASCOTA' value="LIMPIEZA Y MASCOTA">
+                    <span>LIMPIEZA Y MASCOTA</span>
+                </div>
+                <div class="container-categoria-especificado">
+                    <input type="checkbox" name='LISTO PARA LLEVAR' value="LISTO PARA LLEVAR">
+                    <span>LISTO PARA LLEVAR</span>
+                </div>
+                <div class="container-categoria-especificado">
+                    <input type="checkbox" name='OFICINA' value="OFICINA">
+                    <span>OFICINA</span>
+                </div>
+                <div class="container-categoria-especificado">
+                    <input type="checkbox" name='OPTICA' value="OPTICA">
+                    <span>OPTICA</span>
+                </div>
+                <div class="container-categoria-especificado">
+                    <input type="checkbox" name='PANADERIA Y TORTILLERIA' value="PANADERIA Y TORTILLERIA">
+                    <span>PANADERIA Y TORTILLERIA</span>
+                </div>
+            </div>
+            <input class="form-control-input-search" type="search" placeholder="Search" aria-label="Search" name="searched" autofocus>
+            <button class="btn-search-send-data" type="submit" >
+                Search
+
+            </button>
+        </form>
+
+    </div>
+    <div class="contaneir-main">
+    {% if qty_prod %}
+        
+        {% for prod in lista_prod_prec %}
+            
+            <div class="product-container">
+                <div class="imagen">
+                    <img src= "{{ prod.4 }}" width="200px" height="200px"><br>
+                    
+                    {% if prod.0 == 'WALLMART' %}
+                        <img src="{% static 'wallmart.png' %}" width="200px" height="80px"><br>
+                    {% elif prod.0 == 'PRICESMART' %}
+                        <img src="{% static 'pricesmart.png' %}" width="200px" height="80px"><br>
+                    
+                    {% else %}
+                    <img src="{% static 'automercado.png' %}" width="200px" height="80px"><br>
+                    {% endif %}
+                    <span>{{ prod.2 }}</span><br>
+                    <span>{{ prod.3 }}</span><br>
+                    <span>{{ prod.5 }}</span><br>
+
+                    <button>Agregar</button><br>
+
+                </div>
+
+            </div>
+        {% endfor %}
+    {% else %}
+        <h1>No se encontraron productos</h1>
+    {% endif %}
+
+    </div>
+
+    {% endblock %}
+    
+</body>
+</html>

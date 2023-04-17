@@ -1,0 +1,320 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compare&Ahorra</title>
+    <link rel="icon" href="{% static 'logo_pes1.ico' %}" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <style>
+        i{
+            width: 5rem;
+        }
+        .img-logo{
+            width: 50px;
+        }
+        .barra-search{
+            min-width: 100px;
+            max-width: 1200px;
+            width: 100%;
+            
+        }
+        .buscar-btn{
+            margin-left: 0.5rem;            
+        }
+
+        .fila{
+            background-color: aqua;
+            
+        }
+        .fila-1{
+            margin-top: 10px;
+            
+            
+        }
+
+        .categoria{
+            border: 1px black solid;
+        }
+        .margen-cat{
+            margin-top: 0.1rem;
+        }
+
+        .productos{
+        
+        display: grid;
+        grid-template-columns: repeat(5, 1fr );
+        gap: 10px  ;
+        
+        margin: 5px;
+        padding: 5px;
+        
+
+    }
+    .car-align{
+        
+        display: grid;
+        grid-template-columns: repeat(3, 1fr );
+        
+        
+        
+        
+
+    }
+
+    .btn-car{
+        min-width: 40px;
+
+    }
+
+    
+    .producto-indiv{
+        border: 1px gray solid;
+        border-radius: 15px;
+        height: 570px;
+        min-width: 180px;
+        text-align: center;
+    }
+    .rounded-15{border-radius: 15px;}
+    .border_especifo_product{
+        border: 1px red solid;
+        border-radius: 15px;
+    }
+    .valor_detallado{
+        
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+    }
+
+    .bi bi-bank{width: 500px;}
+    .btn-search{right: 5px;}
+    .btn-agregar{right: 10px;}
+
+    #side_nav{
+        background: #000;
+        min-width: 250px;
+        max-width: 250px;
+        transition: all 0.3s;
+    }
+
+    .content{
+        min-height: 100vh;
+        width: 100%;
+    }
+
+    hr.h-color{
+        background:#eee;
+    }
+
+    .sidebar li.active{
+        background: blue;
+        border-radius: 8px;
+        
+        margin-top: 4px;
+        margin-bottom: 4px;
+    }
+    
+
+    .sidebar li.active a, .sidebar li.active a:hover {
+        color: yellow;
+    }
+
+    .sidebar li a{
+       
+        border-radius: 8px;
+        border: 1px solid grey;
+        margin-top: 4px;
+        margin-bottom: 4px;
+        
+    }
+
+    .padd-10{padding-right: 10px;}
+
+    .size-font-sm{
+        font-size: small;
+    }
+
+    .size-font-m{
+        font-size:small;
+    }
+
+    .align-items-rightt{
+    float: right;}
+    .texto_responsive:before{
+  content: attr(data-desktoptext);
+    }
+    .img-main-logo{
+        max-height: 80px;
+        min-height: 15px;
+    }
+    .logo-navbar{
+        margin-right: 120px;
+    }
+
+    .smartphone{
+        height: 0;
+        width: 0;
+        image-resolution: 200;
+    }
+    .desktopp{
+        height: auto;
+        width: auto;
+        image-resolution: 200;
+    }
+
+   
+
+    @media(max-width:1300px){
+        .productos{
+            grid-template-columns: repeat(4, 1fr );
+
+        }
+
+     
+    
+    }
+
+    @media(max-width:1100px){
+        .productos{
+            grid-template-columns: repeat(3, 1fr );
+
+        }
+        
+    }
+
+    @media(max-width:900px){
+        .productos{
+            grid-template-columns: repeat(2, 1fr );
+
+        }
+        .texto_responsive:before {
+        content: attr(data-tablettext);
+    }
+    .logo-navbar{
+        margin-right: 5px;
+    }
+        
+    }
+
+    @media(max-width:767px){
+
+        .desktopp{
+        height: 0;
+        width: 0;
+    }
+    .smartphone{
+        height: auto;
+        width: auto;
+        
+        image-resolution: 200;
+    }
+        #side_nav {margin-left: -250px;
+        position: absolute;
+        min-height: 100vh;
+        z-index: 1;}
+    
+        #side_nav.active{
+            margin-left: 0;
+
+        }
+        .logo-navbar{
+        margin-right: 5px;
+    }
+
+        .productos{
+            grid-template-columns: repeat(1, 1fr );
+
+        }
+        .texto_responsive:before {
+        content: attr(data-phonetext);
+    }
+    .btn-car{
+        min-width: 30px;
+
+    }
+    
+    }
+
+
+    
+    </style>
+</head>
+<body>
+    <div class="container-fluid ">
+        
+        <nav class="navbar navbar-expand-lg navbar-light  border-bottom ">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand logo-navbar mr-3" href="/"><img src="{% static 'logo_b.svg' %}" class=" img-main-logo img-fluid" alt="logo principal"></a>
+            
+            <form class="mt-2  mb-8 mb-lg-0 me-lg-3 barra-search d-flex d-inline-block  position-relative" role="search" action="{% url 'search-producto/'  %}" method="GET" >
+                
+                <input type="search" class="form-control " placeholder="Escribe un producto . . . " aria-label="Buscar" name="searched" autofocus>
+                <button class="btn  btn-search position-absolute" type="submit"><i class="bi bi-search"></i></button>
+                
+            </form>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarTogglerDemo03">
+                
+              <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                {% if user.is_authenticated %}
+                    <li class="nav-item active">
+                        <a class="nav-link link-danger" href="{% url 'home-page' %}"><span>Hola! {{ nombre_pila }}</span></i></a>
+                
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link link-primary" href="{% url 'log-out' %}"><i class="bi bi-person-down mx-2"></i>Cerrar Sesion</a>
+                    </li>
+                
+                {% else %}
+
+                   
+                    <li class="nav-item active">
+                        
+                        <a class="nav-link link-primary" href="{% url 'login' %}"><i class="bi bi-person-circle mx-2"></i>Iniciar Sesion </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link link-primary" href="{% url 'sign-up' %}"><i class="bi bi-person-plus  mx-2"></i>Registrarme</a>
+                    </li>
+                {% endif %}
+                <li class="nav-item">
+                    
+                  <a class="nav-link link-primary" href="{% url 'cart' %}"><i class="bi bi-cart  mx-2"></i> Carrito</a>
+                </li>
+              </ul>
+              
+            </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+           
+        </nav>
+
+        <div class="container-fluid bg-body-tertiary text-center">
+            <div class="row justify-content-sm-center align-items-center">
+                
+                <div class="col-auto m-3">
+                    <a class=" text-dark link-primary text-decoration-none fs-6 C" aria-current="page"href="{% url 'canasta-basica' %}">Canasta Basica</a>
+                </div>
+                
+                <div class="col-auto m-3">
+                    <a class="text-dark link-primary text-decoration-none fs-6 fw-bold" aria-current="page" href="#">Sobre nos.</a></a>
+                </div>
+                <div class="col-auto m-3">
+                    <a class="text-dark link-primary text-decoration-none fs-6 fw-bold" aria-current="page" href="#">Publicidad</a></a>
+                </div>
+
+            </div>
+          
+          
+          
+        </div>  
+    </div>
+    {% block content %}
+    {% endblock %}
+</body>
+</html>

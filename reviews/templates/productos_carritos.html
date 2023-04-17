@@ -1,0 +1,112 @@
+
+    {% load static %}
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <div class="d-flex justify-content-between d-md-none d-block">
+                <a class="navbar-brand fs-4" href="#">Compare & Ahorra </a>
+                <button class="btn px-1 py-0 open-btn"><i class="bi bi-list"></i></button>
+            </div>
+          
+          <button class="navbar-toggler btn btn-outline-primary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span> <i class="bi bi-trash3-fill"></i></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+            <ul class="navbar-nav  mb-2 mb-lg-0">
+              <li class="nav-item mx-4 mt-3 mb-3">
+                <span class="fs-7 "><strong>Productos en el Carrito: {{ num_prod }} productos</strong></span>
+              </li>
+              <li class="nav-item dropdown mt-2 mx-5">
+            
+                <button href="#" class="btn btn-outline-primary buscar-btn" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-trash3-fill"></i>
+                      <strong>Vaciar todo </strong>
+                </button>
+                <ul class="dropdown-menu text-small shadow">
+                    <li>
+                        <form action="" method="POST">
+                            {% csrf_token %}
+                            <input type="input" name="vaciar" value="Confirmar" id="" hidden>
+                            <button type="submit" class="btn btn-outline-primary mx-3" ><i class="bi bi-trash3-fill mx-1">Confirmar</i> </button> 
+                        </form>
+
+                    </li>
+                    
+                </ul>
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+        
+             
+           </li>
+            
+            </ul>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+            
+          </div>
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+            
+        </div>
+    </nav>
+    
+ 
+  <div class="row ">
+    <div class="col-md-4">
+        <div class="position-sticky" style="top: 2rem;">    
+          <div class="p-4 mb-3 bg-body-tertiary rounded">
+            <p class="mb-0">Automercado ₡{{ lista_precio_total.0 }}</p>
+            <p class="mb-0">Pricesmart...... ₡{{ lista_precio_total.1 }}</p>
+            <p class="mb-0">Wallmart........ ₡{{ lista_precio_total.2 }}</p>
+            
+            <h4 class="fst-italic mt-2 p-3 border  rounded-pill text-center bg-primary text-white">Total a pagar  ₡ {{ precio_total }}</h4>
+          </div>
+  
+        </div>
+      </div>
+    <div class="col-md-8">
+        <div class="list-group">
+            {% for produ in lista_productos %}
+            <div href="#" class="list-group-item list-group-item-action " aria-current="true">
+                <div class="d-flex w-100 justify-content-between">
+                <a class   ="text-decoration-none" href="{{ produ.6 }}" target="_blank"><h6 class="mb-1 text-primary ">{{ produ.2 }}</h6></a>
+                  
+                  <small class="mt-1"><strong>₡{{ produ.3 }}</strong></small>
+                </div>
+                <div class="row justify-content-center car-align">
+                    <div >
+                        <small><img loading="auto" src="{{ produ.4 }}" class="rounded-15" alt="" style="width:70px ; height:70px"></small>
+                    </div>
+                    <div >
+                        {% if produ.0 == 'WALLMART' %}
+                            <img class="m-2" src="{% static 'wallmart1.png' %}" style= "width : 140px; height:25px" alt="">
+                        {% elif produ.0 == 'PRICESMART' %}
+                            <img class="m-2" src="{% static 'pricesmart1.png' %}" style= "width : 140px; height:25px" alt="">
+                        {% else %}
+                            <img class="m-2" src="{% static 'automercado1.png' %}" style= "width : 140px; height:25px" alt="">
+                        {% endif %}
+
+                    </div>
+                    <div class="">
+                        <form   method="POST" >
+                            {% csrf_token %}
+                            <input type="number" class="form-control" name="carrito" id="validationCustom03" value="{{produ.5}}" hidden>
+                            <button type="submit" class="btn btn-outline-success btn-car" ><span class="texto_responsive" data-desktoptext="Remover" data-tablettext="" data-phonetext=""><i class="bi bi-trash3-fill mx-1"></i></span></button> 
+                    
+                        </form> 
+
+                    </div>
+                </div>
+                
+            </div>
+            {% endfor %}
+            
+        </div>
+      
+      
+
+    </div>
+
+    
+  </div>
+
+</main>
+
+
+

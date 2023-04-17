@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    
+    <style>
+        i{
+            width: 5rem;
+        }
+        .img-logo{
+            width: 50px;
+        }
+        .barra-search{
+            min-width: 100px;
+            max-width: 1200px;
+            width: 100%;
+            
+        }
+        .buscar-btn{
+            margin-left: 0.5rem;            
+        }
+
+        .fila{
+            background-color: aqua;
+            
+        }
+        .fila-1{
+            margin-top: 10px;
+            
+            
+        }
+
+        .categoria{
+            border: 1px black solid;
+        }
+        .margen-cat{
+            margin-top: 0.1rem;
+        }
+
+        .productos{
+        
+        display: grid;
+        grid-template-columns: repeat(5, 1fr );
+        gap: 10px  ;
+        
+        margin: 5px;
+        padding: 5px;
+        
+
+    }
+
+    
+    .producto-indiv{
+        border: 1px gray solid;
+        border-radius: 15px;
+        height: 540px;
+        min-width: 180px;
+        text-align: center;
+    }
+    .rounded-15{border-radius: 15px;}
+    .border_especifo_product{
+        border: 1px red solid;
+        border-radius: 15px;
+    }
+    .valor_detallado{
+        
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+    }
+
+    .bi bi-bank{width: 500px;}
+    .btn-search{right: 5px;}
+
+    #side_nav{
+        background: #000;
+        min-width: 250px;
+        max-width: 250px;
+        transition: all 0.3s;
+    }
+
+    .content{
+        min-height: 100vh;
+        width: 100%;
+    }
+
+    hr.h-color{
+        background:#eee;
+    }
+
+    .sidebar li.active{
+        background: blue;
+        border-radius: 8px;
+        
+        margin-top: 4px;
+        margin-bottom: 4px;
+    }
+    
+
+    .sidebar li.active a, .sidebar li.active a:hover {
+        color: yellow;
+    }
+
+    .sidebar li a{
+       
+        border-radius: 8px;
+        border: 1px solid grey;
+        margin-top: 4px;
+        margin-bottom: 4px;
+        
+    }
+
+    .padd-10{padding-right: 10px;}
+
+    .size-font-sm{
+        font-size: small;
+    }
+
+    .size-font-m{
+        font-size:small;
+    }
+
+    .align-items-rightt{
+    float: right;}
+
+   
+
+    @media(max-width:1300px){
+        .productos{
+            grid-template-columns: repeat(4, 1fr );
+
+        }
+    
+    }
+
+    @media(max-width:1100px){
+        .productos{
+            grid-template-columns: repeat(3, 1fr );
+
+        }
+    }
+
+    @media(max-width:900px){
+        .productos{
+            grid-template-columns: repeat(2, 1fr );
+
+        }
+    }
+
+    @media(max-width:767px){
+        #side_nav {margin-left: -250px;
+        position: absolute;
+        min-height: 100vh;
+        z-index: 1;}
+    
+        #side_nav.active{
+            margin-left: 0;
+
+        }
+
+        .productos{
+            grid-template-columns: repeat(1, 1fr );
+
+        }
+    
+    }
+
+
+    
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container-fluid ">
+        <header class="d-flex flex-wrap align-items-center justify-content-between py-3 mb-4 border-bottom">
+            <a href="#" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+                <img src="https://getbootstrap.com/docs/5.0/assets/brand/bootstrap-logo-black.svg" class=" img-logo img-fluid" alt="logo principal">
+            </a>
+            <form class="  mb-8 mb-lg-0 me-lg-3 barra-search d-flex  " role="search">
+                
+                <input type="search" class="form-control " placeholder="Search..." aria-label="Search">
+                <button class="btn btn-outline-success buscar-btn" type="submit">Buscar</button>
+                
+            </form>
+            
+            
+            <div class="col-md-3 text-end">
+                
+                
+                <button type="button" class="btn btn-outline-primary buscar-btn">Login</button>
+                <button type="button" class="btn btn-primary">Sign-up</button>
+                <button type="button" class="btn btn-outline-danger"><i class="bi bi-cart"></i></button>
+                
+                  
+            </div>
+        </header>
+
+        <nav class="navbar navbar-expand-lg navbar-light  border-bottom">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand  mr-3" href="#"><img src="https://getbootstrap.com/docs/5.0/assets/brand/bootstrap-logo-black.svg" class=" img-logo img-fluid" alt="logo principal"></a>
+            
+            <form class="mt-2  mb-8 mb-lg-0 me-lg-3 barra-search d-flex d-inline-block  position-relative" role="search">
+                
+                <input type="search" class="form-control " placeholder="Escribe producto.." aria-label="Search">
+                <button class="btn  btn-search position-absolute" type="submit"><i class="bi bi-search"></i></button>
+                
+            </form>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                
+              <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                <li class="nav-item active">
+                  <a class="nav-link link-primary" href="#"><i class="bi bi-person-circle mx-2"></i>Iniciar Sesion </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link link-primary" href="#"><i class="bi bi-person-plus  mx-2"></i>Registrarme</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link link-primary" href="#"><i class="bi bi-cart  mx-2"></i> Carrito</a>
+                </li>
+              </ul>
+              
+            </div>
+        </nav>
+
+        
+    </div>
+
+    
+    <div class="container-fluid bg-body-tertiary text-center">
+            <div class="row justify-content-sm-center align-items-center">
+                <div class="col-auto m-3">
+                    <a class="text-dark link-primary text-decoration-none fs-6 fw-bold " aria-current="page" href="#">Ofertas</a>
+                </div>
+                <div class="col-auto m-3">
+                    <a class=" text-dark link-primary text-decoration-none fs-6 fw-bold" aria-current="page" href="#">Canasta Basica</a>
+                </div>
+                <div class="col-auto m-3">
+                    <a class="text-dark link-primary text-decoration-none fs-6 fw-bold" aria-current="page" href="#">Ofertas</a></a>
+                </div>
+                <div class="col-auto m-3">
+                    <a class="text-dark link-primary text-decoration-none fs-6 fw-bold" aria-current="page" href="#">Sobre nos.</a></a>
+                </div>
+                <div class="col-auto m-3">
+                    <a class="text-dark link-primary text-decoration-none fs-6 fw-bold" aria-current="page" href="#">Publicidad</a></a>
+                </div>
+
+            </div>
+          
+          
+          
+    </div>
+
+    <div id="carouselExample" class="carousel slide ">
+        <div class="carousel-inner  ">
+          <div class="carousel-item active  ">
+            <img src="https://www.anaisindia.com/wp-content/uploads/2019/01/fotografia-panoramica-fotografo.jpg" class="d-block w-100" style="width: 500px; height: 300px " alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="https://www.blogdelfotografo.com/wp-content/uploads/2021/07/panoramica-reflejo.jpg" class="d-block w-100"  style="width: 500px; height: 300px " alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="https://thumbs.dreamstime.com/b/vista-panor%C3%A1mica-de-new-york-city-58437826.jpg" class="d-block w-100" style="width: 500px; height: 300px "  alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Siguiente</span>
+        </button>
+    </div>
+
+    <div class="main-container d-flex">
+        <div class="sidebar" id="side_nav">
+            <div class="header-box px-3 pt-3 pb-4  d-flex justify-content-between">
+                <h1 class="fs-4"><span class="bg-white text-dark rounded shadow px-2 me-2">CA</span ><span class="text-white">Categoria</span> </h1>
+                <button class="btn d-md-none d-block close-btn px-1 py-0 text-white"><i class="bi bi-menu-button-wide"></i></button>
+            </div>
+
+            <ul class="list-unstyled px-2">
+                <li class="active"><a href="#" class="text-decoration-none px-3 py-2 d-block"><span class="text-white link-primary">Abarrotes</span><span class="text-white link-primary align-items-rightt">7.555</span></a></li>
+                <li class=""><a href="#" class="text-decoration-none px-3 py-2 d-block"><span class="text-white link-primary">Licores</span><span class="text-white link-primary align-items-rightt">7.555</span></a></li>
+                <li class=""><a href="#" class="text-decoration-none px-3 py-2 d-block "><span class="text-white link-primary ">Carnes</span><span class=" text-white link-primary align-items-rightt"> 7.555</span></a></li>
+                
+            </ul>
+            <hr class="h-color mx-3 ">
+        </div>
+
+        
+        <div class="content">
+            <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                <div class="container-fluid">
+                    <div class="d-flex justify-content-between d-md-none d-block">
+                        <a class="navbar-brand fs-4" href="#">Compara & Ahorra </a>
+                        <button class="btn px-1 py-0 open-btn"><i class="bi bi-menu-button-wide"></i></button>
+                    </div>
+                  
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                    <ul class="navbar-nav  mb-2 mb-lg-0">
+                      <li class="nav-item mx-4 mt-3 mb-3">
+                        <span class="fs-7 "><strong>Productos Encontrados: 25.000 productos</strong></span>
+                      </li>
+                      
+                       <li class="nav-item dropdown mt-2 mx-5">
+                        
+                            <button href="#" class="btn btn-outline-primary buscar-btn" data-bs-toggle="dropdown" aria-expanded="false">
+                               <i class="bi bi-funnel"></i>
+                                  <strong>Filtrar por ...</strong>
+                            </button>
+                            <ul class="dropdown-menu text-small shadow">
+                                 <li><a class="dropdown-item" href="#"><i class="bi bi-cash"></i>   Precio: menor a mayor</a></li>
+                                 <li><a class="dropdown-item" href="#"><i class="bi bi-cash"></i>   Precio: mayor a menor</a></li>
+                                 <li><a class="dropdown-item" href="#"><i class="bi bi-bucket"></i>   Peso: mejor precio x Kg</a></li>
+                                 <li><a class="dropdown-item" href="#"><i class="bi bi-earbuds"></i>   Volumen: mejor precio x Lt</a></li>
+                                 <li><a class="dropdown-item" href="#"><i class="bi bi-earbuds"></i>   Unidad: mejor precio x Unid</a></li>
+                       
+                            </ul>
+                         
+                       </li>
+                    </ul>
+                    
+                  </div>
+                </div>
+            </nav>
+
+            <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                <div class="container-fluid">
+                    
+                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7502926443959805"
+                        crossorigin="anonymous">
+                    </script>
+                    <!-- ad_horizontal -->
+                    <ins class="adsbygoogle"
+                        style="display:block"
+                        data-ad-client="ca-pub-7502926443959805"
+                        data-ad-slot="3624493545"
+                        data-ad-format="auto"
+                        data-full-width-responsive="true">
+                    </ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                  
+                  
+                </div>
+            </nav>
+
+            <div class="navbar navbar-expand-lg ">
+                <div class="container-fluid  ">
+                    <div class="row productos ">
+                        <div class="producto-indiv bg-light p-1 shadow m-2">
+                            <div class="row mt-3">
+                                <div class="col-1"></div>
+                                <div class="col-8 ">
+                                    <img loading="auto" src="https://walmartcr.vtexassets.com/arquivos/ids/262511-500-auto?v=1766272721&width=500&height=auto&aspect=true"  class="rounded-15" alt="" style="width:150px ; height:150px">
+                                </div>
+    
+                                <div class="col-1"></div>
+                            </div>
+                            <div class="row mt-2">
+                                <span class="text-primary size-font-m"><strong>Avena Quaker Instantanea Mosh Nutremas - 600gr</strong></span>
+                            </div>
+                            <div class="row mt-2 d-inline justify-content-start ">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Walmart_logo.svg/1280px-Walmart_logo.svg.png" style= "width : 200px; height:30px" alt="">
+                            </div>
+                            <div class="row mt-2 d-inline justify-content-start ">
+                                <div class="col">
+                                    
+                                    <span class="fs-4 text-danger fw-bold text-center">₡2.900</span>
+    
+                                </div>
+                            </div>
+                            <div class="row  justify-content-center fw-bold size-font-sm ">
+                                
+                                <div  class="col-5 border_especifo_product mx-1 ">Precio/Kilo</div>
+                                <div  class="col-5 border_especifo_product  mx-1 ">Peso</div>
+                                
+                            </div>
+                            <div class="row  justify-content-center fw-bold size-font-sm">
+                                
+                                <div  class="col-5 valor_detallado mx-1 text-white bg-danger ">4800 ₡/Kg</div>
+                                <div  class="col-5 valor_detallado mx-1 text-white bg-danger">0.6 Kg</div>
+                                
+                            </div>
+                            <div class="row  justify-content-center fw-bold size-font-sm">
+                                
+                                <div  class="col-5 border_especifo_product mx-1 mt-1 ">Precio/Litro</div>
+                                <div  class="col-5 border_especifo_product  mx-1 mt-1 ">Volumen</div>
+                                
+                            </div>
+                            <div class="row  justify-content-center fw-bold size-font-sm">
+                                
+                                <div  class="col-5 valor_detallado mx-1 text-white bg-primary ">N/A</div>
+                                <div  class="col-5 valor_detallado mx-1 text-white bg-primary">N/A</div>
+                                
+                            </div>
+                            <div class="row  justify-content-center fw-bold size-font-sm">
+                                
+                                <div  class="col-5 border_especifo_product mx-1 mt-1">Precio/Unid</div>
+                                <div  class="col-5 border_especifo_product  mx-1 mt-1">Unidad</div>
+                                
+                            </div>
+                            <div class="row  justify-content-center fw-bold size-font-sm">
+                                
+                                <div  class="col-5 valor_detallado mx-1 text-white bg-success">2900 ₡/Unid</div>
+                                <div  class="col-5 valor_detallado mx-1 text-white bg-success">1 Unidad</div>
+                                
+                            </div>
+                            <div class="row  m-2 ">
+                                <button type="button" class="btn btn-outline-success">Agregar</button> 
+                            </div>
+    
+                            
+
+
+                        </div>
+
+                        <div class="producto-indiv bg-light p-1 shadow m-2">
+                            <div class="row mt-3">
+                                <div class="col-1"></div>
+                                <div class="col-8 ">
+                                    <img loading="auto" src="https://walmartcr.vtexassets.com/arquivos/ids/262511-500-auto?v=1766272721&width=500&height=auto&aspect=true"  class="rounded-15" alt="" style="width:150px ; height:150px">
+                                </div>
+    
+                                <div class="col-1"></div>
+                            </div>
+                            <div class="row mt-2">
+                                <span class="text-primary size-font-m"><strong>Avena Quaker Instantanea Mosh Nutremas - 600gr</strong></span>
+                            </div>
+                            <div class="row mt-2 d-inline justify-content-start ">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Walmart_logo.svg/1280px-Walmart_logo.svg.png" style= "width : 200px; height:30px" alt="">
+                            </div>
+                            <div class="row mt-2 d-inline justify-content-start ">
+                                <div class="col">
+                                    
+                                    <span class="fs-4 text-danger fw-bold text-center">₡2.900</span>
+    
+                                </div>
+                            </div>
+                            <div class="row  justify-content-center fw-bold size-font-sm ">
+                                
+                                <div  class="col-5 border_especifo_product mx-1 ">Precio/Kilo</div>
+                                <div  class="col-5 border_especifo_product  mx-1 ">Peso</div>
+                                
+                            </div>
+                            <div class="row  justify-content-center fw-bold size-font-sm">
+                                
+                                <div  class="col-5 valor_detallado mx-1 text-white bg-danger ">4800 ₡/Kg</div>
+                                <div  class="col-5 valor_detallado mx-1 text-white bg-danger">0.6 Kg</div>
+                                
+                            </div>
+                            <div class="row  justify-content-center fw-bold size-font-sm">
+                                
+                                <div  class="col-5 border_especifo_product mx-1 mt-1 ">Precio/Litro</div>
+                                <div  class="col-5 border_especifo_product  mx-1 mt-1 ">Volumen</div>
+                                
+                            </div>
+                            <div class="row  justify-content-center fw-bold size-font-sm">
+                                
+                                <div  class="col-5 valor_detallado mx-1 text-white bg-primary ">N/A</div>
+                                <div  class="col-5 valor_detallado mx-1 text-white bg-primary">N/A</div>
+                                
+                            </div>
+                            <div class="row  justify-content-center fw-bold size-font-sm">
+                                
+                                <div  class="col-5 border_especifo_product mx-1 mt-1">Precio/Unid</div>
+                                <div  class="col-5 border_especifo_product  mx-1 mt-1">Unidad</div>
+                                
+                            </div>
+                            <div class="row  justify-content-center fw-bold size-font-sm">
+                                
+                                <div  class="col-5 valor_detallado mx-1 text-white bg-success">2900 ₡/Unid</div>
+                                <div  class="col-5 valor_detallado mx-1 text-white bg-success">1 Unidad</div>
+                                
+                            </div>
+                            <div class="row  m-2 ">
+                                <button type="button" class="btn btn-outline-success">Agregar</button> 
+                            </div>
+    
+                            
+
+
+                        </div>
+
+                        <div class="producto-indiv bg-light p-1 shadow m-2">
+                            <div class="row mt-3">
+                                <div class="col-1"></div>
+                                <div class="col-8 ">
+                                    <img loading="auto" src="https://walmartcr.vtexassets.com/arquivos/ids/262511-500-auto?v=1766272721&width=500&height=auto&aspect=true"  class="rounded-15" alt="" style="width:150px ; height:150px">
+                                </div>
+    
+                                <div class="col-1"></div>
+                            </div>
+                            <div class="row mt-2">
+                                <span class="text-primary size-font-m"><strong>Avena Quaker Instantanea Mosh Nutremas - 600gr</strong></span>
+                            </div>
+                            <div class="row mt-2 d-inline justify-content-start ">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Walmart_logo.svg/1280px-Walmart_logo.svg.png" style= "width : 200px; height:30px" alt="">
+                            </div>
+                            <div class="row mt-2 d-inline justify-content-start ">
+                                <div class="col">
+                                    
+                                    <span class="fs-4 text-danger fw-bold text-center">₡2.900</span>
+    
+                                </div>
+                            </div>
+                            <div class="row  justify-content-center fw-bold size-font-sm ">
+                                
+                                <div  class="col-5 border_especifo_product mx-1 ">Precio/Kilo</div>
+                                <div  class="col-5 border_especifo_product  mx-1 ">Peso</div>
+                                
+                            </div>
+                            <div class="row  justify-content-center fw-bold size-font-sm">
+                                
+                                <div  class="col-5 valor_detallado mx-1 text-white bg-danger ">4800 ₡/Kg</div>
+                                <div  class="col-5 valor_detallado mx-1 text-white bg-danger">0.6 Kg</div>
+                                
+                            </div>
+                            <div class="row  justify-content-center fw-bold size-font-sm">
+                                
+                                <div  class="col-5 border_especifo_product mx-1 mt-1 ">Precio/Litro</div>
+                                <div  class="col-5 border_especifo_product  mx-1 mt-1 ">Volumen</div>
+                                
+                            </div>
+                            <div class="row  justify-content-center fw-bold size-font-sm">
+                                
+                                <div  class="col-5 valor_detallado mx-1 text-white bg-primary ">N/A</div>
+                                <div  class="col-5 valor_detallado mx-1 text-white bg-primary">N/A</div>
+                                
+                            </div>
+                            <div class="row  justify-content-center fw-bold size-font-sm">
+                                
+                                <div  class="col-5 border_especifo_product mx-1 mt-1">Precio/Unid</div>
+                                <div  class="col-5 border_especifo_product  mx-1 mt-1">Unidad</div>
+                                
+                            </div>
+                            <div class="row  justify-content-center fw-bold size-font-sm">
+                                
+                                <div  class="col-5 valor_detallado mx-1 text-white bg-success">2900 ₡/Unid</div>
+                                <div  class="col-5 valor_detallado mx-1 text-white bg-success">1 Unidad</div>
+                                
+                            </div>
+                            <div class="row  m-2 ">
+                                <button type="button" class="btn btn-outline-success">Agregar</button> 
+                            </div>
+    
+                            
+
+
+                        </div>
+
+                        <div class="producto-indiv bg-light p-1 shadow m-2">
+                            <div class="row mt-3">
+                                <div class="col-1"></div>
+                                <div class="col-8 ">
+                                    <img loading="auto" src="https://walmartcr.vtexassets.com/arquivos/ids/262511-500-auto?v=1766272721&width=500&height=auto&aspect=true"  class="rounded-15" alt="" style="width:150px ; height:150px">
+                                </div>
+    
+                                <div class="col-1"></div>
+                            </div>
+                            <div class="row mt-2">
+                                <span class="text-primary size-font-m"><strong>Avena Quaker Instantanea Mosh Nutremas - 600gr</strong></span>
+                            </div>
+                            <div class="row mt-2 d-inline justify-content-start ">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Walmart_logo.svg/1280px-Walmart_logo.svg.png" style= "width : 200px; height:30px" alt="">
+                            </div>
+                            <div class="row mt-2 d-inline justify-content-start ">
+                                <div class="col">
+                                    
+                                    <span class="fs-4 text-danger fw-bold text-center">₡2.900</span>
+    
+                                </div>
+                            </div>
+                            <div class="row  justify-content-center fw-bold size-font-sm ">
+                                
+                                <div  class="col-5 border_especifo_product mx-1 ">Precio/Kilo</div>
+                                <div  class="col-5 border_especifo_product  mx-1 ">Peso</div>
+                                
+                            </div>
+                            <div class="row  justify-content-center fw-bold size-font-sm">
+                                
+                                <div  class="col-5 valor_detallado mx-1 text-white bg-danger ">4800 ₡/Kg</div>
+                                <div  class="col-5 valor_detallado mx-1 text-white bg-danger">0.6 Kg</div>
+                                
+                            </div>
+                            <div class="row  justify-content-center fw-bold size-font-sm">
+                                
+                                <div  class="col-5 border_especifo_product mx-1 mt-1 ">Precio/Litro</div>
+                                <div  class="col-5 border_especifo_product  mx-1 mt-1 ">Volumen</div>
+                                
+                            </div>
+                            <div class="row  justify-content-center fw-bold size-font-sm">
+                                
+                                <div  class="col-5 valor_detallado mx-1 text-white bg-primary ">N/A</div>
+                                <div  class="col-5 valor_detallado mx-1 text-white bg-primary">N/A</div>
+                                
+                            </div>
+                            <div class="row  justify-content-center fw-bold size-font-sm">
+                                
+                                <div  class="col-5 border_especifo_product mx-1 mt-1">Precio/Unid</div>
+                                <div  class="col-5 border_especifo_product  mx-1 mt-1">Unidad</div>
+                                
+                            </div>
+                            <div class="row  justify-content-center fw-bold size-font-sm">
+                                
+                                <div  class="col-5 valor_detallado mx-1 text-white bg-success">2900 ₡/Unid</div>
+                                <div  class="col-5 valor_detallado mx-1 text-white bg-success">1 Unidad</div>
+                                
+                            </div>
+                            <div class="row  m-2 ">
+                                <button type="button" class="btn btn-outline-success">Agregar</button> 
+                            </div>
+    
+                            
+
+
+                        </div>
+
+                        <div class="producto-indiv bg-light p-1 shadow m-2">
+                            <div class="row mt-3">
+                                <div class="col-1"></div>
+                                <div class="col-8 ">
+                                    <img loading="auto" src="https://walmartcr.vtexassets.com/arquivos/ids/262511-500-auto?v=1766272721&width=500&height=auto&aspect=true"  class="rounded-15" alt="" style="width:150px ; height:150px">
+                                </div>
+    
+                                <div class="col-1"></div>
+                            </div>
+                            <div class="row mt-2">
+                                <span class="text-primary size-font-m"><strong>Avena Quaker Instantanea Mosh Nutremas - 600gr</strong></span>
+                            </div>
+                            <div class="row mt-2 d-inline justify-content-start ">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Walmart_logo.svg/1280px-Walmart_logo.svg.png" style= "width : 200px; height:30px" alt="">
+                            </div>
+                            <div class="row mt-2 d-inline justify-content-start ">
+                                <div class="col">
+                                    
+                                    <span class="fs-4 text-danger fw-bold text-center">₡2.900</span>
+    
+                                </div>
+                            </div>
+                            <div class="row  justify-content-center fw-bold size-font-sm ">
+                                
+                                <div  class="col-5 border_especifo_product mx-1 ">Precio/Kilo</div>
+                                <div  class="col-5 border_especifo_product  mx-1 ">Peso</div>
+                                
+                            </div>
+                            <div class="row  justify-content-center fw-bold size-font-sm">
+                                
+                                <div  class="col-5 valor_detallado mx-1 text-white bg-danger ">4800 ₡/Kg</div>
+                                <div  class="col-5 valor_detallado mx-1 text-white bg-danger">0.6 Kg</div>
+                                
+                            </div>
+                            <div class="row  justify-content-center fw-bold size-font-sm">
+                                
+                                <div  class="col-5 border_especifo_product mx-1 mt-1 ">Precio/Litro</div>
+                                <div  class="col-5 border_especifo_product  mx-1 mt-1 ">Volumen</div>
+                                
+                            </div>
+                            <div class="row  justify-content-center fw-bold size-font-sm">
+                                
+                                <div  class="col-5 valor_detallado mx-1 text-white bg-primary ">N/A</div>
+                                <div  class="col-5 valor_detallado mx-1 text-white bg-primary">N/A</div>
+                                
+                            </div>
+                            <div class="row  justify-content-center fw-bold size-font-sm">
+                                
+                                <div  class="col-5 border_especifo_product mx-1 mt-1">Precio/Unid</div>
+                                <div  class="col-5 border_especifo_product  mx-1 mt-1">Unidad</div>
+                                
+                            </div>
+                            <div class="row  justify-content-center fw-bold size-font-sm">
+                                
+                                <div  class="col-5 valor_detallado mx-1 text-white bg-success">2900 ₡/Unid</div>
+                                <div  class="col-5 valor_detallado mx-1 text-white bg-success">1 Unidad</div>
+                                
+                            </div>
+                            <div class="row  m-2 ">
+                                <button type="button" class="btn btn-outline-success">Agregar</button> 
+                            </div>
+    
+                            
+
+
+                        </div>
+
+                        <div class="producto-indiv bg-light p-1 shadow m-2">
+                            <div class="row mt-3">
+                                <div class="col-1"></div>
+                                <div class="col-8 ">
+                                    <img loading="auto" src="https://walmartcr.vtexassets.com/arquivos/ids/262511-500-auto?v=1766272721&width=500&height=auto&aspect=true"  class="rounded-15" alt="" style="width:150px ; height:150px">
+                                </div>
+    
+                                <div class="col-1"></div>
+                            </div>
+                            <div class="row mt-2">
+                                <span class="text-primary size-font-m"><strong>Avena Quaker Instantanea Mosh Nutremas - 600gr</strong></span>
+                            </div>
+                            <div class="row mt-2 d-inline justify-content-start ">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Walmart_logo.svg/1280px-Walmart_logo.svg.png" style= "width : 200px; height:30px" alt="">
+                            </div>
+                            <div class="row mt-2 d-inline justify-content-start ">
+                                <div class="col">
+                                    
+                                    <span class="fs-4 text-danger fw-bold text-center">₡2.900</span>
+    
+                                </div>
+                            </div>
+                            <div class="row  justify-content-center fw-bold size-font-sm ">
+                                
+                                <div  class="col-5 border_especifo_product mx-1 ">Precio/Kilo</div>
+                                <div  class="col-5 border_especifo_product  mx-1 ">Peso</div>
+                                
+                            </div>
+                            <div class="row  justify-content-center fw-bold size-font-sm">
+                                
+                                <div  class="col-5 valor_detallado mx-1 text-white bg-danger ">4800 ₡/Kg</div>
+                                <div  class="col-5 valor_detallado mx-1 text-white bg-danger">0.6 Kg</div>
+                                
+                            </div>
+                            <div class="row  justify-content-center fw-bold size-font-sm">
+                                
+                                <div  class="col-5 border_especifo_product mx-1 mt-1 ">Precio/Litro</div>
+                                <div  class="col-5 border_especifo_product  mx-1 mt-1 ">Volumen</div>
+                                
+                            </div>
+                            <div class="row  justify-content-center fw-bold size-font-sm">
+                                
+                                <div  class="col-5 valor_detallado mx-1 text-white bg-primary ">N/A</div>
+                                <div  class="col-5 valor_detallado mx-1 text-white bg-primary">N/A</div>
+                                
+                            </div>
+                            <div class="row  justify-content-center fw-bold size-font-sm">
+                                
+                                <div  class="col-5 border_especifo_product mx-1 mt-1">Precio/Unid</div>
+                                <div  class="col-5 border_especifo_product  mx-1 mt-1">Unidad</div>
+                                
+                            </div>
+                            <div class="row  justify-content-center fw-bold size-font-sm">
+                                
+                                <div  class="col-5 valor_detallado mx-1 text-white bg-success">2900 ₡/Unid</div>
+                                <div  class="col-5 valor_detallado mx-1 text-white bg-success">1 Unidad</div>
+                                
+                            </div>
+                            <div class="row  m-2 ">
+                                <button type="button" class="btn btn-outline-success">Agregar</button> 
+                            </div>
+    
+                            
+
+
+                        </div>
+
+                        <div class="producto-indiv bg-light p-1 shadow m-2">
+                            <div class="row mt-3">
+                                <div class="col-1"></div>
+                                <div class="col-8 ">
+                                    <img loading="auto" src="https://walmartcr.vtexassets.com/arquivos/ids/262511-500-auto?v=1766272721&width=500&height=auto&aspect=true"  class="rounded-15" alt="" style="width:150px ; height:150px">
+                                </div>
+    
+                                <div class="col-1"></div>
+                            </div>
+                            <div class="row mt-2">
+                                <span class="text-primary size-font-m"><strong>Avena Quaker Instantanea Mosh Nutremas - 600gr</strong></span>
+                            </div>
+                            <div class="row mt-2 d-inline justify-content-start ">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Walmart_logo.svg/1280px-Walmart_logo.svg.png" style= "width : 200px; height:30px" alt="">
+                            </div>
+                            <div class="row mt-2 d-inline justify-content-start ">
+                                <div class="col">
+                                    
+                                    <span class="fs-4 text-danger fw-bold text-center">₡2.900</span>
+    
+                                </div>
+                            </div>
+                            <div class="row  justify-content-center fw-bold size-font-sm ">
+                                
+                                <div  class="col-5 border_especifo_product mx-1 ">Precio/Kilo</div>
+                                <div  class="col-5 border_especifo_product  mx-1 ">Peso</div>
+                                
+                            </div>
+                            <div class="row  justify-content-center fw-bold size-font-sm">
+                                
+                                <div  class="col-5 valor_detallado mx-1 text-white bg-danger ">4800 ₡/Kg</div>
+                                <div  class="col-5 valor_detallado mx-1 text-white bg-danger">0.6 Kg</div>
+                                
+                            </div>
+                            <div class="row  justify-content-center fw-bold size-font-sm">
+                                
+                                <div  class="col-5 border_especifo_product mx-1 mt-1 ">Precio/Litro</div>
+                                <div  class="col-5 border_especifo_product  mx-1 mt-1 ">Volumen</div>
+                                
+                            </div>
+                            <div class="row  justify-content-center fw-bold size-font-sm">
+                                
+                                <div  class="col-5 valor_detallado mx-1 text-white bg-primary ">N/A</div>
+                                <div  class="col-5 valor_detallado mx-1 text-white bg-primary">N/A</div>
+                                
+                            </div>
+                            <div class="row  justify-content-center fw-bold size-font-sm">
+                                
+                                <div  class="col-5 border_especifo_product mx-1 mt-1">Precio/Unid</div>
+                                <div  class="col-5 border_especifo_product  mx-1 mt-1">Unidad</div>
+                                
+                            </div>
+                            <div class="row  justify-content-center fw-bold size-font-sm">
+                                
+                                <div  class="col-5 valor_detallado mx-1 text-white bg-success">2900 ₡/Unid</div>
+                                <div  class="col-5 valor_detallado mx-1 text-white bg-success">1 Unidad</div>
+                                
+                            </div>
+                            <div class="row  m-2 ">
+                                <button type="button" class="btn btn-outline-success">Agregar</button> 
+                            </div>
+    
+                            
+
+
+                        </div>
+
+                        <div class="producto-indiv bg-light p-1 shadow m-2">
+                            <div class="row mt-3">
+                                <div class="col-1"></div>
+                                <div class="col-8 ">
+                                    <img loading="auto" src="https://walmartcr.vtexassets.com/arquivos/ids/262511-500-auto?v=1766272721&width=500&height=auto&aspect=true"  class="rounded-15" alt="" style="width:150px ; height:150px">
+                                </div>
+    
+                                <div class="col-1"></div>
+                            </div>
+                            <div class="row mt-2">
+                                <span class="text-primary size-font-m"><strong>Avena Quaker Instantanea Mosh Nutremas - 600gr</strong></span>
+                            </div>
+                            <div class="row mt-2 d-inline justify-content-start ">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Walmart_logo.svg/1280px-Walmart_logo.svg.png" style= "width : 200px; height:30px" alt="">
+                            </div>
+                            <div class="row mt-2 d-inline justify-content-start ">
+                                <div class="col">
+                                    
+                                    <span class="fs-4 text-danger fw-bold text-center">₡2.900</span>
+    
+                                </div>
+                            </div>
+                            <div class="row  justify-content-center fw-bold size-font-sm ">
+                                
+                                <div  class="col-5 border_especifo_product mx-1 ">Precio/Kilo</div>
+                                <div  class="col-5 border_especifo_product  mx-1 ">Peso</div>
+                                
+                            </div>
+                            <div class="row  justify-content-center fw-bold size-font-sm">
+                                
+                                <div  class="col-5 valor_detallado mx-1 text-white bg-danger ">4800 ₡/Kg</div>
+                                <div  class="col-5 valor_detallado mx-1 text-white bg-danger">0.6 Kg</div>
+                                
+                            </div>
+                            <div class="row  justify-content-center fw-bold size-font-sm">
+                                
+                                <div  class="col-5 border_especifo_product mx-1 mt-1 ">Precio/Litro</div>
+                                <div  class="col-5 border_especifo_product  mx-1 mt-1 ">Volumen</div>
+                                
+                            </div>
+                            <div class="row  justify-content-center fw-bold size-font-sm">
+                                
+                                <div  class="col-5 valor_detallado mx-1 text-white bg-primary ">N/A</div>
+                                <div  class="col-5 valor_detallado mx-1 text-white bg-primary">N/A</div>
+                                
+                            </div>
+                            <div class="row  justify-content-center fw-bold size-font-sm">
+                                
+                                <div  class="col-5 border_especifo_product mx-1 mt-1">Precio/Unid</div>
+                                <div  class="col-5 border_especifo_product  mx-1 mt-1">Unidad</div>
+                                
+                            </div>
+                            <div class="row  justify-content-center fw-bold size-font-sm">
+                                
+                                <div  class="col-5 valor_detallado mx-1 text-white bg-success">2900 ₡/Unid</div>
+                                <div  class="col-5 valor_detallado mx-1 text-white bg-success">1 Unidad</div>
+                                
+                            </div>
+                            <div class="row  m-2 ">
+                                <button type="button" class="btn btn-outline-success">Agregar</button> 
+                            </div>
+    
+                            
+
+
+                        </div>
+
+                        <div class="producto-indiv bg-light p-1 shadow m-2">
+                            <div class="row mt-3">
+                                <div class="col-1"></div>
+                                <div class="col-8 ">
+                                    <img loading="auto" src="https://walmartcr.vtexassets.com/arquivos/ids/262511-500-auto?v=1766272721&width=500&height=auto&aspect=true"  class="rounded-15" alt="" style="width:150px ; height:150px">
+                                </div>
+    
+                                <div class="col-1"></div>
+                            </div>
+                            <div class="row mt-2">
+                                <span class="text-primary size-font-m"><strong>Avena Quaker Instantanea Mosh Nutremas - 600gr</strong></span>
+                            </div>
+                            <div class="row mt-2 d-inline justify-content-start ">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Walmart_logo.svg/1280px-Walmart_logo.svg.png" style= "width : 200px; height:30px" alt="">
+                            </div>
+                            <div class="row mt-2 d-inline justify-content-start ">
+                                <div class="col">
+                                    
+                                    <span class="fs-4 text-danger fw-bold text-center">₡2.900</span>
+    
+                                </div>
+                            </div>
+                            <div class="row  justify-content-center fw-bold size-font-sm ">
+                                
+                                <div  class="col-5 border_especifo_product mx-1 ">Precio/Kilo</div>
+                                <div  class="col-5 border_especifo_product  mx-1 ">Peso</div>
+                                
+                            </div>
+                            <div class="row  justify-content-center fw-bold size-font-sm">
+                                
+                                <div  class="col-5 valor_detallado mx-1 text-white bg-danger ">4800 ₡/Kg</div>
+                                <div  class="col-5 valor_detallado mx-1 text-white bg-danger">0.6 Kg</div>
+                                
+                            </div>
+                            <div class="row  justify-content-center fw-bold size-font-sm">
+                                
+                                <div  class="col-5 border_especifo_product mx-1 mt-1 ">Precio/Litro</div>
+                                <div  class="col-5 border_especifo_product  mx-1 mt-1 ">Volumen</div>
+                                
+                            </div>
+                            <div class="row  justify-content-center fw-bold size-font-sm">
+                                
+                                <div  class="col-5 valor_detallado mx-1 text-white bg-primary ">N/A</div>
+                                <div  class="col-5 valor_detallado mx-1 text-white bg-primary">N/A</div>
+                                
+                            </div>
+                            <div class="row  justify-content-center fw-bold size-font-sm">
+                                
+                                <div  class="col-5 border_especifo_product mx-1 mt-1">Precio/Unid</div>
+                                <div  class="col-5 border_especifo_product  mx-1 mt-1">Unidad</div>
+                                
+                            </div>
+                            <div class="row  justify-content-center fw-bold size-font-sm">
+                                
+                                <div  class="col-5 valor_detallado mx-1 text-white bg-success">2900 ₡/Unid</div>
+                                <div  class="col-5 valor_detallado mx-1 text-white bg-success">1 Unidad</div>
+                                
+                            </div>
+                            <div class="row  m-2 ">
+                                <button type="button" class="btn btn-outline-success">Agregar</button> 
+                            </div>
+    
+                            
+
+
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="container-fluid   ">
+                <footer class="py-5 ">
+                  <div class="row">
+                    <div class="col-6 col-md-2 mb-3 ">
+                      <h5>Conocenos</h5>
+                      <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Terminos y Condiciones</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Aviso de Privacidad</a></li>
+                        
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Preguntas Frecuentes</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Como aumentar tus ventas</a></li>
+                      </ul>
+                    </div>
+              
+                    <div class="col-6 col-md-2 mb-3">
+                      <h5>Necesitas ayuda?</h5>
+                      <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Comprar por mejor precio</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Comprar por mejor peso</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Comprar por mejor volumen</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Comprar por mejor unidad</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Canasta Basica</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Buscar senal</a></li>
+                      </ul>
+                    </div>
+              
+                    <div class="col-6 col-md-2 mb-3">
+                      <h5>Servicios</h5>
+                      <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Promocionate con Nosotros</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Proyecta tus ventas</a></li>
+                        
+                      </ul>
+                    </div>
+              
+                    <div class="col-md-5 offset-md-1 mb-3">
+                      <form class="row g-3" method="POST">
+                        <h5>Activa seguimiento de productos</h5>
+                        <p>Te enviaremos el mejor precio de tus productos en seguimiento.</p>
+                        <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+                          <label for="validationDefaultUsername" class="form-label visually-hidden">Correo Electronico</label>
+                          <input  id="validationDefaultUsername" type="email" class="form-control" placeholder="Correo Electronico" required>
+                          <div id="validationServer03Feedback" class="invalid-feedback">
+                            Por Favor, Escriba un correo electronico.
+                          </div>
+                          <button class="btn btn-primary" type="submit">Subscribete</button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+              
+                  <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+                    <p>© 2023 Compra&Ahorra, Inc. All rights reserved.</p>
+                    <ul class="list-unstyled d-flex">
+                      <li class="ms-3"><a class="link-dark" href="#"><i class="bi bi-facebook"></i></a></li>
+                      <li class="ms-3"><a class="link-dark" href="#"><i class="bi bi-instagram"></i></a></li>
+                      <li class="ms-3"><a class="link-dark" href="#"><i class="bi bi-youtube"></i></a></li>
+                    </ul>
+                  </div>
+                </footer>
+            </div>
+            
+            
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    
+        </div>
+    </div>
+   
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        $(".sidebar ul li").on('click' , function(){
+            $(".sidebar ul li.active").removeClass('active');
+            $(this).addClass('active');
+        });
+
+            $('.open-btn').on('click' , function(){
+            $('.sidebar').addClass('active');
+            
+        });
+
+        $('.close-btn').on('click' , function(){
+            $('.sidebar').removeClass('active');
+            
+        });
+
+    </script>
+</body>
+</html>

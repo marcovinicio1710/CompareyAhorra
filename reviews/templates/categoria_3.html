@@ -1,0 +1,16 @@
+<div class="sidebar" id="side_nav">
+    <div class="header-box px-3 pt-3 pb-4  d-flex justify-content-between">
+        <h1 class="fs-4"><span class="bg-white text-dark rounded shadow px-2 me-2">C&A</span ><span class="text-white">Categoria</span> </h1>
+        <button class="btn d-md-none d-block close-btn px-1 py-0 text-white"><i class="bi bi-list"></i></button>
+    </div>
+
+    <ul class="list-unstyled px-2">
+        {% for prod in lista_categoria %}
+        
+        <li class=""><a href="{% url 'cart' %}?super={{prod.0}}" class="text-decoration-none px-3 py-2 d-block"><span class="text-white link-primary">{{ prod.0 }}</span><span class="text-white link-primary align-items-rightt">{{ prod.1 }}</span></a></li>
+
+        {% endfor %}
+       
+    </ul>
+    <hr class="h-col7or mx-3 ">
+</div>

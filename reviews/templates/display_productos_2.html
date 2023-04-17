@@ -1,0 +1,314 @@
+
+{% load static %}
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+        <div class="d-flex justify-content-between d-md-none d-block">
+            <a class="navbar-brand fs-4" href="#">Compare & Ahorra </a>
+            <button class="btn px-1 py-0 open-btn"><i class="bi bi-list"></i></button>
+        </div>
+      
+      <button class="navbar-toggler btn btn-outline-primary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span> <i class="bi bi-funnel"></i></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+        <ul class="navbar-nav  mb-2 mb-lg-0">
+          <li class="nav-item mx-4 mt-3 mb-3">
+            <span class="fs-7 "><strong>Productos Encontrados: {{ num_prod }} productos</strong></span>
+          </li>
+          
+           <li class="nav-item dropdown mt-2 mx-5">
+            
+                <button href="#" class="btn btn-outline-primary buscar-btn" data-bs-toggle="dropdown" aria-expanded="false">
+                   <i class="bi bi-funnel"></i>
+                      <strong>Filtrar por ...</strong>
+                </button>
+                <ul class="dropdown-menu text-small shadow">
+                    <li><a class="dropdown-item" href="{% url 'search-producto/' %}?searched={{name}}&categoria={{categoria}}"><i class="bi bi-cash"></i>   Precio: menor a mayor</a></li>
+                    
+                    <li><a class="dropdown-item" href="{% url 'search-producto/' %}?searched={{name}}&categoria={{categoria}}&price_kg=yes"><img src="{% static 'balaza.svg' %}" alt="" style="height: 20px;">   Peso: mejor precio x Kg</a></li>
+                    <li><a class="dropdown-item" href="{% url 'search-producto/' %}?searched={{name}}&categoria={{categoria}}&price_lt=yes"><img src="{% static 'botella1.svg' %}" alt="" style="height: 20px;">   Volumen: mejor precio x Lt</a></li>
+                    <li><a class="dropdown-item" href="{% url 'search-producto/' %}?searched={{name}}&categoria={{categoria}}&price_unid=yes"><img src="{% static 'unidad.svg' %}" alt="" style="height: 20px;">    Unidad: mejor precio x Unid</a></li>
+           
+                </ul>
+             
+           </li>
+        </ul>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+        
+      </div>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+        
+    </div>
+</nav>
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+        
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7502926443959805"
+            crossorigin="anonymous">
+        </script>
+        <!-- ad_horizontal -->
+        <ins class="adsbygoogle"
+            style="display:block"
+            data-ad-client="ca-pub-7502926443959805"
+            data-ad-slot="3624493545"
+            data-ad-format="auto"
+            data-full-width-responsive="true">
+        </ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      
+      
+    </div>
+</nav>
+
+<div class="navbar navbar-expand-lg ">
+    <div class="container-fluid  ">
+        <div class="row productos ">
+            {% for produ in lista_productos %}
+            <div class="producto-indiv bg-light p-1 shadow m-2">
+                <div class="row mt-3">
+                    <div class="col-1"></div>
+                    <div class="col-8 ">
+                        <img loading="auto" src="{{ produ.4 }}" class="rounded-15" alt="" style="width:150px ; height:150px">
+                    </div>
+
+                    <div class="col-1"></div>
+                </div>
+                <div class="row mt-2">
+                    <span class="text-primary size-font-m"><strong>{{ produ.2 }}</strong></span>
+                </div>
+                <div class="row mt-2 d-inline justify-content-start ">
+                    {% if produ.0 == 'WALLMART' %}
+                        <img class="m-2" src="{% static 'wallmart1.png' %}" style= "width: 170px; height:30px" alt="">
+                    {% elif produ.0 == 'PRICESMART' %}
+                        <img class="m-2" src="{% static 'pricesmart1.png' %}" style= " width: 170px;height:30px" alt="">
+                    {% else %}
+                        <img class="m-2" src="{% static 'automercado1.png' %}" style= "width: 170px; height:30px" alt="">
+                    {% endif %}
+                </div>
+                <div class="row mt-2 d-inline justify-content-start ">
+                    <div class="col">
+                        
+                        <span class="fs-4 text-danger fw-bold text-center">₡{{ produ.3 }}</span>
+
+                    </div>
+                </div>
+                <div class="row  justify-content-center fw-bold size-font-sm ">
+                    
+                    <div  class="col-5 border_especifo_product mx-1 ">Precio/Kilo</div>
+                    <div  class="col-5 border_especifo_product  mx-1 ">{{produ.6}} ₡/Kg</div>
+                    
+                </div>
+                <div class="row  justify-content-center fw-bold size-font-sm">
+                    
+                    <div  class="col-5 valor_detallado mx-1 text-white bg-danger "> Peso</div>
+                    <div  class="col-5 valor_detallado mx-1 text-white bg-danger">{{produ.5}} Kg</div>
+                    
+                </div>
+                <div class="row  justify-content-center fw-bold size-font-sm">
+                    
+                    <div  class="col-5 border_especifo_product mx-1 mt-1 ">Precio/Litro</div>
+                    <div  class="col-5 border_especifo_product  mx-1 mt-1 ">{{produ.8}} ₡/Lt</div>
+                    
+                </div>
+                <div class="row  justify-content-center fw-bold size-font-sm">
+                    
+                    <div  class="col-5 valor_detallado mx-1 text-white bg-primary ">Volumen</div>
+                    <div  class="col-5 valor_detallado mx-1 text-white bg-primary">{{produ.7}} Lt</div>
+                    
+                </div>
+                <div class="row  justify-content-center fw-bold size-font-sm">
+                    
+                    <div  class="col-5 border_especifo_product mx-1 mt-1">Precio/Unid</div>
+                    <div  class="col-5 border_especifo_product  mx-1 mt-1">{{produ.10}} ₡/Unid</div>
+                    
+                </div>
+                <div class="row  justify-content-center fw-bold size-font-sm">
+                    
+                    <div  class="col-5 valor_detallado mx-1 text-white bg-success">Unidad</div>
+                    <div  class="col-5 valor_detallado mx-1 text-white bg-success">{{produ.9}} Unidad</div>
+                    
+                </div>
+                <div class="row  m-2 ">
+                    
+                    <form  method="POST" >
+                        {% csrf_token %}
+                        <input type="number" class="form-control" name="carrito" id="validationCustom03" value="{{produ.11}}" hidden>
+                        <button type="submit" class="btn btn-outline-success " style="min-width: 150px;">Agregar </button> 
+                
+                    </form>                   
+                </div>
+
+                
+
+
+            </div>
+            {% endfor %}
+
+            
+
+
+        </div>
+        
+    </div>
+</div>
+
+
+{% if page_bool == 'yes' %}
+
+    <nav aria-label="Page navigation example ">
+        <ul class="pagination justify-content-center">
+            {% if lista_param_page.0 == 'disabled' %}
+                <li class="page-item disabled">
+                    <a class="page-link" href="/{{ lista_pagina.0 }}" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+            {% else %}
+                {% if price_kg == 'yes' %}
+                    <li class="page-item">
+                        <a class="page-link" href="{% url 'search-producto/' %}?searched={{name}}&categoria={{categoria}}&price_kg=yes&page={{lista_param_page.0}}" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                {% elif price_lt == 'yes' %}  
+                    <li class="page-item">
+                        <a class="page-link" href="{% url 'search-producto/' %}?searched={{name}}&categoria={{categoria}}&price_lt=yes&page={{lista_param_page.0}}" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                {% elif price_uni == 'yes' %}
+                    <li class="page-item">
+                        <a class="page-link" href="{% url 'search-producto/' %}?searched={{name}}&categoria={{categoria}}&price_uni=yes&page={{lista_param_page.0}}" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>  
+                    
+                {% else %}  
+                    <li class="page-item">
+                        <a class="page-link" href="{% url 'search-producto/' %}?searched={{name}}&categoria={{categoria}}&page={{lista_param_page.0}}" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li> 
+
+                {% endif %}
+                
+                
+            {% endif %}
+        
+
+        
+        {% for index_page in lista_pagina %}
+            
+            {% if price_kg == 'yes' %}
+            
+                {% if lista_param_page.1 == index_page %}
+                    {% if index_page == '...' %}
+                        <li class="page-item disabled"><a class="page-link" href="{% url 'search-producto/' %}?searched={{name}}&categoria={{categoria}}&price_kg=yes&page={{index_page}}">{{index_page}}</a></li>
+                    {% else %}
+                        <li class="page-item active"><a class="page-link" href="{% url 'search-producto/' %}?searched={{name}}&categoria={{categoria}}&price_kg=yes&page={{index_page}}">{{index_page}}</a></li>
+                    {% endif %}
+                
+                {% else %}
+                        {% if index_page == '...' %}
+                            <li class="page-item disabled"><a class="page-link" href="{% url 'search-producto/' %}?searched={{name}}&categoria={{categoria}}&price_kg=yes&page={{index_page}}">{{index_page}}</a></li>
+                        {% else %}
+                            <li class="page-item"><a class="page-link" href="{% url 'search-producto/' %}?searched={{name}}&categoria={{categoria}}&price_kg=yes&page={{index_page}}">{{index_page}}</a></li>
+                        {% endif %}
+                    {% endif %}
+                
+            {% elif price_lt == 'yes' %}
+                {% if lista_param_page.1 == index_page %}
+                    {% if index_page == '...' %}
+                        <li class="page-item disabled"><a class="page-link" href="{% url 'search-producto/' %}?searched={{name}}&categoria={{categoria}}&price_kg=yes&page={{index_page}}">{{index_page}}</a></li>
+                    {% else %}
+            
+                        <li class="page-item active"><a class="page-link" href="{% url 'search-producto/' %}?searched={{name}}&categoria={{categoria}}&price_lt=yes&page={{index_page}}">{{index_page}}</a></li>
+                    {% endif %}
+                {% else %}
+                    {% if index_page == '...' %}
+                        <li class="page-item disabled"><a class="page-link" href="{% url 'search-producto/' %}?searched={{name}}&categoria={{categoria}}&price_kg=yes&page={{index_page}}">{{index_page}}</a></li>
+                    {% else %}
+                        <li class="page-item"><a class="page-link" href="{% url 'search-producto/' %}?searched={{name}}&categoria={{categoria}}&price_lt=yes&page={{index_page}}">{{index_page}}</a></li>
+                    {% endif %}
+                {% endif %}
+                
+            {% elif price_uni == 'yes' %}
+                {% if lista_param_page.1 == index_page %}
+                    {% if index_page == '...' %}
+                        <li class="page-item disabled"><a class="page-link" href="{% url 'search-producto/' %}?searched={{name}}&categoria={{categoria}}&price_kg=yes&page={{index_page}}">{{index_page}}</a></li>
+                    {% else %}
+                
+                        <li class="page-item active"><a class="page-link" href="{% url 'search-producto/' %}?searched={{name}}&categoria={{categoria}}&price_uni=yes&page={{index_page}}">{{index_page}}</a></li>
+                    {% endif %}
+                {% else %}
+                    {% if index_page == '...' %}
+                        <li class="page-item disabled"><a class="page-link" href="{% url 'search-producto/' %}?searched={{name}}&categoria={{categoria}}&price_kg=yes&page={{index_page}}">{{index_page}}</a></li>
+                    {% else %}
+                        <li class="page-item"><a class="page-link" href="{% url 'search-producto/' %}?searched={{name}}&categoria={{categoria}}&price_uni=yes&page={{index_page}}">{{index_page}}</a></li>
+                    {% endif %}
+                {% endif %}
+                
+            {% else %}  
+                {% if lista_param_page.1 == index_page %}
+                    {% if index_page == '...' %}
+                        <li class="page-item disabled"><a class="page-link" href="{% url 'search-producto/' %}?searched={{name}}&categoria={{categoria}}&price_kg=yes&page={{index_page}}">{{index_page}}</a></li>
+                    {% else %}
+                        <li class="page-item active"><a class="page-link" href="{% url 'search-producto/' %}?searched={{name}}&categoria={{categoria}}&page={{index_page}}">{{index_page}}</a></li>
+                    {% endif %}
+                {% else %}
+                    {% if index_page == '...' %}
+                        <li class="page-item disabled"><a class="page-link" href="{% url 'search-producto/' %}?searched={{name}}&categoria={{categoria}}&price_kg=yes&page={{index_page}}">{{index_page}}</a></li>
+                    {% else %}
+                        <li class="page-item"><a class="page-link" href="{% url 'search-producto/' %}?searched={{name}}&categoria={{categoria}}&page={{index_page}}">{{index_page}}</a></li>
+                    {% endif %}
+                {% endif %}
+        
+            {% endif %}
+        {% endfor %}
+
+        {% if lista_param_page.2 == 'disabled' %}
+            <li class="page-item disabled">
+                <a class="page-link" href="page={{ lista_pagina.1 }}" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+        {% else %}
+
+            {% if price_kg == 'yes' %}
+               
+
+                <li class="page-item ">
+                    <a class="page-link" href="{% url 'search-producto/' %}?searched={{name}}&categoria={{categoria}}&price_kg=yes&page={{lista_param_page.2}}" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            {% elif price_lt == 'yes' %}  
+                <li class="page-item ">
+                    <a class="page-link" href="{% url 'search-producto/' %}?searched={{name}}&categoria={{categoria}}&price_lt=yes&page={{lista_param_page.2}}" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            {% elif price_uni == 'yes' %}
+                <li class="page-item ">
+                    <a class="page-link" href="{% url 'search-producto/' %}?searched={{name}}&categoria={{categoria}}&price_uni=yes&page={{lista_param_page.2}}" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li> 
+        
+            {% else %}  
+                <li class="page-item ">
+                    <a class="page-link" href="{% url 'search-producto/' %}?searched={{name}}&categoria={{categoria}}&page={{lista_param_page.2}}" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li> 
+    {% endif %}
+            
+        {% endif %}
+        
+        </ul>
+    </nav>
+    
+{% endif %}

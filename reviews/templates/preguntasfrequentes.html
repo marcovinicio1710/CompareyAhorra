@@ -1,0 +1,93 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset=»utf-8»>
+
+    <title>Compara&Ahorra</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    
+
+</head>
+
+    <body>
+        
+        {% extends 'base_main_2.html' %}
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+        
+        {% block content %}
+        
+        
+        <div class="container p-2 text-justify">
+            <div class="container text-bg-light p-5">
+                <h3 class=" mt-5">Preguntas Frecuentes</h3><br><br>
+                <p><strong>1. ¿Para qué sirve CompareyAhorra?</strong></p>
+                <p>Compareyahorra sirve para hacer una compra inteligente y ahorrar dinero de forma fácil y rápida. Pero sobre todo sirve para hacerte (hacernos) la vida más sencilla. <br><br>
+
+                    Si haces una lista de la compra en Compareyahorra, te enseñamos el precio que tendría en nuestros los principales supermercados del pais. Así puedes aprovechar las ofertas en cada momento (ofertas especiales, promociones, etc.). La compra itinerante es la compra inteligente. <br> <br>
+                    
+                    Regístrate y comprueba el precio de tus compras habituales en los principales supermercados. Si ya tienes cuenta en Wallmart,Automercado,Pricesmart, pásate directamente por la home de Compareyahorra y empieza a comparar Compareyahorra con lo que ya tienes guardado en estos súpers.</p>
+                
+                <p><strong>2. ¿Hay supermercados que no aparecen en mi zona?</strong></p>
+                <p>Actualmente tenemos información de 3 supermercados: Automercado, Pricesmart y Wallmart. Intentaremos tener todos los supers que venden online, pero aunque no es enviar un cohete a la luna, sí que es cierto que requiere su tiempo.
+
+                <br><br> Utilizamos estos supermecados de referencia , por estar  populados con mayor presencia en el territorio Costarricense.</p>
+                <p><strong>3. ¿Cómo funciona este servicio de comparación y ahorro de productos de supermercados?</strong></p>
+                <p>Nuestro servicio de CompareyAhorra se basa en la búsqueda de productos utilizando palabras iguales para encontrar coincidencias precisas en los catálogos de los supermercados que comparamos.
+
+                    <br><br> No ofrecemos sugerencias o recomendaciones de productos, ya que CompareyAhorra nuestro enfoque se basa en la búsqueda exacta de los términos ingresados por los usuarios. Te recomendamos que escribas el nombre del producto lo más específico posible para obtener resultados precisos y relevantes.
+                    
+                    <br><br> Nuestra base de datos incluye los catálogos de los principales supermercados, lo que te permite comparar precios, peso, volumen y unidades en los productos de manera eficiente. Nos esforzamos por proporcionar información actualizada y precisa para ayudarte a tomar decisiones informadas al hacer tus compras en supermercados.
+                </p>
+                <p><strong>4. ¿Es realmente gratuito el servicio de comparación y ahorro de productos de supermercados?</strong></p>
+                <p>Nos complace ofrecer un servicio gratuito para toda la población, tanto dentro como fuera de Costa Rica, con el objetivo de ayudarte a ahorrar dinero al comparar precios de productos en supermercados.
+
+                    <br><br>Queremos informarte que para utilizar ciertas funciones de nuestra página web, como guardar información o configurar preferencias personalizadas, es necesario aceptar nuestros términos y condiciones. Estos términos y condiciones establecen las reglas y regulaciones que rigen el uso de nuestra página web y la protección de tus datos.
+                    
+                    <br><br>Queremos asegurarte que nuestro servicio es gratuito y no solicitamos ninguna información de tarjeta bancaria ni datos de pago para utilizar nuestra página web. Nuestro enfoque es brindar un servicio transparente y confiable para ayudarte a comparar productos de supermercados de manera fácil y conveniente.</p>
+                <p><strong>5. ¿Cómo puedo buscar y comparar productos en este servicio de manera eficiente?</strong></p>
+                <p>Una clave para obtener resultados precisos es especificar la unidad de medida del producto que estás buscando. Nuestra base de datos se actualiza constantemente y compara precios en base a unidades de peso, litro o unidad, según corresponda. 
+
+                    <br><br>Nuestro objetivo es ofrecerte una herramienta confiable y conveniente para comparar precios y ahorrar en tus compras de supermercado. Trabajamos arduamente para proporcionar información actualizada y precisa para que puedas tomar decisiones informadas al hacer tus compras.
+                    
+                    <br><br>Ten en cuenta que "CompareyAhorra" es una herramienta de comparación de precios y no realiza ventas directas. Te redirigiremos a los sitios web de los supermercados para que puedas completar tus compras con ellos directamente.
+                </p>
+                {% include 'footer.html' %}
+        </div>
+       
+        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script>
+
+            $("#navbarTogglerDemo03").on('show.bs.collapse', function() {
+                $('a.nav-link').click(function() {
+                    $("#navbarTogglerDemo03").collapse('hide');
+                    });
+                });
+
+            $(".sidebar ul li").on('click' , function(){
+                $(".sidebar ul li.active").removeClass('active');
+                $(this).addClass('active');
+            });
+    
+                $('.open-btn').on('click' , function(){
+                $('.sidebar').addClass('active');
+                
+            });
+    
+            $('.close-btn').on('click' , function(){
+                $('.sidebar').removeClass('active');
+                
+            });
+    
+        </script>
+        
+        {% endblock %}
+    </body>
+
+</html>

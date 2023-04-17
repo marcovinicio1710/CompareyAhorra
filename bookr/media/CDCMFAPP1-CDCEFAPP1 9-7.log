@@ -1,0 +1,1050 @@
+=~=~=~=~=~=~=~=~=~=~=~= PuTTY log 2022.09.07 13:53:38 =~=~=~=~=~=~=~=~=~=~=~=
+show config
+: Saved
+
+: 
+: Hardware:   ASA5545
+: Written by rexb.nadCVG at 08:12:42.380 UTC Thu Jul 14 2022
+!
+ASA Version 9.14(3)18 <context>
+!
+firewall transparent
+hostname CDCEFAPP1
+domain-name dc.cmg.convergys.com
+enable password ***** encrypted
+names
+
+!
+interface BVI1
+ ip address 10.164.183.50 255.255.255.240 standby 10.164.183.51 
+!
+interface inside_AVALON
+ bridge-group 1
+ nameif inside
+ security-level 100
+!
+interface outside_AVALON
+ bridge-group 1
+ nameif outside
+ security-level 0
+!
+banner exec              CONCENTRIX CORPORATION  Cincinnati, OH, USA
+banner exec -------------------------------------------------------------------------------
+banner exec              Device Managed by DNETS Security
+banner exec -------------------------------------------------------------------------------
+banner exec -------------------------------------------------------------------------------
+banner exec   Changes need to done on CDCEFAPP1
+banner exec -------------------------------------------------------------------------------
+banner login --------------------------------------------------------------------------------
+banner login 
+banner login 
+banner login                                      CONCENTRIX CORPORATION
+banner login                                                   Warning Notice
+banner login 
+banner login  This system is restricted solely to CONCENTRIX authorized users. Any unauthorized access of
+banner login  this system is prohibited by CONCENTRIX and violators will be subject to criminal and civil
+banner login  prosecution under the law. This system is being monitored for administrative and security
+banner login  reasons.
+banner login  --------------------------------------------------------------------------------------
+banner motd -------------------------------------------------------------------------------------------
+banner motd 
+banner motd CONCENTRIX CORPORATION
+banner motd Warning Notice
+banner motd 
+banner motd This system is restricted solely to Convergys authorized users. Any unauthorized access of 
+banner motd this system is prohibited by Convergys and violators will be subject to criminal and civil 
+banner motd prosecution under the law. This system is being monitored for administrative and security 
+banner motd reasons.
+banner motd -------------------------------------------------------------------------------------------
+banner asdm -------------------------------------------------------------------------------------------
+banner asdm 
+banner asdm CONCENTRIX CORPORATION
+banner asdm Warning Notice
+banner asdm   
+banner asdm This system is restricted solely to Convergys authorized users. Any unauthorized access of 
+banner asdm this system is prohibited by Convergys and violators will be subject to criminal and civil 
+banner asdm prosecution under the law. This system is being monitored for administrative and security 
+banner asdm reasons.
+banner asdm -------------------------------------------------------------------------------------------
+dns server-group DefaultDNS
+ domain-name dc.cmg.convergys.com
+object network obj-17.118.41.1
+ host 17.118.41.1
+object network obj-17.118.41.2
+ host 17.118.41.2
+object network obj-17.118.41.3
+ host 17.118.41.3
+object network obj-17.118.41.4
+ host 17.118.41.4
+object network obj-17.118.41.5
+ host 17.118.41.5
+object network obj-17.118.41.6
+ host 17.118.41.6
+object network obj-17.118.41.7
+ host 17.118.41.7
+object network obj-17.118.41.8
+ host 17.118.41.8
+object network obj-17.118.41.9
+ host 17.118.41.9
+object network obj-17.118.41.10
+ host 17.118.41.10
+object network obj-17.118.41.11
+ host 17.118.41.11
+object network obj-17.118.41.12
+ host 17.118.41.12
+object network obj-17.118.41.13
+ host 17.118.41.13
+object network obj-17.118.41.14
+ host 17.118.41.14
+object network obj-17.118.41.15
+ host 17.118.41.15
+object network obj-17.118.41.16
+ host 17.118.41.16
+object network obj-17.118.41.17
+ host 17.118.41.17
+object network obj-17.118.41.18
+ host 17.118.41.18
+object network obj-17.118.41.19
+ host 17.118.41.19
+object network obj-17.118.41.20
+ host 17.118.41.20
+object network obj-17.118.41.21
+ host 17.118.41.21
+object network obj-17.118.41.22
+ host 17.118.41.22
+object network obj-17.118.41.23
+ host 17.118.41.23
+object network obj-17.118.41.24
+ host 17.118.41.24
+object network obj-17.118.41.25
+ host 17.118.41.25
+object network obj-17.118.41.26
+ host 17.118.41.26
+object network obj-17.118.41.27
+ host 17.118.41.27
+object network obj-17.118.41.28
+ host 17.118.41.28
+object network obj-17.118.41.29
+ host 17.118.41.29
+object network obj-17.118.41.30
+ host 17.118.41.30
+object network obj-17.118.41.31
+ host 17.118.41.31
+object network obj-17.118.41.32
+ host 17.118.41.32
+object network obj-17.118.41.33
+ host 17.118.41.33
+object network obj-17.118.41.34
+ host 17.118.41.34
+object network obj-17.118.41.35
+ host 17.118.41.35
+object network obj-17.118.41.36
+ host 17.118.41.36
+object network obj-17.118.41.37
+ host 17.118.41.37
+object network obj-17.118.41.38
+ host 17.118.41.38
+object network obj-17.118.41.39
+ host 17.118.41.39
+object network obj-17.118.41.40
+ host 17.118.41.40
+object network obj-17.118.41.41
+ host 17.118.41.41
+object network obj-17.118.41.42
+ host 17.118.41.42
+object network obj-17.118.41.43
+ host 17.118.41.43
+object network obj-17.118.41.44
+ host 17.118.41.44
+object network obj-17.118.41.45
+ host 17.118.41.45
+object network obj-17.118.41.46
+ host 17.118.41.46
+object network obj-17.118.41.47
+ host 17.118.41.47
+object network obj-17.118.41.48
+ host 17.118.41.48
+object network obj-17.118.41.49
+ host 17.118.41.49
+object network obj-17.118.41.50
+ host 17.118.41.41
+object network obj-17.118.41.51
+ host 17.118.41.51
+object network obj-17.118.41.52
+ host 17.118.41.52
+object network obj-17.118.41.53
+ host 17.118.41.53
+object network obj-17.118.41.54
+ host 17.118.41.54
+object network obj-17.118.41.55
+ host 17.118.41.55
+object network obj-17.118.41.56
+ host 17.118.41.56
+object network obj-17.118.41.57
+ host 17.118.41.57
+object network obj-17.118.41.58
+ host 17.118.41.58
+object network obj-17.118.41.59
+ host 17.118.41.59
+object network obj-17.118.41.60
+ host 17.118.41.60
+object network obj-17.118.41.61
+ host 17.118.41.61
+object network obj-17.118.41.62
+ host 17.118.41.62
+object network obj-17.118.41.63
+ host 17.118.41.63
+object network obj-17.118.41.64
+ host 17.118.41.64
+object network obj-17.118.41.65
+ host 17.118.41.65
+object network obj-17.118.41.66
+ host 17.118.41.66
+object network obj-17.118.41.67
+ host 17.118.41.67
+object network obj-17.118.41.68
+ host 17.118.41.68
+object network obj-17.118.41.69
+ host 17.118.41.69
+object network obj-17.118.41.70
+ host 17.118.41.70
+object network obj-17.118.41.71
+ host 17.118.41.71
+object network obj-17.118.41.72
+ host 17.118.41.72
+object network obj-10.198.0.0_26
+ subnet 10.198.0.0 255.255.255.192
+object network obj-10.198.0.64_26
+ subnet 10.198.0.64 255.255.255.192
+object network obj-10.198.0.128_26
+ subnet 10.198.0.128 255.255.255.192
+object network obj-10.198.0.192_26
+ subnet 10.198.0.192 255.255.255.192
+object network obj-10.198.1.0_26
+ subnet 10.198.1.0 255.255.255.192
+object network obj-10.198.1.64_26
+ subnet 10.198.1.64 255.255.255.192
+object network obj-10.198.1.128_26
+ subnet 10.198.1.128 255.255.255.192
+object network obj-10.198.1.192_26
+ subnet 10.198.1.192 255.255.255.192
+object network obj-10.198.2.0_26
+ subnet 10.198.2.0 255.255.255.192
+object network obj-10.198.2.64_26
+ subnet 10.198.2.64 255.255.255.192
+object network obj-10.198.2.128_26
+ subnet 10.198.2.128 255.255.255.192
+object network obj-10.198.2.192_26
+ subnet 10.198.2.192 255.255.255.192
+object network obj-10.198.3.0_26
+ subnet 10.198.3.0 255.255.255.192
+object network obj-10.198.3.64_26
+ subnet 10.198.3.64 255.255.255.192
+object network obj-10.198.3.128_26
+ subnet 10.198.3.128 255.255.255.192
+object network obj-10.198.3.192_26
+ subnet 10.198.3.192 255.255.255.192
+object network obj-10.198.4.0_26
+ subnet 10.198.4.0 255.255.255.192
+object network obj-10.198.4.64_26
+ subnet 10.198.4.64 255.255.255.192
+object network obj-10.198.4.128_26
+ subnet 10.198.4.128 255.255.255.192
+object network obj-10.198.4.192_26
+ subnet 10.198.4.192 255.255.255.192
+object network obj-10.198.5.0_26
+ subnet 10.198.5.0 255.255.255.192
+object network obj-10.198.5.64_26
+ subnet 10.198.5.64 255.255.255.192
+object network obj-10.198.5.128_26
+ subnet 10.198.5.128 255.255.255.192
+object network obj-10.198.5.192_26
+ subnet 10.198.5.192 255.255.255.192
+object network obj-10.198.6.0_26
+ subnet 10.198.6.0 255.255.255.192
+object network obj-10.198.6.64_26
+ subnet 10.198.6.64 255.255.255.192
+object network obj-10.198.6.128_26
+ subnet 10.198.6.128 255.255.255.192
+object network obj-10.198.6.192_26
+ subnet 10.198.6.192 255.255.255.192
+object network obj-10.198.7.0_26
+ subnet 10.198.7.0 255.255.255.192
+object network obj-10.198.7.64_26
+ subnet 10.198.7.64 255.255.255.192
+object network obj-10.198.7.128_26
+ subnet 10.198.7.128 255.255.255.192
+object network obj-10.198.7.192_26
+ subnet 10.198.7.192 255.255.255.192
+object network obj-10.198.8.0_26
+ subnet 10.198.8.0 255.255.255.192
+object network obj-10.198.8.64_26
+ subnet 10.198.8.64 255.255.255.192
+object network obj-10.198.8.128_26
+ subnet 10.198.8.128 255.255.255.192
+object network obj-10.198.8.192_26
+ subnet 10.198.8.192 255.255.255.192
+object network obj-10.198.9.0_26
+ subnet 10.198.9.0 255.255.255.192
+object network obj-10.198.9.64_26
+ subnet 10.198.9.64 255.255.255.192
+object network obj-10.198.9.128_26
+ subnet 10.198.9.128 255.255.255.192
+object network obj-10.198.9.192_26
+ subnet 10.198.9.192 255.255.255.192
+object network obj-10.198.10.0_26
+ subnet 10.198.10.0 255.255.255.192
+object network obj-10.198.10.64_26
+ subnet 10.198.10.64 255.255.255.192
+object network obj-10.198.10.128_26
+ subnet 10.198.10.128 255.255.255.192
+object network obj-10.198.10.192_26
+ subnet 10.198.10.192 255.255.255.192
+object network obj-10.198.11.0_26
+ subnet 10.198.11.0 255.255.255.192
+object network obj-10.198.11.64_26
+ subnet 10.198.11.64 255.255.255.192
+object network obj-10.198.11.128_26
+ subnet 10.198.11.128 255.255.255.192
+object network obj-10.198.11.192_26
+ subnet 10.198.11.192 255.255.255.192
+object network obj-10.198.12.0_26
+ subnet 10.198.12.0 255.255.255.192
+object network obj-10.198.12.64_26
+ subnet 10.198.12.64 255.255.255.192
+object network obj-10.198.12.128_26
+ subnet 10.198.12.128 255.255.255.192
+object network obj-10.198.12.192_26
+ subnet 10.198.12.192 255.255.255.192
+object network obj-10.198.13.0_26
+ subnet 10.198.13.0 255.255.255.192
+object network obj-10.198.13.64_26
+ subnet 10.198.13.64 255.255.255.192
+object network obj-10.198.13.128_26
+ subnet 10.198.13.128 255.255.255.192
+object network obj-10.198.13.192_26
+ subnet 10.198.13.192 255.255.255.192
+object network obj-10.198.14.0_26
+ subnet 10.198.14.0 255.255.255.192
+object network obj-10.198.14.64_26
+ subnet 10.198.14.64 255.255.255.192
+object network obj-10.198.14.128_26
+ subnet 10.198.14.128 255.255.255.192
+object network obj-10.198.14.192_26
+ subnet 10.198.14.192 255.255.255.192
+object network obj-10.198.15.0_26
+ subnet 10.198.15.0 255.255.255.192
+object network obj-10.198.15.64_26
+ subnet 10.198.15.64 255.255.255.192
+object network obj-10.198.15.128_26
+ subnet 10.198.15.128 255.255.255.192
+object network obj-10.198.15.192_26
+ subnet 10.198.15.192 255.255.255.192
+object network obj-10.198.16.0_26
+ subnet 10.198.16.0 255.255.255.192
+object network obj-10.198.16.64_26
+ subnet 10.198.16.64 255.255.255.192
+object network obj-10.198.16.128_26
+ subnet 10.198.16.128 255.255.255.192
+object network obj-10.198.16.192_26
+ subnet 10.198.16.192 255.255.255.192
+object network obj-10.198.17.0_26
+ subnet 10.198.17.0 255.255.255.192
+object network obj-10.198.17.64_26
+ subnet 10.198.17.64 255.255.255.192
+object network obj-10.198.17.128_26
+ subnet 10.198.17.128 255.255.255.192
+object network obj-10.198.17.192_26
+ subnet 10.198.17.192 255.255.255.192
+object network obj-17.118.41.73
+ host 17.118.41.73
+object network obj-17.118.41.74
+ host 17.118.41.74
+object network obj-17.118.41.75
+ host 17.118.41.75
+object network obj-17.118.41.76
+ host 17.118.41.76
+object network obj-17.118.41.77
+ host 17.118.41.77
+object network obj-17.118.41.78
+ host 17.118.41.78
+object network obj-17.118.41.79
+ host 17.118.41.79
+object network obj-17.118.41.80
+ host 17.118.41.80
+object network obj-17.118.41.81
+ host 17.118.41.81
+object network obj-17.118.41.82
+ host 17.118.41.82
+object network obj-17.118.41.83
+ host 17.118.41.83
+object network obj-17.118.41.84
+ host 17.118.41.84
+object network obj-17.118.41.85
+ host 17.118.41.85
+object network obj-17.118.41.86
+ host 17.118.41.86
+object network obj-17.118.41.87
+ host 17.118.41.87
+object network obj-17.118.41.88
+ host 17.118.41.88
+object network obj-17.118.41.89
+ host 17.118.41.89
+object network obj-17.118.41.90
+ host 17.118.41.90
+object network obj-17.118.41.91
+ host 17.118.41.91
+object network obj-17.118.41.92
+ host 17.118.41.92
+object network obj-17.118.41.93
+ host 17.118.41.93
+object network obj-17.118.41.94
+ host 17.118.41.94
+object network obj-17.118.41.95
+ host 17.118.41.95
+object network obj-17.118.41.96
+ host 17.118.41.96
+object network obj-17.118.41.97
+ host 17.118.41.97
+object network obj-17.118.41.98
+ host 17.118.41.98
+object network obj-17.118.41.99
+ host 17.118.41.99
+object network obj-17.118.41.100
+ host 17.118.41.100
+object network obj-17.118.41.101
+ host 17.118.41.101
+object network obj-17.118.41.102
+ host 17.118.41.102
+object network obj-17.118.41.103
+ host 17.118.41.103
+object network obj-17.118.41.104
+ host 17.118.41.104
+object network obj-17.118.41.105
+ host 17.118.41.105
+object network obj-17.118.41.106
+ host 17.118.41.106
+object network obj-17.118.41.107
+ host 17.118.41.107
+object network obj-17.118.41.108
+ host 17.118.41.108
+object network obj-17.118.41.109
+ host 17.118.41.109
+object network obj-17.118.41.110
+ host 17.118.41.110
+object network obj-17.118.41.111
+ host 17.118.41.111
+object network obj-17.118.41.112
+ host 17.118.41.112
+object network obj-17.118.41.113
+ host 17.118.41.113
+object network obj-17.118.41.114
+ host 17.118.41.114
+object network obj-17.118.41.115
+ host 17.118.41.115
+object network obj-17.118.41.116
+ host 17.118.41.116
+object network obj-17.118.41.117
+ host 17.118.41.117
+object network obj-17.118.41.118
+ host 17.118.41.118
+object network obj-17.118.41.119
+ host 17.118.41.119
+object network obj-17.118.41.120
+ host 17.118.41.120
+object network obj-17.118.41.121
+ host 17.118.41.121
+object network obj-17.118.41.122
+ host 17.118.41.122
+object network obj-17.118.41.123
+ host 17.118.41.123
+object network obj-17.118.41.124
+ host 17.118.41.124
+object network obj-17.118.41.125
+ host 17.118.41.125
+object network obj-17.118.41.126
+ host 17.118.41.126
+object network obj-17.118.41.127
+ host 17.118.41.127
+object network obj-17.118.41.128
+ host 17.118.41.128
+object network obj-10.198.18.0_26
+ subnet 10.198.18.0 255.255.255.192
+object network obj-10.198.18.64_26
+ subnet 10.198.18.64 255.255.255.192
+object network obj-10.198.18.128_26
+ subnet 10.198.18.128 255.255.255.192
+object network obj-10.198.18.192_26
+ subnet 10.198.18.192 255.255.255.192
+object network obj-10.198.19.0_26
+ subnet 10.198.19.0 255.255.255.192
+object network obj-10.198.19.64_26
+ subnet 10.198.19.64 255.255.255.192
+object network obj-10.198.19.128_26
+ subnet 10.198.19.128 255.255.255.192
+object network obj-10.198.19.192_26
+ subnet 10.198.19.192 255.255.255.192
+object network obj-10.198.20.0_26
+ subnet 10.198.20.0 255.255.255.192
+object network obj-10.198.20.64_26
+ subnet 10.198.20.64 255.255.255.192
+object network obj-10.198.20.128_26
+ subnet 10.198.20.128 255.255.255.192
+object network obj-10.198.20.192_26
+ subnet 10.198.18.192 255.255.255.192
+object network obj-10.198.21.0_26
+ subnet 10.198.21.0 255.255.255.192
+object network obj-10.198.21.64_26
+ subnet 10.198.21.64 255.255.255.192
+object network obj-10.198.21.128_26
+ subnet 10.198.21.128 255.255.255.192
+object network obj-10.198.21.192_26
+ subnet 10.198.21.192 255.255.255.192
+object network obj-10.198.22.0_26
+ subnet 10.198.22.0 255.255.255.192
+object network obj-10.198.22.64_26
+ subnet 10.198.22.64 255.255.255.192
+object network obj-10.198.22.128_26
+ subnet 10.198.22.128 255.255.255.192
+object network obj-10.198.22.192_26
+ subnet 10.198.22.192 255.255.255.192
+object network obj-10.198.23.0_26
+ subnet 10.198.23.0 255.255.255.192
+object network obj-10.198.23.64_26
+ subnet 10.198.23.64 255.255.255.192
+object network obj-10.198.23.128_26
+ subnet 10.198.23.128 255.255.255.192
+object network obj-10.198.23.192_26
+ subnet 10.198.23.192 255.255.255.192
+object network obj-10.198.24.0_26
+ subnet 10.198.24.0 255.255.255.192
+object network obj-10.198.24.64_26
+ subnet 10.198.24.64 255.255.255.192
+object network obj-10.198.24.128_26
+ subnet 10.198.24.128 255.255.255.192
+object network obj-10.198.24.192_26
+ subnet 10.198.24.192 255.255.255.192
+object network obj-10.198.25.0_26
+ subnet 10.198.25.0 255.255.255.192
+object network obj-10.198.25.64_26
+ subnet 10.198.25.64 255.255.255.192
+object network obj-10.198.25.128_26
+ subnet 10.198.25.128 255.255.255.192
+object network obj-10.198.25.192_26
+ subnet 10.198.25.192 255.255.255.192
+object network obj-10.198.26.0_26
+ subnet 10.198.26.0 255.255.255.192
+object network obj-10.198.26.64_26
+ subnet 10.198.26.64 255.255.255.192
+object network obj-10.198.26.128_26
+ subnet 10.198.26.128 255.255.255.192
+object network obj-10.198.26.192_26
+ subnet 10.198.26.192 255.255.255.192
+object network obj-10.198.27.0_26
+ subnet 10.198.27.0 255.255.255.192
+object network obj-10.198.27.64_26
+ subnet 10.198.27.64 255.255.255.192
+object network obj-10.198.27.128_26
+ subnet 10.198.27.128 255.255.255.192
+object network obj-10.198.27.192_26
+ subnet 10.198.27.192 255.255.255.192
+object network obj-10.198.28.0_26
+ subnet 10.198.28.0 255.255.255.192
+object network obj-10.198.28.64_26
+ subnet 10.198.28.64 255.255.255.192
+object network obj-10.198.28.128_26
+ subnet 10.198.28.128 255.255.255.192
+object network obj-10.198.28.192_26
+ subnet 10.198.28.192 255.255.255.192
+object network obj-10.198.29.0_26
+ subnet 10.198.29.0 255.255.255.192
+object network obj-10.198.29.64_26
+ subnet 10.198.29.64 255.255.255.192
+object network obj-10.198.29.128_26
+ subnet 10.198.29.128 255.255.255.192
+object network obj-10.198.29.192_26
+ subnet 10.198.29.192 255.255.255.192
+object network obj-10.198.30.0_26
+ subnet 10.198.30.0 255.255.255.192
+object network obj-10.198.30.64_26
+ subnet 10.198.30.64 255.255.255.192
+object network obj-10.198.30.128_26
+ subnet 10.198.30.128 255.255.255.192
+object network obj-10.198.30.192_26
+ subnet 10.198.30.192 255.255.255.192
+object network obj-10.198.31.0_26
+ subnet 10.198.31.0 255.255.255.192
+object network obj-10.198.31.64_26
+ subnet 10.198.31.64 255.255.255.192
+object network obj-10.198.31.128_26
+ subnet 10.198.31.128 255.255.255.192
+object network obj-10.198.31.192_26
+ subnet 10.198.31.192 255.255.255.192
+object network CDC_AVALON_CARE
+ subnet 10.198.8.0 255.255.248.0
+object network CDC_AVALON_RCC
+ subnet 10.198.0.0 255.255.248.0
+object network CDC_AVALON_MGMT
+ subnet 10.198.16.0 255.255.254.0
+object network CDC_AVALON_IT
+ subnet 10.198.18.0 255.255.255.224
+object network AVALON_DEFAULT
+ subnet 17.0.0.0 255.0.0.0
+object network obj-155.90.248.206
+ host 155.90.248.206
+object network obj-155.90.248.207
+ host 155.90.248.207
+object network obj-17.118.41.254
+ host 17.118.41.254
+object network obj-17.118.41.253
+ host 17.118.41.253
+object network obj-10.25.103.34
+ host 10.25.103.34
+object network obj-17.118.41.252
+ host 17.118.41.252
+object network AVALON_DEFAULT2
+ subnet 139.178.144.0 255.255.252.0
+object network obj-10.164.132.32_27
+ subnet 10.164.132.32 255.255.255.224
+object network CDC_AVALON_IDL
+ subnet 10.198.31.0 255.255.255.0
+object-group network AVALON_ADVISORS
+ network-object object CDC_AVALON_CARE
+ network-object object CDC_AVALON_RCC
+ network-object object CDC_AVALON_MGMT
+ network-object object CDC_AVALON_IT
+ network-object object CDC_AVALON_IDL
+object-group network CNX_SERVERS
+ network-object object obj-155.90.248.206
+ network-object object obj-10.25.103.34
+object-group network AVALON_SERVERS
+ network-object 17.178.8.164 255.255.255.254
+ network-object 17.171.74.7 255.255.255.255
+ network-object 17.171.74.9 255.255.255.255
+access-list OUTSIDE_ACCESS_IN extended permit tcp host 10.164.183.49 host 10.164.183.53 eq bgp 
+access-list OUTSIDE_ACCESS_IN extended permit tcp host 10.164.183.49 host 10.164.183.54 eq bgp 
+access-list INSIDE_ACCESS_IN extended permit tcp host 10.164.183.54 host 10.164.183.49 eq bgp 
+access-list INSIDE_ACCESS_IN extended permit udp host 10.164.183.54 host 224.0.0.102 
+access-list INSIDE_ACCESS_IN extended permit tcp host 10.164.183.53 host 10.164.183.49 eq bgp 
+access-list INSIDE_ACCESS_IN extended permit udp host 10.164.183.53 host 224.0.0.102 
+access-list INSIDE_ACCESS_IN extended permit udp host 10.164.183.54 host 224.0.0.2 
+access-list INSIDE_ACCESS_IN extended permit udp host 10.164.183.53 host 224.0.0.2 
+access-list INSIDE_ACCESS_IN extended permit ip object-group AVALON_ADVISORS object AVALON_DEFAULT 
+access-list INSIDE_ACCESS_IN extended permit ip object-group CNX_SERVERS object AVALON_DEFAULT 
+access-list INSIDE_ACCESS_IN extended permit ip object-group AVALON_ADVISORS object AVALON_DEFAULT2 
+access-list INSIDE_ACCESS_IN extended permit ip object-group CNX_SERVERS object AVALON_DEFAULT2 
+access-list INSIDE_ACCESS_IN extended permit tcp 10.164.132.32 255.255.255.224 object-group AVALON_SERVERS eq ssh 
+pager lines 24
+logging enable
+logging timestamp
+logging buffered warnings
+logging trap informational
+logging asdm informational
+logging host inside 155.90.248.106
+logging host inside 155.90.248.222
+logging host inside 10.195.133.24
+mtu inside 1500
+mtu outside 1500
+monitor-interface inside
+monitor-interface outside
+icmp unreachable rate-limit 1 burst-size 1
+no asdm history enable
+arp timeout 14400
+!
+object network obj-10.198.0.0_26
+ nat (inside,outside) dynamic 17.118.41.1
+object network obj-10.198.0.64_26
+ nat (inside,outside) dynamic 17.118.41.2
+object network obj-10.198.0.128_26
+ nat (inside,outside) dynamic 17.118.41.3
+object network obj-10.198.0.192_26
+ nat (inside,outside) dynamic 17.118.41.4
+object network obj-10.198.1.0_26
+ nat (inside,outside) dynamic 17.118.41.5
+object network obj-10.198.1.64_26
+ nat (inside,outside) dynamic 17.118.41.6
+object network obj-10.198.1.128_26
+ nat (inside,outside) dynamic 17.118.41.7
+object network obj-10.198.1.192_26
+ nat (inside,outside) dynamic 17.118.41.8
+object network obj-10.198.2.0_26
+ nat (inside,outside) dynamic 17.118.41.9
+object network obj-10.198.2.64_26
+ nat (inside,outside) dynamic 17.118.41.10
+object network obj-10.198.2.128_26
+ nat (inside,outside) dynamic 17.118.41.11
+object network obj-10.198.2.192_26
+ nat (inside,outside) dynamic 17.118.41.12
+object network obj-10.198.3.0_26
+ nat (inside,outside) dynamic 17.118.41.13
+object network obj-10.198.3.64_26
+ nat (inside,outside) dynamic 17.118.41.14
+object network obj-10.198.3.128_26
+ nat (inside,outside) dynamic 17.118.41.15
+object network obj-10.198.3.192_26
+ nat (inside,outside) dynamic 17.118.41.16
+object network obj-10.198.4.0_26
+ nat (inside,outside) dynamic 17.118.41.17
+object network obj-10.198.4.64_26
+ nat (inside,outside) dynamic 17.118.41.18
+object network obj-10.198.4.128_26
+ nat (inside,outside) dynamic 17.118.41.19
+object network obj-10.198.4.192_26
+ nat (inside,outside) dynamic 17.118.41.20
+object network obj-10.198.5.0_26
+ nat (inside,outside) dynamic 17.118.41.21
+object network obj-10.198.5.64_26
+ nat (inside,outside) dynamic 17.118.41.22
+object network obj-10.198.5.128_26
+ nat (inside,outside) dynamic 17.118.41.23
+object network obj-10.198.5.192_26
+ nat (inside,outside) dynamic 17.118.41.24
+object network obj-10.198.6.0_26
+ nat (inside,outside) dynamic 17.118.41.25
+object network obj-10.198.6.64_26
+ nat (inside,outside) dynamic 17.118.41.26
+object network obj-10.198.6.128_26
+ nat (inside,outside) dynamic 17.118.41.27
+object network obj-10.198.6.192_26
+ nat (inside,outside) dynamic 17.118.41.28
+object network obj-10.198.7.0_26
+ nat (inside,outside) dynamic 17.118.41.29
+object network obj-10.198.7.64_26
+ nat (inside,outside) dynamic 17.118.41.30
+object network obj-10.198.7.128_26
+ nat (inside,outside) dynamic 17.118.41.31
+object network obj-10.198.7.192_26
+ nat (inside,outside) dynamic 17.118.41.32
+object network obj-10.198.8.0_26
+ nat (inside,outside) dynamic 17.118.41.33
+object network obj-10.198.8.64_26
+ nat (inside,outside) dynamic 17.118.41.34
+object network obj-10.198.8.128_26
+ nat (inside,outside) dynamic 17.118.41.35
+object network obj-10.198.8.192_26
+ nat (inside,outside) dynamic 17.118.41.36
+object network obj-10.198.9.0_26
+ nat (inside,outside) dynamic 17.118.41.37
+object network obj-10.198.9.64_26
+ nat (inside,outside) dynamic 17.118.41.38
+object network obj-10.198.9.128_26
+ nat (inside,outside) dynamic 17.118.41.39
+object network obj-10.198.9.192_26
+ nat (inside,outside) dynamic 17.118.41.40
+object network obj-10.198.10.0_26
+ nat (inside,outside) dynamic 17.118.41.41
+object network obj-10.198.10.64_26
+ nat (inside,outside) dynamic 17.118.41.42
+object network obj-10.198.10.128_26
+ nat (inside,outside) dynamic 17.118.41.43
+object network obj-10.198.10.192_26
+ nat (inside,outside) dynamic 17.118.41.44
+object network obj-10.198.11.0_26
+ nat (inside,outside) dynamic 17.118.41.45
+object network obj-10.198.11.64_26
+ nat (inside,outside) dynamic 17.118.41.46
+object network obj-10.198.11.128_26
+ nat (inside,outside) dynamic 17.118.41.47
+object network obj-10.198.11.192_26
+ nat (inside,outside) dynamic 17.118.41.48
+object network obj-10.198.12.0_26
+ nat (inside,outside) dynamic 17.118.41.49
+object network obj-10.198.12.64_26
+ nat (inside,outside) dynamic 17.118.41.50
+object network obj-10.198.12.128_26
+ nat (inside,outside) dynamic 17.118.41.51
+object network obj-10.198.12.192_26
+ nat (inside,outside) dynamic 17.118.41.52
+object network obj-10.198.13.0_26
+ nat (inside,outside) dynamic 17.118.41.53
+object network obj-10.198.13.64_26
+ nat (inside,outside) dynamic 17.118.41.54
+object network obj-10.198.13.128_26
+ nat (inside,outside) dynamic 17.118.41.55
+object network obj-10.198.13.192_26
+ nat (inside,outside) dynamic 17.118.41.56
+object network obj-10.198.14.0_26
+ nat (inside,outside) dynamic 17.118.41.57
+object network obj-10.198.14.64_26
+ nat (inside,outside) dynamic 17.118.41.58
+object network obj-10.198.14.128_26
+ nat (inside,outside) dynamic 17.118.41.59
+object network obj-10.198.14.192_26
+ nat (inside,outside) dynamic 17.118.41.60
+object network obj-10.198.15.0_26
+ nat (inside,outside) dynamic 17.118.41.61
+object network obj-10.198.15.64_26
+ nat (inside,outside) dynamic 17.118.41.62
+object network obj-10.198.15.128_26
+ nat (inside,outside) dynamic 17.118.41.63
+object network obj-10.198.15.192_26
+ nat (inside,outside) dynamic 17.118.41.64
+object network obj-10.198.16.0_26
+ nat (inside,outside) dynamic 17.118.41.65
+object network obj-10.198.16.64_26
+ nat (inside,outside) dynamic 17.118.41.66
+object network obj-10.198.16.128_26
+ nat (inside,outside) dynamic 17.118.41.67
+object network obj-10.198.16.192_26
+ nat (inside,outside) dynamic 17.118.41.68
+object network obj-10.198.17.0_26
+ nat (inside,outside) dynamic 17.118.41.69
+object network obj-10.198.17.64_26
+ nat (inside,outside) dynamic 17.118.41.70
+object network obj-10.198.17.128_26
+ nat (inside,outside) dynamic 17.118.41.71
+object network obj-10.198.17.192_26
+ nat (inside,outside) dynamic 17.118.41.72
+object network obj-10.198.18.0_26
+ nat (inside,outside) dynamic 17.118.41.73
+object network obj-10.198.18.64_26
+ nat (inside,outside) dynamic 17.118.41.74
+object network obj-10.198.18.128_26
+ nat (inside,outside) dynamic 17.118.41.75
+object network obj-10.198.18.192_26
+ nat (inside,outside) dynamic 17.118.41.76
+object network obj-10.198.19.0_26
+ nat (inside,outside) dynamic 17.118.41.77
+object network obj-10.198.19.64_26
+ nat (inside,outside) dynamic 17.118.41.78
+object network obj-10.198.19.128_26
+ nat (inside,outside) dynamic 17.118.41.79
+object network obj-10.198.19.192_26
+ nat (inside,outside) dynamic 17.118.41.80
+object network obj-10.198.20.0_26
+ nat (inside,outside) dynamic 17.118.41.81
+object network obj-10.198.20.64_26
+ nat (inside,outside) dynamic 17.118.41.82
+object network obj-10.198.20.128_26
+ nat (inside,outside) dynamic 17.118.41.83
+object network obj-10.198.20.192_26
+ nat (inside,outside) dynamic 17.118.41.84
+object network obj-10.198.21.0_26
+ nat (inside,outside) dynamic 17.118.41.85
+object network obj-10.198.21.64_26
+ nat (inside,outside) dynamic 17.118.41.86
+object network obj-10.198.21.128_26
+ nat (inside,outside) dynamic 17.118.41.87
+object network obj-10.198.21.192_26
+ nat (inside,outside) dynamic 17.118.41.88
+object network obj-10.198.22.0_26
+ nat (inside,outside) dynamic 17.118.41.89
+object network obj-10.198.22.64_26
+ nat (inside,outside) dynamic 17.118.41.90
+object network obj-10.198.22.128_26
+ nat (inside,outside) dynamic 17.118.41.91
+object network obj-10.198.22.192_26
+ nat (inside,outside) dynamic 17.118.41.92
+object network obj-10.198.23.0_26
+ nat (inside,outside) dynamic 17.118.41.93
+object network obj-10.198.23.64_26
+ nat (inside,outside) dynamic 17.118.41.94
+object network obj-10.198.23.128_26
+ nat (inside,outside) dynamic 17.118.41.95
+object network obj-10.198.23.192_26
+ nat (inside,outside) dynamic 17.118.41.96
+object network obj-10.198.24.0_26
+ nat (inside,outside) dynamic 17.118.41.97
+object network obj-10.198.24.64_26
+ nat (inside,outside) dynamic 17.118.41.98
+object network obj-10.198.24.128_26
+ nat (inside,outside) dynamic 17.118.41.99
+object network obj-10.198.24.192_26
+ nat (inside,outside) dynamic 17.118.41.100
+object network obj-10.198.25.0_26
+ nat (inside,outside) dynamic 17.118.41.101
+object network obj-10.198.25.64_26
+ nat (inside,outside) dynamic 17.118.41.102
+object network obj-10.198.25.128_26
+ nat (inside,outside) dynamic 17.118.41.103
+object network obj-10.198.25.192_26
+ nat (inside,outside) dynamic 17.118.41.104
+object network obj-10.198.26.0_26
+ nat (inside,outside) dynamic 17.118.41.105
+object network obj-10.198.26.64_26
+ nat (inside,outside) dynamic 17.118.41.106
+object network obj-10.198.26.128_26
+ nat (inside,outside) dynamic 17.118.41.107
+object network obj-10.198.26.192_26
+ nat (inside,outside) dynamic 17.118.41.108
+object network obj-10.198.27.0_26
+ nat (inside,outside) dynamic 17.118.41.109
+object network obj-10.198.27.64_26
+ nat (inside,outside) dynamic 17.118.41.110
+object network obj-10.198.27.128_26
+ nat (inside,outside) dynamic 17.118.41.111
+object network obj-10.198.27.192_26
+ nat (inside,outside) dynamic 17.118.41.112
+object network obj-10.198.28.0_26
+ nat (inside,outside) dynamic 17.118.41.113
+object network obj-10.198.28.64_26
+ nat (inside,outside) dynamic 17.118.41.114
+object network obj-10.198.28.128_26
+ nat (inside,outside) dynamic 17.118.41.115
+object network obj-10.198.28.192_26
+ nat (inside,outside) dynamic 17.118.41.116
+object network obj-10.198.29.0_26
+ nat (inside,outside) dynamic 17.118.41.117
+object network obj-10.198.29.64_26
+ nat (inside,outside) dynamic 17.118.41.118
+object network obj-10.198.29.128_26
+ nat (inside,outside) dynamic 17.118.41.119
+object network obj-10.198.29.192_26
+ nat (inside,outside) dynamic 17.118.41.120
+object network obj-10.198.30.0_26
+ nat (inside,outside) dynamic 17.118.41.121
+object network obj-10.198.30.64_26
+ nat (inside,outside) dynamic 17.118.41.122
+object network obj-10.198.30.128_26
+ nat (inside,outside) dynamic 17.118.41.123
+object network obj-10.198.30.192_26
+ nat (inside,outside) dynamic 17.118.41.124
+object network obj-10.198.31.0_26
+ nat (inside,outside) dynamic 17.118.41.125
+object network obj-10.198.31.64_26
+ nat (inside,outside) dynamic 17.118.41.126
+object network obj-10.198.31.128_26
+ nat (inside,outside) dynamic 17.118.41.127
+object network obj-10.198.31.192_26
+ nat (inside,outside) dynamic 17.118.41.128
+object network obj-155.90.248.206
+ nat (inside,outside) dynamic obj-17.118.41.253
+object network obj-10.25.103.34
+ nat (inside,outside) dynamic obj-17.118.41.252
+object network obj-10.164.132.32_27
+ nat (inside,outside) dynamic 17.118.41.129
+access-group INSIDE_ACCESS_IN in interface inside
+access-group OUTSIDE_ACCESS_IN in interface outside
+route inside 0.0.0.0 0.0.0.0 10.164.183.52 1
+route inside 10.0.0.0 255.0.0.0 10.164.183.52 1
+route outside 17.0.0.0 255.0.0.0 17.119.8.164 1
+route outside 139.178.144.0 255.255.252.0 17.119.8.164 1
+timeout xlate 3:00:00
+timeout pat-xlate 0:00:30
+timeout conn 1:00:00 half-closed 0:10:00 udp 0:02:00 sctp 0:02:00 icmp 0:00:02
+timeout sunrpc 0:10:00 h323 0:05:00 h225 1:00:00 mgcp 0:05:00 mgcp-pat 0:05:00
+timeout sip 0:30:00 sip_media 0:02:00 sip-invite 0:03:00 sip-disconnect 0:02:00
+timeout sip-provisional-media 0:02:00 uauth 0:05:00 absolute
+timeout tcp-proxy-reassembly 0:01:00
+timeout floating-conn 0:00:00
+timeout conn-holddown 0:00:15
+timeout igp stale-route 0:01:10
+aaa-server CSACS protocol tacacs+
+aaa-server CSACS (inside) host 170.14.136.100
+ timeout 5
+ key *****
+aaa-server CSACS (inside) host 10.164.130.114
+ timeout 5
+ key *****
+aaa-server TACACS+ protocol tacacs+
+user-identity default-domain LOCAL
+aaa authentication enable console CSACS LOCAL
+aaa authentication http console CSACS LOCAL
+aaa authentication telnet console CSACS LOCAL
+aaa authentication ssh console CSACS LOCAL
+aaa authentication login-history
+http server enable
+http 155.90.248.222 255.255.255.255 inside
+http 155.90.248.223 255.255.255.255 inside
+http 155.90.248.224 255.255.255.255 inside
+http 155.90.92.0 255.255.255.0 inside
+http 155.90.160.0 255.255.224.0 inside
+http 155.90.230.204 255.255.255.255 inside
+http 155.90.245.214 255.255.255.255 inside
+http 10.132.192.199 255.255.255.255 inside
+http 10.30.35.199 255.255.255.255 inside
+http 10.195.133.105 255.255.255.255 inside
+http 10.80.150.150 255.255.255.255 inside
+http 10.195.133.104 255.255.255.255 inside
+snmp-server host inside 10.195.54.78 community ***** version 2c
+snmp-server host inside 155.90.92.5 community ***** version 2c
+snmp-server host inside 155.90.248.222 poll community ***** version 2c
+snmp-server host inside 10.195.54.93 poll community ***** version 2c
+snmp-server host inside 10.164.71.151 poll community ***** version 2c
+snmp-server host inside 10.164.71.152 poll community ***** version 2c
+snmp-server host inside 10.195.54.92 poll community ***** version 2c
+snmp-server host inside 10.195.54.77 poll community ***** version 2c
+snmp-server host inside 10.195.54.81 poll community ***** version 2c
+snmp-server host inside 10.195.54.83 poll community ***** version 2c
+snmp-server host inside 10.195.54.84 poll community ***** version 2c
+snmp-server host inside 10.195.54.85 poll community ***** version 2c
+snmp-server host inside 10.195.54.86 poll community ***** version 2c
+snmp-server host inside 10.195.54.88 poll community ***** version 2c
+snmp-server host inside 10.195.54.90 poll community ***** version 2c
+snmp-server host inside 10.195.54.91 poll community ***** version 2c
+snmp-server host inside 10.195.54.80 poll community ***** version 2c
+snmp-server host inside 155.90.92.31 poll community ***** version 2c
+snmp-server host inside 155.90.92.33 poll community ***** version 2c
+snmp-server host inside 155.90.92.44 poll community ***** version 2c
+snmp-server host inside 155.90.92.45 poll community ***** version 2c
+snmp-server host inside 155.90.92.46 poll community ***** version 2c
+snmp-server host inside 155.90.92.47 poll community ***** version 2c
+snmp-server host inside 155.90.92.81 poll community ***** version 2c
+snmp-server host inside 155.90.92.82 poll community ***** version 2c
+snmp-server host inside 155.90.92.83 poll community ***** version 2c
+snmp-server host inside 155.90.92.84 poll community ***** version 2c
+snmp-server host inside 155.90.92.170 poll community ***** version 2c
+snmp-server location 229 West 7th Street, Cincinnati, OH
+snmp-server contact Concentrix Data Network @ 800-284-4006, Device Owner: Network Security Team
+snmp-server community *****
+snmp-server enable traps syslog
+snmp-server enable traps ipsec start stop
+snmp-server enable traps memory-threshold
+snmp-server enable traps cpu threshold rising
+snmp-server enable traps ikev2 start stop
+snmp-server enable traps nat packet-discard
+crypto ipsec security-association pmtu-aging infinite
+telnet timeout 10
+ssh stricthostkeycheck
+ssh timeout 10
+ssh version 2
+ssh cipher encryption high
+ssh 155.90.248.222 255.255.255.255 inside
+ssh 155.90.248.223 255.255.255.255 inside
+ssh 155.90.248.224 255.255.255.255 inside
+ssh 155.90.92.0 255.255.255.0 inside
+ssh 155.90.160.0 255.255.224.0 inside
+ssh 155.90.230.204 255.255.255.255 inside
+ssh 155.90.245.214 255.255.255.255 inside
+ssh 10.132.192.199 255.255.255.255 inside
+ssh 10.30.35.199 255.255.255.255 inside
+ssh 10.80.150.40 255.255.255.255 inside
+ssh 10.195.133.104 255.255.255.255 inside
+ssh 10.195.133.105 255.255.255.255 inside
+ssh 10.80.150.150 255.255.255.255 inside
+threat-detection statistics tcp-intercept rate-interval 30 burst-rate 400 average-rate 200
+dynamic-access-policy-record DfltAccessPolicy
+username englocal password ***** encrypted privilege 15
+!
+class-map inspection_default
+ match default-inspection-traffic
+!
+!
+policy-map type inspect dns preset_dns_map
+ parameters
+  message-length maximum client auto
+  message-length maximum 512
+  no tcp-inspection
+policy-map global_policy
+ class inspection_default
+  inspect dns preset_dns_map 
+  inspect ftp 
+  inspect h323 h225 
+  inspect h323 ras 
+  inspect rsh 
+  inspect rtsp 
+  inspect esmtp 
+  inspect sqlnet 
+  inspect skinny  
+  inspect sunrpc 
+  inspect xdmcp 
+  inspect sip  
+  inspect netbios 
+  inspect tftp 
+  inspect ip-options 
+  inspect snmp 
+!
+service-policy global_policy global
+Cryptochecksum:847825728a3afe74d73d03210bdc97d1
+: end
+CDCMFAPP1/CDCEFAPP1# 

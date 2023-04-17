@@ -1,0 +1,84 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset=»utf-8»>
+
+    <title>Compara&Ahorra</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    
+
+</head>
+
+    <body>
+        
+        {% extends 'base_main_2.html' %}
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+        
+        {% block content %}
+        
+        {% if precio_total == 0 %}
+        <div>
+            <h1 class="text-center mt-5" style="height: 300px;">Ningun producto seleccionado en el carrito.</h1>
+            {% include 'footer.html' %}
+        </div>
+        {% else %}
+        <div class="main-container d-flex">
+
+            {% include 'categoria_3.html' %}
+            
+            <div class="content">
+                {% include 'productos_carritos.html' %}
+
+                
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+        
+
+                
+                <div class="container-fluid   ">
+                    {% include 'footer.html' %}
+                </div>
+                
+                
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+        
+            </div>
+        </div>
+        {% endif %}
+       
+        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script>
+
+            $("#navbarTogglerDemo03").on('show.bs.collapse', function() {
+                $('a.nav-link').click(function() {
+                    $("#navbarTogglerDemo03").collapse('hide');
+                    });
+                });
+
+            $(".sidebar ul li").on('click' , function(){
+                $(".sidebar ul li.active").removeClass('active');
+                $(this).addClass('active');
+            });
+    
+                $('.open-btn').on('click' , function(){
+                $('.sidebar').addClass('active');
+                
+            });
+    
+            $('.close-btn').on('click' , function(){
+                $('.sidebar').removeClass('active');
+                
+            });
+    
+        </script>
+        
+        {% endblock %}
+    </body>
+
+</html>

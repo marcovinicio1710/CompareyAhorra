@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+    <style>
+
+        .head{
+            background-color: blue;
+            border: 10px black solid;
+            padding: 10px;
+            justify-content: space-between;
+            display: flex;
+            height: 80px;
+            margin-bottom: 10px;
+        }
+        .logo_main{
+            width: 13%;
+            background-color: grey;
+            border: 5px black solid;
+            padding: 5px;
+            }
+        
+        .head_spacio_libre{
+            width: 60%;
+            background-color: grey;
+            border: 5px black solid;
+            margin: 5px;
+            padding: 5px;
+            display: flex;
+
+
+        }
+        .registrar{
+            width: 6%;
+            background-color: grey;
+            border: 5px black solid;
+            padding: 5px;
+
+        }
+        .iniciar_sesion{width: 6%;
+            background-color: grey;
+            border: 5px black solid;
+            padding: 5px;}
+        .Carrito{width: 6%;
+            background-color: grey;
+            border: 5px black solid;
+            padding: 5px;}
+
+        .barra_menu{
+            background-color: aqua;
+            padding: 5px;
+            justify-content: space-between;
+            border: 10px black solid;
+            display: flex;
+            margin-bottom: 10px;
+        }
+        .barra {
+            background-color: aquamarine;
+            padding: 5px;
+            border: 5px black solid;
+            display: flex;
+            margin-bottom: 5px;
+
+        }
+        .mostrar_imagenes{
+            background-color: bisque;
+            border: 10px black solid;
+            padding: 10px;
+             height: 250px;
+            margin-bottom: 10px;
+        }
+
+        .Pie_pagina{background-color:gold;
+            border: 10px black solid;
+            padding: 10px;
+             height: 250px;
+            margin-bottom: 10px;}
+
+        .container_material{
+            background-color: greenyellow;
+            display: flex;
+            
+        }
+
+        .asside {
+            background-color: blue;
+            width: 20%;
+            margin-top: 12px;
+            margin-bottom: 12px;
+
+           
+        }
+        .lista_aside{
+            list-style: none ;
+        }
+
+        .border_categoria{
+            background-color: antiquewhite;
+            width: 90%;
+            padding: 3px;
+            text-align: center;
+            border: 3px black solid;
+            
+
+        }
+
+        .center_element{
+            background-color: grey;
+            width: 65%;
+            margin-top: 12px;
+            margin-left: 10px;
+            margin-bottom: 10px;
+            border: 5px black solid;
+            
+        }
+    
+        .columna_busqueda {
+            border: 5px black solid;
+            margin: 5px;
+            padding: 5px;
+            display: flex;
+
+        }
+
+        
+    
+    .input_search_prod{
+        width: 80%;
+        border: 5px black solid;
+        margin: 5px;
+        padding: 5px;
+    }
+
+    .btn_main{
+        
+        border: 5px black solid;
+        margin: 5px;
+        
+        
+    }
+
+    .button_main{
+        width: 100px;
+        padding: 5px;
+    }
+    
+    .productos{
+        
+        display: grid;
+        grid-template-columns: repeat(3, 1fr );
+        gap: 10px  ;
+        border: 5px black solid;
+        margin: 5px;
+        padding: 5px;
+        height: 500px;
+
+    }
+
+    .producto_unico{
+        border: 5px black solid;
+        margin: 5px;
+        padding: 5px;
+
+    }
+
+    .right-display {
+        background-color: grey;
+        width: 30%;
+        margin-top: 12px;
+        margin-left: 10px;
+        margin-bottom: 12px;
+        border: 5px black solid;
+            
+        }
+
+    .google_adsense{
+        background-color: grey;
+        margin-top: 12px;
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-bottom: 12px;
+        height: 200px;
+        padding: 20px;
+        border: 5px black solid;
+    }
+
+
+
+    </style>
+    
+</head>
+<body>
+
+    <div class="head"  >
+        <div class="logo_main">
+            <span>Logo aqui</span>
+        </div>
+        <div class="head_spacio_libre">
+            <div class="input_search_prod">
+                <span>Que producto buscas?</span>
+            </div>
+            
+            <div class="btn_main">
+                <button class="button_main">Buscar</button>
+            </div>
+        </div>
+        <div class="registrar">
+            <span>registrarme</span>
+        </div>
+        <div class="iniciar_sesion">
+            <span>iniciar sesion</span>
+        </div>
+        <div class="Carrito">
+            <span>carrito</span>
+        </div>
+
+    </div>
+        <nav class="barra_menu">
+            <div class="barra"><span>Buscar producto</span></div>
+            <div class="barra"><span>Mis productos favoritos</span></div>
+            <div class="barra"><span>Canasta Basica</span></div>
+            <div class="barra"><span>ofertas</span></div>
+            <div class="barra"><span>Quienes somos</span></div>
+            <div class="barra"><span>publicidad de comidas</span></div>
+            
+        
+        
+        </nav>
+    <div class="mostrar_imagenes">
+        <span>imagnes rodando</span>
+
+    </div>
+    <div class="container_material">
+            <aside class="asside">
+
+                <ul class="lista_aside">
+                    <li class="border_categoria">
+                        <span>Categoria uno</span>
+                    </li>
+                    <li class="border_categoria">
+                        <span>Categoria uno</span>
+                    </li>
+                    <li class="border_categoria">
+                        <span>Categoria uno</span>
+                    </li>
+                    <li class="border_categoria">
+                        <span>Categoria uno</span>
+                    </li>
+                    <li class="border_categoria">
+                        <span>Categoria uno</span>
+                    </li>
+                    <li class="border_categoria">
+                        <span>Categoria uno</span>
+                    </li>
+                    <li class="border_categoria">
+                        <span>Categoria uno</span>
+                    </li>
+                </ul>
+
+
+            </aside>
+
+            <div class="center_element">
+                <div class="columna_busqueda">
+                    <div class="input_search_prod">
+                        <span>producto encontrados : 1000 productos</span>
+                    </div>
+                    
+                    <div class="btn_main">
+                        <button class="button_main">desplegable</button>
+                    </div>
+                </div>
+
+                <div class="productos">
+                    <div class="producto_unico">producto_unico</div>
+                    <div class="producto_unico">producto_unico</div>
+                    <div class="producto_unico">producto_unico</div>
+                    <div class="producto_unico">producto_unico</div>
+                    <div class="producto_unico">producto_unico</div>
+                    <div class="producto_unico">producto_unico</div>
+                    <div class="producto_unico">producto_unico</div>
+                    <div class="producto_unico">producto_unico</div>
+
+                </div>
+                
+            </div>
+
+            <div class="right_display">
+                <div class="google_adsense">
+                    <span> aqui la Google adsend</span>
+                </div>
+            </div>
+
+    </div>
+
+    <div class="Pie_pagina">
+        <span>pie de pagina</span>
+    </div>
+    
+</body>
+</html>

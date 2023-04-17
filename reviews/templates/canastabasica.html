@@ -1,0 +1,90 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset=»utf-8»>
+
+    <title>Compara&Ahorra</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    
+
+</head>
+
+    <body>
+        
+        {% extends 'base_main_2.html' %}
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+        
+        {% block content %}
+        
+        
+        <div class="container p-2 text-justify">
+            <div class="container text-bg-light p-5">
+                <h3 class=" mt-5">Canasta Básica </h3><br><br>
+                <p><strong>CompareyAhorra</strong> nos complace confirmar que las medidas de una canasta básica alimenticia para satisfacer las necesidades de una sola persona durante un mes pueden variar dependiendo de los hábitos alimenticios, las preferencias personales, la ubicación geográfica y otros factores individuales.</p>
+                <p>Sin embargo, a continuación se presenta una <strong>estimación general</strong>  de las cantidades aproximadas de algunos productos básicos que una (1) persona podría necesitar para un (1) mes:</p>
+                <p>Haz click en nombre del producto de la canasta basica para ser rederijido al mejor producto actualizado del dia de dicho producto</p>
+                <ul>
+                    <li><a class="text-danger link-primary text-decoration-none fw-bold" href="{% url 'search-producto/' %}?searched=arroz&categoria=ABARROTES&price_kg=yes">Arroz:</a> alrededor de 2-3 kilogramos.</li>
+                    <li><a class="text-danger link-primary text-decoration-none fw-bold" href="{% url 'search-producto/' %}?searched=frijol%20negro&categoria=all&price_kg=yes">Frijoles:</a> alrededor de 1-2 kilogramos.</li>
+                    <li><a class="text-danger link-primary text-decoration-none fw-bold" href="{% url 'search-producto/' %}?searched=pan&categoria=PANADERIA%20Y%20TORTILLERIA&price_unid=yes">Pan:</a> alrededor de 8-12 unidades.</li>
+                    <li><a class="text-danger link-primary text-decoration-none fw-bold" href="{% url 'search-producto/' %}?searched=leche&categoria=LACTEOS&price_lt=yes">Leche:</a> alrededor de 4-6 litros.</li>
+                    <li><a class="text-danger link-primary text-decoration-none fw-bold" href="{% url 'search-producto/' %}?searched=huevo&categoria=LACTEOS&price_unid=yes">Huevos:</a> alrededor de 12 a 24 unidades.</li>
+                    <li><a class="text-danger link-primary text-decoration-none fw-bold" href="{% url 'search-producto/' %}?searched=%20&categoria=CARNES%20Y%20PESCADOS">Carnes: Pollo, Res, Cerdo:</a> alrededor de 3-5 kilogramos en total.</li>
+                    <li><a class="text-danger link-primary text-decoration-none fw-bold" href="{% url 'search-producto/' %}?searched=%20&categoria=CARNES%20Y%20PESCADOS">Pescado:</a> alrededor de 1-2 kilogramos.</li>
+                    <li><a class="text-danger link-primary text-decoration-none fw-bold" href="{% url 'search-producto/' %}?searched=%20&categoria=FRUTAS%20Y%20VERDURAS&price_kg=yes">Frutas y Verduras frescas:</a> alrededor de 4-6 kilogramos en total.</li>
+                    <li><a class="text-danger link-primary text-decoration-none fw-bold" href="{% url 'search-producto/' %}?searched=papa&categoria=FRUTAS%20Y%20VERDURAS&price_kg=yes">Papas:</a> alrededor de 2-3 kilogramos.</li>
+                    <li><a class="text-danger link-primary text-decoration-none fw-bold" href="{% url 'search-producto/' %}?searched=pasta&categoria=ALL&price_kg=yes">Pasta:</a> alrededor de 1-2 kilogramos.</li>
+                    <li><a class="text-danger link-primary text-decoration-none fw-bold" href="{% url 'search-producto/' %}?searched=Azucar&categoria=all&price_kg=yes">Azúcar:</a> alrededor de 1-2 kilogramos.</li>
+                    <li><a class="text-danger link-primary text-decoration-none fw-bold" href="{% url 'search-producto/' %}/?searched=sal%20refinada&categoria=all&price_kg=yes">Sal:</a> alrededor de 250-500 gramos.</li>
+                    <li><a class="text-danger link-primary text-decoration-none fw-bold" href="{% url 'search-producto/' %}/?searched=aceite&categoria=all&price_lt=yes">Aceite de cocina:</a>  alrededor de 1-2 litros.</li>
+                    <li><a class="text-danger link-primary text-decoration-none fw-bold" href="{% url 'search-producto/' %}/?searched=salsa%20tomate&categoria=ABARROTES&price_kg=yes">Salsa de tomate:</a> alrededor de 1-2 frascos.</li>
+                    <li><a class="text-danger link-primary text-decoration-none fw-bold" href="{% url 'search-producto/' %}/?searched=cereal&categoria=ABARROTES&price_kg=yes">Cereales o avena:</a> alrededor de 1-2 paquetes.</li>
+                    <li><a class="text-danger link-primary text-decoration-none fw-bold" href="{% url 'search-producto/' %}/?searched=lentejas&categoria=all&price_kg=yes">Lentejas:</a> alrededor de 1-2 kilogramos</li>
+                    <li>Yogurt: alrededor de 4-6 unidades.</li>
+                    <li>Queso: alrededor de 250-500 gramos</li>
+                    <li>Mantequilla o margarina: alrededor de 250-500 gramos</li>
+                </ul>
+                <br><p>Estas cantidades son solo estimaciones y pueden variar según las necesidades y preferencias individuales. Es importante tener en cuenta que los precios y la disponibilidad de productos pueden variar según la ubicación geográfica y el momento en el que se realice la compra.</p>
+</body>
+</html>
+
+                {% include 'footer.html' %}
+        </div>
+       
+        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script>
+
+            $("#navbarTogglerDemo03").on('show.bs.collapse', function() {
+                $('a.nav-link').click(function() {
+                    $("#navbarTogglerDemo03").collapse('hide');
+                    });
+                });
+
+            $(".sidebar ul li").on('click' , function(){
+                $(".sidebar ul li.active").removeClass('active');
+                $(this).addClass('active');
+            });
+    
+                $('.open-btn').on('click' , function(){
+                $('.sidebar').addClass('active');
+                
+            });
+    
+            $('.close-btn').on('click' , function(){
+                $('.sidebar').removeClass('active');
+                
+            });
+    
+        </script>
+        
+        {% endblock %}
+    </body>
+
+</html>

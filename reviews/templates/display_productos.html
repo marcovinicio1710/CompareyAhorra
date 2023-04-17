@@ -1,0 +1,95 @@
+{% load static %}
+<div class="row text-center fila-1" >
+    <div class="col-5"> <span class="fs-7"><strong>Productos Encontrados: {{ num_prod }} productos</strong></span></div>
+    <div class="col-4"></div>
+    <div class="col-3">
+        <div class="dropdown">
+            <button href="#" class="btn btn-outline-primary buscar-btn" data-bs-toggle="dropdown" aria-expanded="false">
+               <i class="bi bi-funnel"></i>
+                  <strong>Filtrar por ...</strong>
+            </button>
+            <ul class="dropdown-menu text-small shadow">
+                 <li><a class="dropdown-item" href="#"><i class="bi bi-cash"></i>   Precio: menor a mayor</a></li>
+                 <li><a class="dropdown-item" href="#"><i class="bi bi-cash"></i>   Precio: mayor a menor</a></li>
+                 <li><a class="dropdown-item" href="{% url 'search-producto/' %}?searched={{name}}&categoria={{categoria}}&price_kg=yes"><i class="bi bi-bucket"></i>   Peso: mejor precio x Kg</a></li>
+                 <li><a class="dropdown-item" href="{% url 'search-producto/' %}?searched={{name}}&categoria={{categoria}}&price_lt=yes"><i class="bi bi-earbuds"></i>   Volumen: mejor precio x Lt</a></li>
+                 <li><a class="dropdown-item" href="{% url 'search-producto/' %}?searched={{name}}&categoria={{categoria}}&price_unid=yes"><i class="bi bi-earbuds"></i>   Unidad: mejor precio x Unid</a></li>
+       
+            </ul>
+         </div>
+     </div>
+ </div>
+ <div class="row productos ">
+    {% for produ in lista_productos %}
+    <div class="producto-indiv bg-light p-1 shadow ">
+        <div class="row mt-3">
+            <div class="col-1"></div>
+            <div class="col-8 ">
+                <img loading="auto" src="{{ produ.4 }}" class="rounded-15" alt="" style="width:180px ; height:180px">
+            </div>
+
+            <div class="col-1"></div>
+        </div>
+        <div class="row mt-2">
+            <span class="fs-7 text-primary"><strong>{{ produ.2 }}</strong></span>
+        </div>
+        <div class="row mt-2 d-inline justify-content-start ">
+            {% if produ.0 == 'WALLMART' %}
+                <img src="{% static 'wallmart.png' %}" style= "width : 200px; height:30px" alt="">
+            {% elif produ.0 == 'PRICESMART' %}
+                <img src="{% static 'pricesmart.png' %}" style= "width : 200px; height:30px" alt="">
+            {% else %}
+                <img src="{% static 'automercado.png' %}" style= "width : 200px; height:30px" alt="">
+            {% endif %}
+            
+        </div>
+        <div class="row mt-2 d-inline justify-content-start ">
+            <div class="col">
+                <span class="fs-3 text-danger fw-bold">{{ produ.3 }}</span>
+            </div>
+        </div>
+        <div class="row  justify-content-center fw-bold  ">
+             
+            <div  class="col-5 border_especifo_product mx-1 ">Precio/Kilo</div>
+            <div  class="col-5 border_especifo_product  mx-1 ">Peso</div>
+            
+        </div>
+        <div class="row  justify-content-center fw-bold ">
+             
+            <div  class="col-5 valor_detallado mx-1 text-white bg-danger ">{{produ.6}} ₡/Kg</div>
+            <div  class="col-5 valor_detallado mx-1 text-white bg-danger">{{produ.5}} Kg</div>
+            
+        </div>
+        <div class="row  justify-content-center fw-bold ">
+             
+            <div  class="col-5 border_especifo_product mx-1 mt-1 ">Precio/Litro</div>
+            <div  class="col-5 border_especifo_product  mx-1 mt-1 ">Volumen</div>
+            
+        </div>
+        <div class="row  justify-content-center fw-bold ">
+            
+            <div  class="col-5 valor_detallado mx-1 text-white bg-primary ">{{produ.8}} ₡/Lt</div>
+            <div  class="col-5 valor_detallado mx-1 text-white bg-primary">{{produ.7}} Lt</div>
+            
+        </div>
+        <div class="row  justify-content-center fw-bold ">
+             
+            <div  class="col-5 border_especifo_product mx-1 mt-1">Precio/Unid</div>
+            <div  class="col-5 border_especifo_product  mx-1 mt-1">Unidad</div>
+            
+        </div>
+        <div class="row  justify-content-center fw-bold ">
+            
+            <div  class="col-5 valor_detallado mx-1 text-white bg-success">{{produ.10}} ₡/Unid</div>
+            <div  class="col-5 valor_detallado mx-1 text-white bg-success">{{produ.9}} Unidad</div>
+            
+        </div>
+        <div class="row  m-2 ">
+            <button type="button" class="btn btn-outline-secondary">Agregar</button> 
+        </div>
+
+    </div>
+
+
+    {% endfor %}
+ </div>
