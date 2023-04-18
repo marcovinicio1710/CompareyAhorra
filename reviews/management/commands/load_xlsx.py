@@ -43,6 +43,7 @@ lista_now=now.split()
 now=lista_now[0]
 
 for i in lista_prod:
+    
     Super=i[0]
     Categ=i[1]
     Producto=i[2]
@@ -80,4 +81,5 @@ for i in lista_prod:
                     fecha=now)
     if created:
         num+=1
+    print (num,'creados')
 print( 'se cargaron ',num,'en database')
