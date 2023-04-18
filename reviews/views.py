@@ -7,6 +7,7 @@ from django.contrib.auth import login, logout
 from operator import itemgetter
 from django.conf import settings
 import os
+from datetime import datetime
 from django.shortcuts import get_object_or_404
 from django.shortcuts import get_list_or_404
 from math import ceil
@@ -14,7 +15,10 @@ from math import ceil
 def index(request):
 
     if request.method=='GET':
-        hoy="2023-04-07"
+        now = datetime.now()
+        now=str(now)
+        lista_now=now.split()
+        now=lista_now[0]
         name = " "
         lista_prod=[]
         lista_producto=[]
