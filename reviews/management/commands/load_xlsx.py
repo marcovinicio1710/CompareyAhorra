@@ -33,7 +33,7 @@ def leer_master_12_atributtes(file,atributtes):
     
     return(lista)
 
-file=pathh+'tabla_precio_super_2023.xlsx'
+file=pathh+'/reviews/management/commands/tabla_precio_super_2023.xlsx'
 num=0
 
 lista_prod=leer_master_12_atributtes(file,'Super,Categ,Producto,Precio,Espacio_5,Espacio_6,Precios_kg,Peso_kg,Precios_lt,Peso_lt,Precios_unid,Unid')
