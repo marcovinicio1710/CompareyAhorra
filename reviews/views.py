@@ -19,6 +19,7 @@ def index(request):
         now=str(now)
         lista_now=now.split()
         now=lista_now[0]
+        hoy=now
         name = " "
         lista_prod=[]
         lista_producto=[]
@@ -165,7 +166,11 @@ def search(request):
         return render(request, "select_bar1.html", {"name": name})
 
 def search_prod(request, searched='',categoria='all',price_kg='no',price_lt='no', price_uni='no',page="0"):
-    hoy="2023-04-07"
+    now = datetime.now()
+    now=str(now)
+    lista_now=now.split()
+    now=lista_now[0]
+    hoy=now
     lista_prod=[]
     lista_categoria=[]
     lista_categoria_2=[]
