@@ -4,6 +4,12 @@ from django.contrib.auth.models import User
 from django.core.management.base import BaseCommand, CommandError
 from reviews.models import Productos_Super
 from datetime import datetime
+import os
+from pathlib import Path
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+pathh=os.getcwd()
+print('fin')
 
 def leer_master_12_atributtes(file,atributtes):
     list_atrr=atributtes.split(',')
@@ -26,7 +32,7 @@ def leer_master_12_atributtes(file,atributtes):
     
     return(lista)
 
-file='C:/Users/Laptop ASUS/Documents/markets/tabla_precio_super_2023-04-07 13_09_58_.xlsx'
+file=pathh='tabla_precio_super_2023-01-25 18_44_38_.xlsx'
 num=0
 
 lista_prod=leer_master_12_atributtes(file,'Super,Categ,Producto,Precio,Espacio_5,Espacio_6,Precios_kg,Peso_kg,Precios_lt,Peso_lt,Precios_unid,Unid')
