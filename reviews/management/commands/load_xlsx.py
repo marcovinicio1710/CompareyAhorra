@@ -43,7 +43,7 @@ lista_now=now.split()
 now=lista_now[0]
 
 for i in lista_prod:
-    print(len(lista_producto=Productos_Super.objects.all()), 'total ya guardados en database')
+    print(len(lista_producto=Productos_Super.objects.all()), 'total ya guardados en database1')
     
     Super=i[0]
     Categ=i[1]
