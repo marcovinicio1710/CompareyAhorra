@@ -11,11 +11,24 @@ from django.shortcuts import get_object_or_404
 from django.shortcuts import get_list_or_404
 from math import ceil
 import locale
+from datetime import datetime, timedelta
 # Create your views here.
 def index(request):
 
     if request.method=='GET':
-        hoy="2023-04-07"
+        noww=datetime.now()
+        now=str(noww)
+        lista_now=now.split()
+        hora=lista_now[1]
+        lista_hora=hora.split(':')
+        horaa=int(lista_hora[0])
+        if horaa<8:
+            d = str(noww - timedelta(days=1))
+            lista_d=d.split()
+            hoy=lista_d[0]
+        else:
+            hoy=lista_now[0]
+
         name = " "
         lista_prod=[]
         lista_producto=[]
@@ -184,7 +197,19 @@ def search(request):
         return render(request, "select_bar1.html", {"name": name})
 
 def search_prod(request, searched='',categoria='all',price_kg='no',price_lt='no', price_uni='no',page="0"):
-    hoy="2023-04-07"
+    noww=datetime.now()
+    now=str(noww)
+    lista_now=now.split()
+    hora=lista_now[1]
+    lista_hora=hora.split(':')
+    horaa=int(lista_hora[0])
+    if horaa<8:
+        d = str(noww - timedelta(days=1))
+        lista_d=d.split()
+        hoy=lista_d[0]
+    else:
+        hoy=lista_now[0]
+
     lista_prod=[]
     lista_categoria=[]
     lista_categoria_2=[]
@@ -869,6 +894,9 @@ def post_producto(request,producto=id):
     item=get_object_or_404(Productos_Super, id=producto)
     prod=item.producto
     return render(request, 'post_producto.html',{'post':prod})
+
+def sobrenos(request ):
+     return render(request, "sobrenos.html")
               
 
 
