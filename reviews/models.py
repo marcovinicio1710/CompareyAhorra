@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib import auth
+from django.urls import reverse
 
 # Create your models here.
 
@@ -19,6 +20,9 @@ class Productos_Super(models.Model):
 
     def __str__(self):
         return (self.super+' '+self.producto)
+    
+    def get_absolute_url(self):
+        return(reverse('post', args=[str(self.id)]))
 
 class Carrito_compra(models.Model):
     #A published book.
@@ -38,7 +42,7 @@ class Publisher(models.Model):
     website = models.URLField(help_text="The Publisher's website.")
     email = models.EmailField(help_text="The Publisher's email address.")
     def __str__(self):
-        return self.name
+        return self.name+self.website
 
 class Book(models.Model):
     #A published book.
@@ -92,3 +96,13 @@ class Review(models.Model):
     creator = models.ForeignKey(auth.get_user_model(), on_delete=models.CASCADE)
     book = models.ForeignKey(Book, on_delete=models.CASCADE,
                              help_text="The Book that this review is for.") 
+    
+class Publicidad_interesados(models.Model):
+    #A company that publishes books."""
+
+    name = models.CharField(max_length=50, help_text="The name of the Publisher.")
+    phone=models.IntegerField(help_text="The rating the reviewer has given.")
+    empresa = models.CharField(max_length=50, help_text="The name of the Publisher.")
+    email = models.EmailField(help_text="The Publisher's email address.")
+    def __str__(self):
+        return self.name+self.phone+self.email

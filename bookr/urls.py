@@ -15,12 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path , include
+from reviews.views import index_redirect
 
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', index_redirect, name='home-page-main'),
     path('', include('reviews.urls'))
+    
     
 ]
 

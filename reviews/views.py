@@ -1,5 +1,5 @@
 from django.shortcuts import render , redirect
-from reviews.models import Productos_Super , Carrito_compra
+from reviews.models import Productos_Super , Carrito_compra, Publicidad_interesados
 from django.utils.datastructures import MultiValueDictKeyError
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
@@ -7,19 +7,15 @@ from django.contrib.auth import login, logout
 from operator import itemgetter
 from django.conf import settings
 import os
-from datetime import datetime
 from django.shortcuts import get_object_or_404
 from django.shortcuts import get_list_or_404
 from math import ceil
+import locale
 # Create your views here.
 def index(request):
 
     if request.method=='GET':
-        now = datetime.now()
-        now=str(now)
-        lista_now=now.split()
-        now=lista_now[0]
-        hoy=now
+        hoy="2023-04-07"
         name = " "
         lista_prod=[]
         lista_producto=[]
@@ -35,6 +31,7 @@ def index(request):
                     'PANADERIA Y TORTILLERIA'
                     ]
         new_lista=[]
+        lista_final_productos_commas=[]
         for i in lista_categoria_1:
             new_lista.append(i.capitalize)
     
@@ -68,10 +65,31 @@ def index(request):
             nombre_pila='AnonymousUser'
 
     
-    
+        for i in lista_final_productos:
+            superr=i[0]
+            categoriaa=i[1]
+            productoo=i[2]
+            precioo=ceil(i[3])
+            pic=i[4]
+            pesokg=round(float(i[5]),3)
+            preciokg=round(float(i[6]),2)
+            pesolt=round(float(i[7]),2)
+            preciolt=round(float(i[8]),2)
+            pesoU=round(float(i[9]),2)
+            precioU=round(float(i[10]),2)
+            PK=i[11]
+            preciooo="{:,}".format(precioo)        
+            pesokg="{:,}".format(pesokg)
+            preciokg="{:,}".format(preciokg)
+            pesolt="{:,}".format(pesolt)
+            preciolt="{:,}".format(preciolt)
+            pesoU="{:,}".format(pesoU)
+            precioU="{:,}".format(precioU)
+            lista_final_productos_commas.append([superr,categoriaa,productoo,str(preciooo),pic,pesokg,preciokg,pesolt,preciolt,pesoU,precioU,PK])
+          
 
 
-        return render(request, "index_page.html", {"categoria":"all","name": name, "lista_categoria":lista_final_categoria , 'num_prod':num_prod,'lista_productos':lista_final_productos,'super':'all', "nombre_pila":nombre_pila})
+        return render(request, "index_page.html", {"categoria":"all","name": name, "lista_categoria":lista_final_categoria , 'num_prod':num_prod,'lista_productos':lista_final_productos_commas,'super':'all', "nombre_pila":nombre_pila})
 
     elif request.method=='POST':
         if request.user.is_authenticated:
@@ -166,23 +184,20 @@ def search(request):
         return render(request, "select_bar1.html", {"name": name})
 
 def search_prod(request, searched='',categoria='all',price_kg='no',price_lt='no', price_uni='no',page="0"):
-    now = datetime.now()
-    now=str(now)
-    lista_now=now.split()
-    now=lista_now[0]
-    hoy=now
+    hoy="2023-04-07"
     lista_prod=[]
     lista_categoria=[]
     lista_categoria_2=[]
     lista_final_categoria=[]
     lista_final_productos=[]
+    lista_final_productos_commas=[]
     lista_pagina=[]
     lista_param_page=["disabled",1,2]
     if request.method=='GET':
 
-        print('*/**/*/*/*//*/*/*/')
+        """print('*/**/*/*/*//*/*/*/')
         print(request.GET)
-        """urll=(request.build_absolute_uri )
+        urll=(request.build_absolute_uri )
         urll=str(urll)
         lista_url=urll.split()
         urll=lista_url[-1]
@@ -221,9 +236,11 @@ def search_prod(request, searched='',categoria='all',price_kg='no',price_lt='no'
                 lista_producto=lista_producto.filter(producto__icontains=word)
 
         for i in range(len(lista_producto)):
-            cat=str(lista_producto[i].categoria)
-            cat=cat.capitalize()
-            lista_prod.append([lista_producto[i].super,cat,lista_producto[i].producto,lista_producto[i].precio,lista_producto[i].picture,lista_producto[i].peso_kg,round(float(lista_producto[i].precio_kg),2),lista_producto[i].peso_lt,round(float(lista_producto[i].precio_lt),2),lista_producto[i].peso_unidad, round(float(lista_producto[i].precio_unidad),2),lista_producto[i].pk])
+            prices=round(float(lista_producto[i].precio),3)
+            if prices<9999999:
+                cat=str(lista_producto[i].categoria)
+                cat=cat.capitalize()
+                lista_prod.append([lista_producto[i].super,cat,lista_producto[i].producto,prices,lista_producto[i].picture,lista_producto[i].peso_kg,round(float(lista_producto[i].precio_kg),2),lista_producto[i].peso_lt,round(float(lista_producto[i].precio_lt),2),lista_producto[i].peso_unidad, round(float(lista_producto[i].precio_unidad),2),lista_producto[i].pk])
 
         for lista_de_prod in lista_prod:
             lista_categoria.append(lista_de_prod[1])
@@ -359,7 +376,31 @@ def search_prod(request, searched='',categoria='all',price_kg='no',price_lt='no'
         except:
             nombre_pila='AnonymousUser'
         name=searched
-        return render(request, "search_producto.html", {"categoria":categoria, "name": name, "lista_categoria":lista_final_categoria , 'num_prod':num_prod,'lista_productos':lista_final_productos,"page":page, "page_bool":page_bool, "lista_pagina":lista_pagina , "lista_param_page":lista_param_page, "price_kg":price_kg,"price_lt":price_lt, "price_uni":price_uni, "nombre_pila":nombre_pila })
+
+        for i in lista_final_productos:
+            superr=i[0]
+            categoriaa=i[1]
+            productoo=i[2]
+            precioo=ceil(i[3])
+            pic=i[4]
+            pesokg=round(float(i[5]),3)
+            preciokg=round(float(i[6]),2)
+            pesolt=round(float(i[7]),2)
+            preciolt=round(float(i[8]),2)
+            pesoU=round(float(i[9]),2)
+            precioU=round(float(i[10]),2)
+            PK=i[11]
+            preciooo="{:,}".format(precioo)        
+            pesokg="{:,}".format(pesokg)
+            preciokg="{:,}".format(preciokg)
+            pesolt="{:,}".format(pesolt)
+            preciolt="{:,}".format(preciolt)
+            pesoU="{:,}".format(pesoU)
+            precioU="{:,}".format(precioU)
+            lista_final_productos_commas.append([superr,categoriaa,productoo,str(preciooo),pic,pesokg,preciokg,pesolt,preciolt,pesoU,precioU,PK])
+            
+        
+        return render(request, "search_producto.html", {"categoria":categoria, "name": name, "lista_categoria":lista_final_categoria , 'num_prod':num_prod,'lista_productos':lista_final_productos_commas,"page":page, "page_bool":page_bool, "lista_pagina":lista_pagina , "lista_param_page":lista_param_page, "price_kg":price_kg,"price_lt":price_lt, "price_uni":price_uni, "nombre_pila":nombre_pila })
     
     elif request.method=='POST':
         if request.user.is_authenticated:
@@ -565,7 +606,7 @@ def sign_up_page(request):
         error_pass=''
         error_email=''
         main_error=''
-        print(request.POST)
+        
         usuario_name=request.POST["username"]
         usuario_lastname=request.POST["Lastname"]
         usuario_email=request.POST["email_address"]
@@ -579,7 +620,7 @@ def sign_up_page(request):
             error='Valid Password Format'
         else:
             print("Invalid Password Format")
-            error='Invalid Password Format'
+            error='Formato invalido de contraseña'
             
         if error=='Valid Password Format':
             if usuario_pass1==usuario_pass2:
@@ -641,6 +682,59 @@ def log_in(request):
 
     else:
         return render(request, "login_page.html")
+def recovery_password(request):
+    if request.method=='POST':
+        print(request.POST)
+        usuario_name=request.POST["name"]
+        usuario_lastname=request.POST["lastname"]
+        usuario_email=request.POST["email_address"]
+        usuario_pass1=request.POST["password_1"]
+        usuario_pass2=request.POST["password_2"]
+        usuario_lastname=usuario_lastname.lower()
+        usuario_name=usuario_name.lower()
+        
+        s = usuario_pass1
+        if (len(s) >= 8):
+            
+           
+            error='Valid Password Format'
+        else:
+           
+            error='Formato invalido de contraseña'
+            return render(request, "recuperarpassword.html", {"error": error})
+            
+        if error=='Valid Password Format':
+            if usuario_pass1==usuario_pass2:
+                error_pass='passwords equal'
+            else:
+                error_pass='contraseña no son iguales'
+                return render(request, "recuperarpassword.html", {"error": error})
+        if error_pass=='passwords equal':
+            #comparing user
+            try:
+                user = User.objects.get(email=usuario_email)
+                
+                
+                
+                if user.first_name.lower()==usuario_name and user.last_name.lower()==usuario_lastname :
+                    User.objects.filter(email=usuario_email). update(password=usuario_pass1)
+                    
+                    error="Se cambio correctamente la contraseña. Inicia Sesion nuevamente."
+                    return render(request, "recuperarpassword.html", {"error": error})
+
+                    # A backend authenticated the credentials
+                    
+                    
+                else:
+                    # No backend authenticated the credentials
+                    error="Correo electronico, usuario o contraseña no coinciden, Por favor intente de nuevo."
+                    return render(request, "recuperarpassword.html", {"error": error})
+            except User.DoesNotExist:
+                error="Correo electronico no ha sido registrado en nuestra base dato."
+                return render(request, "recuperarpassword.html", {"error": error})
+
+    else:
+        return render(request, "recuperarpassword.html")
 
 def cart(request ):
     superr='all'
@@ -753,3 +847,28 @@ def preguntasfrequentes(request ):
 def canastabasica(request ):
     nombre_compañia="Compare y Ahorra Costa Rica"
     return render(request, "canastabasica.html", {'compañia':nombre_compañia})
+def index_redirect(request):
+    return redirect("home-page")
+
+def publicidad_interna(request):
+     if request.method=='GET':
+        return render(request, "publicidad_interna.html")
+     else:
+        usuario_name=request.POST["name"]
+        usuario_empresa=request.POST["empresa"]
+        usuario_email=request.POST["email_address"]
+        usuario_telefono=request.POST["phone"]
+        created = Publicidad_interesados.objects.get_or_create(name=usuario_name,phone=usuario_telefono,empresa=usuario_empresa,email=usuario_email)
+                   
+        error='Muchas Gracias por elegirnos!. Pronto nos comunicaremos contigo para brindarte más información'
+        return render(request, "publicidad_interna.html" , {'error':error}) 
+     
+
+
+def post_producto(request,producto=id):
+    item=get_object_or_404(Productos_Super, id=producto)
+    prod=item.producto
+    return render(request, 'post_producto.html',{'post':prod})
+              
+
+
