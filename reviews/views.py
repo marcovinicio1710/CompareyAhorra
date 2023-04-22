@@ -684,7 +684,7 @@ def log_in(request):
         return render(request, "login_page.html")
 def recovery_password(request):
     if request.method=='POST':
-        print(request.POST)
+        
         usuario_name=request.POST["name"]
         usuario_lastname=request.POST["lastname"]
         usuario_email=request.POST["email_address"]
