@@ -11,6 +11,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 pathh=os.getcwd()
 print(pathh)
 print('this is path')
+now = datetime.now()
+now=str(now)
+lista_now=now.split()
+now=lista_now[0]
+print(datetime.now(), 'esta la hora de aqui')
 
 def leer_master_12_atributtes(file,atributtes):
     list_atrr=atributtes.split(',')
@@ -37,10 +42,7 @@ file=pathh+'/reviews/management/commands/tabla_precio_super_2023.xlsx'
 num=0
 total=0
 lista_prod=leer_master_12_atributtes(file,'Super,Categ,Producto,Precio,Espacio_5,Espacio_6,Precios_kg,Peso_kg,Precios_lt,Peso_lt,Precios_unid,Unid')
-now = datetime.now()
-now=str(now)
-lista_now=now.split()
-now=lista_now[0]
+
 
 for i in lista_prod:
     #print(len(Productos_Super.objects.all()), 'total ya guardados en database1')
@@ -84,5 +86,6 @@ for i in lista_prod:
         num+=1
         
     total+=1
-    print (total,'creados', len(lista_prod))
+    if total%1000==0:
+        print (total,'leidos', num, 'creados', len(lista_prod))
 print( 'se cargaron ',num,'en database')
