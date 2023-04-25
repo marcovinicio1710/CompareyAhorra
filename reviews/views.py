@@ -22,7 +22,7 @@ def index(request):
         hora=lista_now[1]
         lista_hora=hora.split(':')
         horaa=int(lista_hora[0])
-        if horaa<8:
+        if horaa<14:
             d = str(noww - timedelta(days=1))
             lista_d=d.split()
             hoy=lista_d[0]
@@ -203,7 +203,7 @@ def search_prod(request, searched='',categoria='all',price_kg='no',price_lt='no'
     hora=lista_now[1]
     lista_hora=hora.split(':')
     horaa=int(lista_hora[0])
-    if horaa<8:
+    if horaa<14:
         d = str(noww - timedelta(days=1))
         lista_d=d.split()
         hoy=lista_d[0]

@@ -90,4 +90,5 @@ for i in lista_prod:
         print (total,'leidos', num, 'creados', len(lista_prod))
     elif total==1:
          print (total,'leidos', num, 'creados', len(lista_prod))
+         
 print( 'se cargaron ',num,'en database')
