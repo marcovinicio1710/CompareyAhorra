@@ -16,6 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path , include
 from reviews.views import index_redirect
+from django.conf.urls import handler404
+import reviews
 
 
 
@@ -26,5 +28,7 @@ urlpatterns = [
     
     
 ]
+
+handler404= reviews.views.error_404
 
 

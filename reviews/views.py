@@ -29,12 +29,12 @@ def index(request):
         else:
             hoy=lista_now[0]'''
         if horaa<14:
-            d = str(noww - timedelta(days=2))
+            d = str(noww - timedelta(days=6))
             lista_d=d.split()
             hoy=lista_d[0]
         else:
             ##hoy=lista_now[0]  original
-            d = str(noww - timedelta(days=2))
+            d = str(noww - timedelta(days=5))
             lista_d=d.split()
             hoy=lista_d[0]
 
@@ -213,12 +213,12 @@ def search_prod(request, searched='',categoria='all',price_kg='no',price_lt='no'
     lista_hora=hora.split(':')
     horaa=int(lista_hora[0])
     if horaa<14:
-        d = str(noww - timedelta(days=2))
+        d = str(noww - timedelta(days=6))
         lista_d=d.split()
         hoy=lista_d[0]
     else:
         ##hoy=lista_now[0]  original
-        d = str(noww - timedelta(days=2))
+        d = str(noww - timedelta(days=5))
         lista_d=d.split()
         hoy=lista_d[0]
 
@@ -913,5 +913,7 @@ def sobrenos(request ):
 def site_map(request)  :   
     return render(request, "sitemapp.xml")
        
-
+def error_404(request,exception):
+    
+    return render(request, "404.html" )
 
