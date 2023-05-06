@@ -912,7 +912,7 @@ def sobrenos(request ):
 def site_map(request)  :   
     return render(request, "sitemapp.xml")
        
-def error_404(request):
+def error_404(request, exception):
     
     return render(request, "404.html" )
 
