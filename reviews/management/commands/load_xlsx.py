@@ -46,31 +46,31 @@ lista_prod=leer_master_12_atributtes(file,'Super,Categ,Producto,Precio,Espacio_5
 
 for i in lista_prod:
     #print(len(Productos_Super.objects.all()), 'total ya guardados en database1')
-    
-    Super=i[0]
-    Categ=i[1]
-    Producto=i[2]
-    Precio=float(i[3])
-    Espacio_5=str(i[4])
-    Espacio_6=str(i[5])
-    Precios_kg=str(i[6])
-    Peso_kg=str(i[7])
-    Precios_lt=str(i[8])
-    Peso_lt=str(i[9])
-    Precios_unid=str(i[10])
-    Unid=str(i[11])
+    if total>18000:
+        Super=i[0]
+        Categ=i[1]
+        Producto=i[2]
+        Precio=float(i[3])
+        Espacio_5=str(i[4])
+        Espacio_6=str(i[5])
+        Precios_kg=str(i[6])
+        Peso_kg=str(i[7])
+        Precios_lt=str(i[8])
+        Peso_lt=str(i[9])
+        Precios_unid=str(i[10])
+        Unid=str(i[11])
 
-    if Precios_kg=='none' or Precios_kg==0 or Peso_kg=='none' or Peso_kg==0:
-        Peso_kg=0
-        Precios_kg=0
-    if Precios_lt=='none' or Precios_lt==0 or Peso_lt=='none' or Peso_lt==0:
-        Precios_lt=0
-        Peso_lt=0
-    if Precios_unid=='none' or Precios_unid==0 or Unid=='none' or Unid==0:
-        Precios_unid=0
-        Unid=0
+        if Precios_kg=='none' or Precios_kg==0 or Peso_kg=='none' or Peso_kg==0:
+            Peso_kg=0
+            Precios_kg=0
+        if Precios_lt=='none' or Precios_lt==0 or Peso_lt=='none' or Peso_lt==0:
+            Precios_lt=0
+            Peso_lt=0
+        if Precios_unid=='none' or Precios_unid==0 or Unid=='none' or Unid==0:
+            Precios_unid=0
+            Unid=0
 
-    b, created = Productos_Super.objects.get_or_create(super=Super,
+        b, created = Productos_Super.objects.get_or_create(super=Super,
                     categoria=Categ,
                     producto=Producto,
                     precio = Precio,
@@ -82,8 +82,8 @@ for i in lista_prod:
                     peso_unidad = Unid,
                     precio_unidad = Precios_unid,
                     fecha=now)
-    if created:
-        num+=1
+        if created:
+         num+=1
         
     total+=1
     if total%1000==0:
