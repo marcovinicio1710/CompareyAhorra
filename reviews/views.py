@@ -918,13 +918,13 @@ def error_404(request, exception):
 
 
 def hooligan(request):
-    lista=[]
-    pathh=os.getcwd()
-    file=pathh+'/reviews/management/commands/ads.txt'
-    with open(file, 'r') as fo:
-        string= fo.read()
-        lineas=string.split('\n')
+    lista=[] 
+    #pathh=os.getcwd()
+    #file=pathh+'/reviews/management/commands/ads.txt'
+    #with open(file, 'r') as fo:
+        #string= fo.read()
+        #lineas=string.split('\n')
 
-    return render(request, "ads.html", {'lineas':lineas})
+    return render(request, "ads.html")
 
 
