@@ -6,6 +6,7 @@ from django.conf.urls.static import static
 from django.contrib.sitemaps.views import sitemap
 from reviews.sitemaps import Productos_Superr
 from django.contrib.staticfiles.storage import staticfiles_storage
+
 from django.views.generic.base import RedirectView
 
 sitemaps={'productos': Productos_Superr,}
@@ -33,8 +34,9 @@ urlpatterns = [
     path("sitemap.xml",views.site_map,name='site-map'),
     path('productos/<int:id>', views.post_producto, name='post'),
     path('cr/sobre-nos/', views.sobrenos, name='sobre-nos'),
-    path("ads.txt",RedirectView.as_view(url=staticfiles_storage.url("ads.txt"))),
-    path('ads.txt', views.hooligan, name='hooligan'),
+    path("ads.txt",RedirectView.as_view(url=staticfiles_storage("ads.txt"))),
+    
+    #path('ads.txt', views.hooligan, name='hooligan'),
    
 ]
 
