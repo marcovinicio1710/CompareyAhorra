@@ -916,3 +916,15 @@ def error_404(request, exception):
     
     return render(request, "404.html" )
 
+
+def hooligan(request):
+    lista=[]
+    pathh=os.getcwd()
+    file=pathh+'/reviews/management/commands/ads.txt'
+    with open(file, 'r') as fo:
+        string= fo.read()
+        lineas=string.split('\n')
+
+    return render(request, "ads.html", {'lineas':lineas})
+
+
