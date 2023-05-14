@@ -29,7 +29,7 @@ def index(request):
         else:
             hoy=lista_now[0]'''
         if horaa<14:
-            d = str(noww - timedelta(days=5))
+            d = str(noww - timedelta(days=6))
             lista_d=d.split()
             hoy=lista_d[0]
         else:
