@@ -31,10 +31,11 @@ urlpatterns = [
     path('cr/canasta-basica/', views.canastabasica, name='canasta-basica'),
     path('cr/recuperar-password/', views.recovery_password, name='recuperar-password'),
     path('cr/nuestros-servicios/', views.publicidad_interna, name='nuestros-servicios'),
-    path("sitemap.xml",views.site_map,name='site-map'),
+    
     path('productos/<int:id>', views.post_producto, name='post'),
     path('cr/sobre-nos/', views.sobrenos, name='sobre-nos'),
     path('ads.txt', views.hooligan, name='hooligan'),
+    #path("sitemap.xml",views.site_map,name='site-map'),
     #path("ads.txt",RedirectView.as_view(url=staticfiles_storage("ads.txt"))),
  
    

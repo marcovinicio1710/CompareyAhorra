@@ -909,8 +909,8 @@ def post_producto(request,producto=id):
 def sobrenos(request ):
      return render(request, "sobrenos.html")
 
-def site_map(request)  :   
-    return render(request, "sitemapp.xml")
+#def site_map(request)  :   
+    #return render(request, "sitemapp.xml")
        
 def error_404(request, exception):
     
