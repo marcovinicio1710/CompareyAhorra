@@ -135,7 +135,6 @@ def index(request):
         else:
             return redirect('login')
             # Do something for anonymous users.
-
 def file_upload(request):
     name = "WORLD"
     if request.method=='POST':
@@ -884,130 +883,8 @@ def preguntasfrequentes(request ):
 def canastabasica(request ):
     nombre_compañia="Compare y Ahorra Costa Rica"
     return render(request, "canastabasica.html", {'compañia':nombre_compañia})
-#def index_redirect(request):
-    #return redirect("home-page")
 def index_redirect(request):
-
-    if request.method=='GET':
-        noww=datetime.now()
-        now=str(noww)
-        lista_now=now.split()
-        hora=lista_now[1]
-        lista_hora=hora.split(':')
-        horaa=int(lista_hora[0])
-        '''if horaa<14:
-            d = str(noww - timedelta(days=1))
-            lista_d=d.split()
-            hoy=lista_d[0]
-        else:
-            hoy=lista_now[0]'''
-        if horaa<14:
-            d = str(noww - timedelta(days=7))
-            lista_d=d.split()
-            hoy=lista_d[0]
-        else:
-            ##hoy=lista_now[0]  original
-            d = str(noww - timedelta(days=6))
-            lista_d=d.split()
-            hoy=lista_d[0]
-
-        name = " "
-        lista_prod=[]
-        lista_producto=[]
-        lista_categoria=[]
-        lista_categoria_2=[]
-        lista_final_categoria=[]
-        lista_final_productos=[]
-        lista_categoria_1=['ABARROTES','ALIMENTOS CONGELADOS','ALIMENTOS PREPARADOS ',
-                    'ARTICULOS PARA EL HOGAR','BEBES Y NINOS ','CARNES FRIAS',
-                    'CARNES Y PESCADOS','ELECTRONICA','FARMACIA','FRUTAS Y VERDURAS',
-                    'HIGIENE Y BELLEZA ','JUGOS Y BEBIDAS','LACTEOS','LICORES',
-                    'LIMPIEZA Y MASCOTA','LISTO PARA LLEVAR','OFICINA','OPTICA',
-                    'PANADERIA Y TORTILLERIA'
-                    ]
-        new_lista=[]
-        lista_final_productos_commas=[]
-        for i in lista_categoria_1:
-            new_lista.append(i.capitalize)
-    
-        lista_producto=Productos_Super.objects.all()
-        lista_producto=lista_producto.filter(fecha__icontains=hoy)
-        #lista_producto = get_list_or_404(Productos_Super, fecha=hoy)
-        for i in range(len(lista_producto)):
-            cat=str(lista_producto[i].categoria)
-            cat=cat.capitalize()
-            lista_prod.append([lista_producto[i].super,cat,lista_producto[i].producto,lista_producto[i].precio,lista_producto[i].picture,lista_producto[i].peso_kg,round(float(lista_producto[i].precio_kg),2),lista_producto[i].peso_lt,round(float(lista_producto[i].precio_lt),2),lista_producto[i].peso_unidad, round(float(lista_producto[i].precio_unidad),2),lista_producto[i].pk])
-
-        for lista_de_prod in lista_prod:
-            lista_categoria.append(lista_de_prod[1])
-            if lista_de_prod[1] not in lista_categoria_2:
-                lista_categoria_2.append(lista_de_prod[1])
-        lista_categoria_2=sorted(lista_categoria_2)
-        for cat in lista_categoria_2:
-            num=lista_categoria.count(cat)
-            lista_final_categoria.append([cat,num])
-        num_prod=len(lista_prod)
-        lista_precio=sorted(lista_prod, key=itemgetter(3))
-        for i in range(len(lista_precio)):
-            if i>29:
-                break
-            else:
-                lista_final_productos.append(lista_precio[i])
-    
-        try:
-            nombre_pila=request.user.first_name
-        except:
-            nombre_pila='AnonymousUser'
-
-    
-        for i in lista_final_productos:
-            superr=i[0]
-            categoriaa=i[1]
-            productoo=i[2]
-            precioo=ceil(i[3])
-            pic=i[4]
-            pesokg=round(float(i[5]),3)
-            preciokg=round(float(i[6]),2)
-            pesolt=round(float(i[7]),2)
-            preciolt=round(float(i[8]),2)
-            pesoU=round(float(i[9]),2)
-            precioU=round(float(i[10]),2)
-            PK=i[11]
-            preciooo="{:,}".format(precioo)        
-            pesokg="{:,}".format(pesokg)
-            preciokg="{:,}".format(preciokg)
-            pesolt="{:,}".format(pesolt)
-            preciolt="{:,}".format(preciolt)
-            pesoU="{:,}".format(pesoU)
-            precioU="{:,}".format(precioU)
-            lista_final_productos_commas.append([superr,categoriaa,productoo,str(preciooo),pic,pesokg,preciokg,pesolt,preciolt,pesoU,precioU,PK])
-          
-
-
-        return render(request, "index_page.html", {"categoria":"all","name": name, "lista_categoria":lista_final_categoria , 'num_prod':num_prod,'lista_productos':lista_final_productos_commas,'super':'all', "nombre_pila":nombre_pila})
-
-    elif request.method=='POST':
-        if request.user.is_authenticated:
-            print('*/**/*/*/*//*/*/*/')
-            print(request.POST)
-            urll=(request.build_absolute_uri )
-            urll=str(urll)
-            lista_url=urll.split()
-            urll=lista_url[-1]
-            urll=urll.replace(">","")
-            urll=urll.replace("'","")
-            
-            id_producto=request.POST['carrito']
-            producto=Productos_Super.objects.get(pk=id_producto)
-            userr=request.user
-            correo_e=userr.email
-            created = Carrito_compra.objects.get_or_create(email=correo_e, publisher=producto)
-
-            return redirect(urll) 
-            # Do something for authenticated users.
-        else:
-            return redirect('login')
-            # Do something for anonymous users.
+    return redirect("home-page")
 
 def publicidad_interna(request):
      if request.method=='GET':
