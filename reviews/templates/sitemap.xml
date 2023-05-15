@@ -1,0 +1,525 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+<url>
+  <loc>https://www.compareyahorra.com/cr/</loc>
+  <lastmod>2023-04-27T16:50:42+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://www.compareyahorra.com/cr/login/</loc>
+  <lastmod>2023-04-27T16:50:42+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.compareyahorra.com/cr/sign-up/</loc>
+  <lastmod>2023-04-27T16:50:42+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.compareyahorra.com/cr/canasta-basica/</loc>
+  <lastmod>2023-04-27T16:50:42+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.compareyahorra.com/cr/sobre-nos/</loc>
+  <lastmod>2023-04-27T16:50:42+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.compareyahorra.com/cr/nuestros-servicios/</loc>
+  <lastmod>2023-04-27T16:50:42+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.compareyahorra.com/cr/buscar-producto/?searched=vino&amp;categoria=LICORES&amp;price_lt=yes</loc>
+  <lastmod>2023-04-27T16:50:42+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.compareyahorra.com/cr/buscar-producto/?searched=%20&amp;categoria=all</loc>
+  <lastmod>2023-04-27T16:50:42+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.compareyahorra.com/cr/buscar-producto/?searched=%20&amp;categoria=all&amp;price_kg=yes</loc>
+  <lastmod>2023-04-27T16:50:42+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.compareyahorra.com/cr/buscar-producto/?searched=%20&amp;categoria=all&amp;price_lt=yes</loc>
+  <lastmod>2023-04-27T16:50:42+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.compareyahorra.com/cr/buscar-producto/?searched=%20&amp;categoria=all&amp;price_unid=yes</loc>
+  <lastmod>2023-04-27T16:50:42+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.compareyahorra.com/cr/terminos-condiciones/</loc>
+  <lastmod>2023-04-27T16:50:42+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.compareyahorra.com/cr/aviso-de-privacidad/</loc>
+  <lastmod>2023-04-27T16:50:42+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.compareyahorra.com/cr/preguntas-frequentes/</loc>
+  <lastmod>2023-04-27T16:50:42+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.compareyahorra.com/cr/recuperar-password/</loc>
+  <lastmod>2023-04-27T16:50:42+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.compareyahorra.com/cr/buscar-producto/?searched=arroz&amp;categoria=ABARROTES&amp;price_kg=yes</loc>
+  <lastmod>2023-04-27T16:50:42+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.compareyahorra.com/cr/buscar-producto/?searched=frijol%20negro&amp;categoria=all&amp;price_kg=yes</loc>
+  <lastmod>2023-04-27T16:50:42+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.compareyahorra.com/cr/buscar-producto/?searched=pan&amp;categoria=PANADERIA%20Y%20TORTILLERIA&amp;price_unid=yes</loc>
+  <lastmod>2023-04-27T16:50:42+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.compareyahorra.com/cr/buscar-producto/?searched=leche&amp;categoria=LACTEOS&amp;price_lt=yes</loc>
+  <lastmod>2023-04-27T16:50:42+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.compareyahorra.com/cr/buscar-producto/?searched=huevo&amp;categoria=LACTEOS&amp;price_unid=yes</loc>
+  <lastmod>2023-04-27T16:50:42+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.compareyahorra.com/cr/buscar-producto/?searched=%20&amp;categoria=CARNES%20Y%20PESCADOS</loc>
+  <lastmod>2023-04-27T16:50:42+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.compareyahorra.com/cr/buscar-producto/?searched=%20&amp;categoria=FRUTAS%20Y%20VERDURAS&amp;price_kg=yes</loc>
+  <lastmod>2023-04-27T16:50:42+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.compareyahorra.com/cr/buscar-producto/?searched=papa&amp;categoria=FRUTAS%20Y%20VERDURAS&amp;price_kg=yes</loc>
+  <lastmod>2023-04-27T16:50:42+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.compareyahorra.com/cr/buscar-producto/?searched=pasta&amp;categoria=ALL&amp;price_kg=yes</loc>
+  <lastmod>2023-04-27T16:50:42+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.compareyahorra.com/cr/buscar-producto/?searched=Azucar&amp;categoria=all&amp;price_kg=yes</loc>
+  <lastmod>2023-04-27T16:50:42+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.compareyahorra.com/cr/buscar-producto/?searched=sal%20refinada&amp;categoria=all&amp;price_kg=yes</loc>
+  <lastmod>2023-04-27T16:50:42+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.compareyahorra.com/cr/buscar-producto/?searched=aceite&amp;categoria=all&amp;price_lt=yes</loc>
+  <lastmod>2023-04-27T16:50:42+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.compareyahorra.com/cr/buscar-producto/?searched=salsa%20tomate&amp;categoria=ABARROTES&amp;price_kg=yes</loc>
+  <lastmod>2023-04-27T16:50:42+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.compareyahorra.com/cr/buscar-producto/?searched=cereal&amp;categoria=ABARROTES&amp;price_kg=yes</loc>
+  <lastmod>2023-04-27T16:50:42+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.compareyahorra.com/cr/buscar-producto/?searched=lentejas&amp;categoria=all&amp;price_kg=yes</loc>
+  <lastmod>2023-04-27T16:50:42+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.compareyahorra.com/cr/buscar-producto/?searched=yogurt&amp;categoria=LACTEOS</loc>
+  <lastmod>2023-04-27T16:50:42+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.compareyahorra.com/cr/buscar-producto/?searched=queso&amp;categoria=LACTEOS&amp;price_kg=yes</loc>
+  <lastmod>2023-04-27T16:50:42+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.compareyahorra.com/cr/buscar-producto/?searched=mantequilla&amp;categoria=LACTEOS&amp;price_kg=yes</loc>
+  <lastmod>2023-04-27T16:50:42+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.compareyahorra.com/cr/buscar-producto/?searched=MARGARINA&amp;categoria=LACTEOS&amp;price_kg=yes</loc>
+  <lastmod>2023-04-27T16:50:42+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.compareyahorra.com/cr/buscar-producto/?searched=vino&amp;categoria=LICORES</loc>
+  <lastmod>2023-04-27T16:50:42+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.compareyahorra.com/cr/buscar-producto/?searched=vino&amp;categoria=LICORES&amp;price_kg=yes</loc>
+  <lastmod>2023-04-27T16:50:42+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.compareyahorra.com/cr/buscar-producto/?searched=vino&amp;categoria=LICORES&amp;price_unid=yes</loc>
+  <lastmod>2023-04-27T16:50:42+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.compareyahorra.com/cr/buscar-producto/?searched=%20&amp;categoria=ALL</loc>
+  <lastmod>2023-04-27T16:50:42+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.compareyahorra.com/cr/buscar-producto/?searched=%20&amp;categoria=ALL&amp;price_kg=yes</loc>
+  <lastmod>2023-04-27T16:50:42+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.compareyahorra.com/cr/buscar-producto/?searched=%20&amp;categoria=ALL&amp;price_lt=yes</loc>
+  <lastmod>2023-04-27T16:50:42+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.compareyahorra.com/cr/buscar-producto/?searched=%20&amp;categoria=ALL&amp;price_unid=yes</loc>
+  <lastmod>2023-04-27T16:50:42+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.compareyahorra.com/cr/buscar-producto/?searched=arroz&amp;categoria=ABARROTES</loc>
+  <lastmod>2023-04-27T16:50:42+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.compareyahorra.com/cr/buscar-producto/?searched=arroz&amp;categoria=ABARROTES&amp;price_lt=yes</loc>
+  <lastmod>2023-04-27T16:50:42+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.compareyahorra.com/cr/buscar-producto/?searched=arroz&amp;categoria=ABARROTES&amp;price_unid=yes</loc>
+  <lastmod>2023-04-27T16:50:42+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.compareyahorra.com/cr/buscar-producto/?searched=frijol%20negro&amp;categoria=ALL</loc>
+  <lastmod>2023-04-27T16:50:42+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.compareyahorra.com/cr/buscar-producto/?searched=frijol%20negro&amp;categoria=ALL&amp;price_kg=yes</loc>
+  <lastmod>2023-04-27T16:50:42+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.compareyahorra.com/cr/buscar-producto/?searched=frijol%20negro&amp;categoria=ALL&amp;price_lt=yes</loc>
+  <lastmod>2023-04-27T16:50:42+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.compareyahorra.com/cr/buscar-producto/?searched=frijol%20negro&amp;categoria=ALL&amp;price_unid=yes</loc>
+  <lastmod>2023-04-27T16:50:42+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.compareyahorra.com/cr/buscar-producto/?searched=pan&amp;categoria=PANADERIA%20Y%20TORTILLERIA</loc>
+  <lastmod>2023-04-27T16:50:42+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.compareyahorra.com/cr/buscar-producto/?searched=pan&amp;categoria=PANADERIA%20Y%20TORTILLERIA&amp;price_kg=yes</loc>
+  <lastmod>2023-04-27T16:50:42+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.compareyahorra.com/cr/buscar-producto/?searched=pan&amp;categoria=PANADERIA%20Y%20TORTILLERIA&amp;price_lt=yes</loc>
+  <lastmod>2023-04-27T16:50:42+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.compareyahorra.com/cr/buscar-producto/?searched=leche&amp;categoria=LACTEOS</loc>
+  <lastmod>2023-04-27T16:50:42+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.compareyahorra.com/cr/buscar-producto/?searched=leche&amp;categoria=LACTEOS&amp;price_kg=yes</loc>
+  <lastmod>2023-04-27T16:50:42+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.compareyahorra.com/cr/buscar-producto/?searched=leche&amp;categoria=LACTEOS&amp;price_unid=yes</loc>
+  <lastmod>2023-04-27T16:50:42+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.compareyahorra.com/cr/buscar-producto/?searched=huevo&amp;categoria=LACTEOS</loc>
+  <lastmod>2023-04-27T16:50:42+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.compareyahorra.com/cr/buscar-producto/?searched=huevo&amp;categoria=LACTEOS&amp;price_kg=yes</loc>
+  <lastmod>2023-04-27T16:50:42+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.compareyahorra.com/cr/buscar-producto/?searched=huevo&amp;categoria=LACTEOS&amp;price_lt=yes</loc>
+  <lastmod>2023-04-27T16:50:42+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.compareyahorra.com/cr/buscar-producto/?searched=%20&amp;categoria=CARNES%20Y%20PESCADOS&amp;price_kg=yes</loc>
+  <lastmod>2023-04-27T16:50:42+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.compareyahorra.com/cr/buscar-producto/?searched=%20&amp;categoria=CARNES%20Y%20PESCADOS&amp;price_lt=yes</loc>
+  <lastmod>2023-04-27T16:50:42+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.compareyahorra.com/cr/buscar-producto/?searched=%20&amp;categoria=CARNES%20Y%20PESCADOS&amp;price_unid=yes</loc>
+  <lastmod>2023-04-27T16:50:42+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.compareyahorra.com/cr/buscar-producto/?searched=%20&amp;categoria=FRUTAS%20Y%20VERDURAS</loc>
+  <lastmod>2023-04-27T16:50:42+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.compareyahorra.com/cr/buscar-producto/?searched=%20&amp;categoria=FRUTAS%20Y%20VERDURAS&amp;price_lt=yes</loc>
+  <lastmod>2023-04-27T16:50:42+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.compareyahorra.com/cr/buscar-producto/?searched=%20&amp;categoria=FRUTAS%20Y%20VERDURAS&amp;price_unid=yes</loc>
+  <lastmod>2023-04-27T16:50:42+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.compareyahorra.com/cr/buscar-producto/?searched=papa&amp;categoria=FRUTAS%20Y%20VERDURAS</loc>
+  <lastmod>2023-04-27T16:50:42+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.compareyahorra.com/cr/buscar-producto/?searched=papa&amp;categoria=FRUTAS%20Y%20VERDURAS&amp;price_lt=yes</loc>
+  <lastmod>2023-04-27T16:50:42+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.compareyahorra.com/cr/buscar-producto/?searched=papa&amp;categoria=FRUTAS%20Y%20VERDURAS&amp;price_unid=yes</loc>
+  <lastmod>2023-04-27T16:50:42+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.compareyahorra.com/cr/buscar-producto/?searched=pasta&amp;categoria=ALL</loc>
+  <lastmod>2023-04-27T16:50:42+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.compareyahorra.com/cr/buscar-producto/?searched=pasta&amp;categoria=ALL&amp;price_lt=yes</loc>
+  <lastmod>2023-04-27T16:50:42+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.compareyahorra.com/cr/buscar-producto/?searched=pasta&amp;categoria=ALL&amp;price_unid=yes</loc>
+  <lastmod>2023-04-27T16:50:42+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.compareyahorra.com/cr/buscar-producto/?searched=Azucar&amp;categoria=ALL</loc>
+  <lastmod>2023-04-27T16:50:42+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.compareyahorra.com/cr/buscar-producto/?searched=Azucar&amp;categoria=ALL&amp;price_kg=yes</loc>
+  <lastmod>2023-04-27T16:50:42+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.compareyahorra.com/cr/buscar-producto/?searched=Azucar&amp;categoria=ALL&amp;price_lt=yes</loc>
+  <lastmod>2023-04-27T16:50:42+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.compareyahorra.com/cr/buscar-producto/?searched=Azucar&amp;categoria=ALL&amp;price_unid=yes</loc>
+  <lastmod>2023-04-27T16:50:42+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.compareyahorra.com/cr/buscar-producto/?searched=sal%20refinada&amp;categoria=ALL</loc>
+  <lastmod>2023-04-27T16:50:42+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.compareyahorra.com/cr/buscar-producto/?searched=sal%20refinada&amp;categoria=ALL&amp;price_kg=yes</loc>
+  <lastmod>2023-04-27T16:50:42+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.compareyahorra.com/cr/buscar-producto/?searched=sal%20refinada&amp;categoria=ALL&amp;price_lt=yes</loc>
+  <lastmod>2023-04-27T16:50:42+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.compareyahorra.com/cr/buscar-producto/?searched=sal%20refinada&amp;categoria=ALL&amp;price_unid=yes</loc>
+  <lastmod>2023-04-27T16:50:42+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.compareyahorra.com/cr/buscar-producto/?searched=aceite&amp;categoria=ALL</loc>
+  <lastmod>2023-04-27T16:50:42+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.compareyahorra.com/cr/buscar-producto/?searched=aceite&amp;categoria=ALL&amp;price_kg=yes</loc>
+  <lastmod>2023-04-27T16:50:42+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.compareyahorra.com/cr/buscar-producto/?searched=aceite&amp;categoria=ALL&amp;price_lt=yes</loc>
+  <lastmod>2023-04-27T16:50:42+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.compareyahorra.com/cr/buscar-producto/?searched=aceite&amp;categoria=ALL&amp;price_unid=yes</loc>
+  <lastmod>2023-04-27T16:50:42+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.compareyahorra.com/cr/buscar-producto/?searched=salsa%20tomate&amp;categoria=ABARROTES</loc>
+  <lastmod>2023-04-27T16:50:42+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.compareyahorra.com/cr/buscar-producto/?searched=salsa%20tomate&amp;categoria=ABARROTES&amp;price_lt=yes</loc>
+  <lastmod>2023-04-27T16:50:42+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.compareyahorra.com/cr/buscar-producto/?searched=salsa%20tomate&amp;categoria=ABARROTES&amp;price_unid=yes</loc>
+  <lastmod>2023-04-27T16:50:42+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.compareyahorra.com/cr/buscar-producto/?searched=cereal&amp;categoria=ABARROTES</loc>
+  <lastmod>2023-04-27T16:50:42+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.compareyahorra.com/cr/buscar-producto/?searched=cereal&amp;categoria=ABARROTES&amp;price_lt=yes</loc>
+  <lastmod>2023-04-27T16:50:42+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.compareyahorra.com/cr/buscar-producto/?searched=cereal&amp;categoria=ABARROTES&amp;price_unid=yes</loc>
+  <lastmod>2023-04-27T16:50:42+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.compareyahorra.com/cr/buscar-producto/?searched=lentejas&amp;categoria=ALL</loc>
+  <lastmod>2023-04-27T16:50:42+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.compareyahorra.com/cr/buscar-producto/?searched=lentejas&amp;categoria=ALL&amp;price_kg=yes</loc>
+  <lastmod>2023-04-27T16:50:42+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.compareyahorra.com/cr/buscar-producto/?searched=lentejas&amp;categoria=ALL&amp;price_lt=yes</loc>
+  <lastmod>2023-04-27T16:50:42+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.compareyahorra.com/cr/buscar-producto/?searched=lentejas&amp;categoria=ALL&amp;price_unid=yes</loc>
+  <lastmod>2023-04-27T16:50:42+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.compareyahorra.com/cr/buscar-producto/?searched=yogurt&amp;categoria=LACTEOS&amp;price_kg=yes</loc>
+  <lastmod>2023-04-27T16:50:42+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.compareyahorra.com/cr/buscar-producto/?searched=yogurt&amp;categoria=LACTEOS&amp;price_lt=yes</loc>
+  <lastmod>2023-04-27T16:50:42+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.compareyahorra.com/cr/buscar-producto/?searched=yogurt&amp;categoria=LACTEOS&amp;price_unid=yes</loc>
+  <lastmod>2023-04-27T16:50:42+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.compareyahorra.com/cr/buscar-producto/?searched=queso&amp;categoria=LACTEOS</loc>
+  <lastmod>2023-04-27T16:50:42+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.compareyahorra.com/cr/buscar-producto/?searched=queso&amp;categoria=LACTEOS&amp;price_lt=yes</loc>
+  <lastmod>2023-04-27T16:50:42+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.compareyahorra.com/cr/buscar-producto/?searched=queso&amp;categoria=LACTEOS&amp;price_unid=yes</loc>
+  <lastmod>2023-04-27T16:50:42+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.compareyahorra.com/cr/buscar-producto/?searched=mantequilla&amp;categoria=LACTEOS</loc>
+  <lastmod>2023-04-27T16:50:42+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.compareyahorra.com/cr/buscar-producto/?searched=mantequilla&amp;categoria=LACTEOS&amp;price_lt=yes</loc>
+  <lastmod>2023-04-27T16:50:42+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.compareyahorra.com/cr/buscar-producto/?searched=mantequilla&amp;categoria=LACTEOS&amp;price_unid=yes</loc>
+  <lastmod>2023-04-27T16:50:42+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.compareyahorra.com/cr/buscar-producto/?searched=MARGARINA&amp;categoria=LACTEOS</loc>
+  <lastmod>2023-04-27T16:50:42+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.compareyahorra.com/cr/buscar-producto/?searched=MARGARINA&amp;categoria=LACTEOS&amp;price_lt=yes</loc>
+  <lastmod>2023-04-27T16:50:42+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.compareyahorra.com/cr/buscar-producto/?searched=MARGARINA&amp;categoria=LACTEOS&amp;price_unid=yes</loc>
+  <lastmod>2023-04-27T16:50:42+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+
+
+</urlset>

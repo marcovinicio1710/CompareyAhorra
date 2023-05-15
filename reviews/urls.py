@@ -35,7 +35,7 @@ urlpatterns = [
     path('productos/<int:id>', views.post_producto, name='post'),
     path('cr/sobre-nos/', views.sobrenos, name='sobre-nos'),
     path('ads.txt', views.hooligan, name='hooligan'),
-    #path("sitemap.xml",views.site_map,name='site-map'),
+    path("sitemap.xml",views.site_map,name='site-map'),
     #path("ads.txt",RedirectView.as_view(url=staticfiles_storage("ads.txt"))),
  
    
