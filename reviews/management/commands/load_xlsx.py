@@ -46,7 +46,7 @@ lista_prod=leer_master_12_atributtes(file,'Super,Categ,Producto,Precio,Espacio_5
 
 for i in lista_prod:
     #print(len(Productos_Super.objects.all()), 'total ya guardados en database1')
-    if total>15000:
+    if total>15001:
         Super=i[0]
         Categ=i[1]
         Producto=i[2]
