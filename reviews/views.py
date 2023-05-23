@@ -217,7 +217,7 @@ def search_prod(request, searched='',categoria='all',price_kg='no',price_lt='no'
             lista_d=d.split()
             hoy=lista_d[0]
     else:
-            ##hoy=lista_now[0]  original
+            #hoy=lista_now[0]  original
             d = str(noww - timedelta(days=0))
             lista_d=d.split()
             hoy=lista_d[0]
