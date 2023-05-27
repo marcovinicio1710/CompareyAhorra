@@ -948,7 +948,7 @@ def index_redirect(request):
         num_prod=len(lista_prod)
         lista_precio=sorted(lista_prod, key=itemgetter(3))
         for i in range(len(lista_precio)):
-            if i>29:
+            if i>9:
                 break
             else:
                 lista_final_productos.append(lista_precio[i])
