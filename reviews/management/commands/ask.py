@@ -19,9 +19,12 @@ print('2 para saber cuanto usuaruis estan creados')
 a=input('selecciona una opcion')
 
 if a=='1':
+    print('select day to filter how many product you have example: ', noww)
+    noww=input('select correct date: ')
+    
     
     lista=Productos_Super.objects.filter(fecha=noww)
-    print('aqui esta los product del dia')
+    print('aqui esta los product del dia: ', noww)
     print(len(lista))
 elif a=='2':
     lista=User.objects.all()
