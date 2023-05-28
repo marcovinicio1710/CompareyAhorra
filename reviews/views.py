@@ -936,21 +936,21 @@ def index_redirect(request):
             cat=str(lista_producto[i].categoria)
             cat=cat.capitalize()
             lista_prod.append([lista_producto[i].super,cat,lista_producto[i].producto,lista_producto[i].precio,'arrozBlanco.webp',lista_producto[i].peso_kg,round(float(lista_producto[i].precio_kg),2),lista_producto[i].peso_lt,round(float(lista_producto[i].precio_lt),2),lista_producto[i].peso_unidad, round(float(lista_producto[i].precio_unidad),2),lista_producto[i].pk])
-        
+        print('*****************   Arroz    *************')
         lista_producto=Productos_Super.objects.filter(fecha__icontains=hoy,producto__icontains='coca cola')
         lista_producto=lista_producto[:1]
         for i in range(len(lista_producto)):
             cat=str(lista_producto[i].categoria)
             cat=cat.capitalize()
             lista_prod.append([lista_producto[i].super,cat,lista_producto[i].producto,lista_producto[i].precio,'CocaCola.webp',lista_producto[i].peso_kg,round(float(lista_producto[i].precio_kg),2),lista_producto[i].peso_lt,round(float(lista_producto[i].precio_lt),2),lista_producto[i].peso_unidad, round(float(lista_producto[i].precio_unidad),2),lista_producto[i].pk])
-        
+        print('*****************   coca cola    *************')
         lista_producto=Productos_Super.objects.filter(fecha__icontains=hoy,producto__icontains='muslo pollo')
         lista_producto=lista_producto[:1]
         for i in range(len(lista_producto)):
             cat=str(lista_producto[i].categoria)
             cat=cat.capitalize()
             lista_prod.append([lista_producto[i].super,cat,lista_producto[i].producto,lista_producto[i].precio,'muslopollo.webp',lista_producto[i].peso_kg,round(float(lista_producto[i].precio_kg),2),lista_producto[i].peso_lt,round(float(lista_producto[i].precio_lt),2),lista_producto[i].peso_unidad, round(float(lista_producto[i].precio_unidad),2),lista_producto[i].pk])
-        
+        print('*****************   muslo pollo    *************')
     
         lista_producto=Productos_Super.objects.filter(fecha__icontains=hoy,producto__icontains='tilapia')
         lista_producto=lista_producto[:1]
@@ -958,82 +958,83 @@ def index_redirect(request):
             cat=str(lista_producto[i].categoria)
             cat=cat.capitalize()
             lista_prod.append([lista_producto[i].super,cat,lista_producto[i].producto,lista_producto[i].precio,'Tilapia.webp',lista_producto[i].peso_kg,round(float(lista_producto[i].precio_kg),2),lista_producto[i].peso_lt,round(float(lista_producto[i].precio_lt),2),lista_producto[i].peso_unidad, round(float(lista_producto[i].precio_unidad),2),lista_producto[i].pk])
-        
+        print('*****************   tilapia    *************')
+
         lista_producto=Productos_Super.objects.filter(fecha__icontains=hoy,producto__icontains='Atun Lomo Trozos Aceite')
         lista_producto=lista_producto[:1]
         for i in range(len(lista_producto)):
             cat=str(lista_producto[i].categoria)
             cat=cat.capitalize()
             lista_prod.append([lista_producto[i].super,cat,lista_producto[i].producto,lista_producto[i].precio,'Atun.webp',lista_producto[i].peso_kg,round(float(lista_producto[i].precio_kg),2),lista_producto[i].peso_lt,round(float(lista_producto[i].precio_lt),2),lista_producto[i].peso_unidad, round(float(lista_producto[i].precio_unidad),2),lista_producto[i].pk])
-        
+        print('*****************   atun    *************')
         lista_producto=Productos_Super.objects.filter(fecha__icontains=hoy,producto__icontains='red bull')
         lista_producto=lista_producto[:1]
         for i in range(len(lista_producto)):
             cat=str(lista_producto[i].categoria)
             cat=cat.capitalize()
             lista_prod.append([lista_producto[i].super,cat,lista_producto[i].producto,lista_producto[i].precio,'redbull.webp',lista_producto[i].peso_kg,round(float(lista_producto[i].precio_kg),2),lista_producto[i].peso_lt,round(float(lista_producto[i].precio_lt),2),lista_producto[i].peso_unidad, round(float(lista_producto[i].precio_unidad),2),lista_producto[i].pk])
-        
+        print('*****************   red bull    *************')
         lista_producto=Productos_Super.objects.filter(fecha__icontains=hoy,producto__icontains='banano',categoria='FRUTAS Y VERDURAS')
         lista_producto=lista_producto[:1]
         for i in range(len(lista_producto)):
             cat=str(lista_producto[i].categoria)
             cat=cat.capitalize()
             lista_prod.append([lista_producto[i].super,cat,lista_producto[i].producto,lista_producto[i].precio,'banano.webp',lista_producto[i].peso_kg,round(float(lista_producto[i].precio_kg),2),lista_producto[i].peso_lt,round(float(lista_producto[i].precio_lt),2),lista_producto[i].peso_unidad, round(float(lista_producto[i].precio_unidad),2),lista_producto[i].pk])
-        
+        print('*****************   banao    *************')
         lista_producto=Productos_Super.objects.filter(fecha__icontains=hoy,producto__icontains='tomate che',categoria='FRUTAS Y VERDURAS')
         lista_producto=lista_producto[:1]
         for i in range(len(lista_producto)):
             cat=str(lista_producto[i].categoria)
             cat=cat.capitalize()
             lista_prod.append([lista_producto[i].super,cat,lista_producto[i].producto,lista_producto[i].precio,'tomate.webp',lista_producto[i].peso_kg,round(float(lista_producto[i].precio_kg),2),lista_producto[i].peso_lt,round(float(lista_producto[i].precio_lt),2),lista_producto[i].peso_unidad, round(float(lista_producto[i].precio_unidad),2),lista_producto[i].pk])
-        
+        print('*****************   tomate    *************')
         lista_producto=Productos_Super.objects.filter(fecha__icontains=hoy,producto__icontains='doritos')
         lista_producto=lista_producto[:1]
         for i in range(len(lista_producto)):
             cat=str(lista_producto[i].categoria)
             cat=cat.capitalize()
             lista_prod.append([lista_producto[i].super,cat,lista_producto[i].producto,lista_producto[i].precio,'doritos.webp',lista_producto[i].peso_kg,round(float(lista_producto[i].precio_kg),2),lista_producto[i].peso_lt,round(float(lista_producto[i].precio_lt),2),lista_producto[i].peso_unidad, round(float(lista_producto[i].precio_unidad),2),lista_producto[i].pk])
-        
+        print('*****************   doritos    *************')
         lista_producto=Productos_Super.objects.filter(fecha__icontains=hoy,producto__icontains='Pera Verde Importada')
         lista_producto=lista_producto[:1]
         for i in range(len(lista_producto)):
             cat=str(lista_producto[i].categoria)  
             cat=cat.capitalize()
             lista_prod.append([lista_producto[i].super,cat,lista_producto[i].producto,lista_producto[i].precio,'pera.webp',lista_producto[i].peso_kg,round(float(lista_producto[i].precio_kg),2),lista_producto[i].peso_lt,round(float(lista_producto[i].precio_lt),2),lista_producto[i].peso_unidad, round(float(lista_producto[i].precio_unidad),2),lista_producto[i].pk])
-        
+        print('*****************   pera    *************')
 
         lista_producto=Productos_Super.objects.filter(fecha__icontains=hoy,producto__icontains='Del Prado Queso Turrialba')
         lista_producto=lista_producto[:1]
         for i in range(len(lista_producto)):
             cat=str(lista_producto[i].categoria)
             lista_prod.append([lista_producto[i].super,cat,lista_producto[i].producto,lista_producto[i].precio,'quesodelprado.webp',lista_producto[i].peso_kg,round(float(lista_producto[i].precio_kg),2),lista_producto[i].peso_lt,round(float(lista_producto[i].precio_lt),2),lista_producto[i].peso_unidad, round(float(lista_producto[i].precio_unidad),2),lista_producto[i].pk])
-        
+        print('*****************   quesp    *************')
         lista_producto=Productos_Super.objects.filter(fecha__icontains=hoy,producto__icontains='Huevos de 40 Unidades')
         lista_producto=lista_producto[:1]
         for i in range(len(lista_producto)):
             cat=str(lista_producto[i].categoria)   
             cat=cat.capitalize()
             lista_prod.append([lista_producto[i].super,cat,lista_producto[i].producto,lista_producto[i].precio,'huevo.webp',lista_producto[i].peso_kg,round(float(lista_producto[i].precio_kg),2),lista_producto[i].peso_lt,round(float(lista_producto[i].precio_lt),2),lista_producto[i].peso_unidad, round(float(lista_producto[i].precio_unidad),2),lista_producto[i].pk])
-        
+        print('*****************   huevo    *************')
         lista_producto=Productos_Super.objects.filter(fecha__icontains=hoy,producto__icontains="Member's Selection Panales Premium")
         lista_producto=lista_producto[:1]
         for i in range(len(lista_producto)):
             cat=str(lista_producto[i].categoria)
             lista_prod.append([lista_producto[i].super,cat,lista_producto[i].producto,lista_producto[i].precio,'panales.webp',lista_producto[i].peso_kg,round(float(lista_producto[i].precio_kg),2),lista_producto[i].peso_lt,round(float(lista_producto[i].precio_lt),2),lista_producto[i].peso_unidad, round(float(lista_producto[i].precio_unidad),2),lista_producto[i].pk])
-        
+        print('*****************   panales    *************')
         lista_producto=Productos_Super.objects.filter(fecha__icontains=hoy,producto__icontains="leche semi descr",categoria='LACTEOS')
         lista_producto=lista_producto[:1]
         for i in range(len(lista_producto)):
             cat=str(lista_producto[i].categoria)
             lista_prod.append([lista_producto[i].super,cat,lista_producto[i].producto,lista_producto[i].precio,'leche.webp',lista_producto[i].peso_kg,round(float(lista_producto[i].precio_kg),2),lista_producto[i].peso_lt,round(float(lista_producto[i].precio_lt),2),lista_producto[i].peso_unidad, round(float(lista_producto[i].precio_unidad),2),lista_producto[i].pk])
         
-         
+        print('*****************   leche    *************') 
         lista_producto=Productos_Super.objects.filter(fecha__icontains=hoy,producto__icontains="colgate")
         lista_producto=lista_producto[:1]
         for i in range(len(lista_producto)):
             cat=str(lista_producto[i].categoria)
             lista_prod.append([lista_producto[i].super,cat,lista_producto[i].producto,lista_producto[i].precio,'colgate.webp',lista_producto[i].peso_kg,round(float(lista_producto[i].precio_kg),2),lista_producto[i].peso_lt,round(float(lista_producto[i].precio_lt),2),lista_producto[i].peso_unidad, round(float(lista_producto[i].precio_unidad),2),lista_producto[i].pk])
-        
+        print('*****************   cogate    *************')
     
         '''lista_producto=Productos_Super.objects.all()
         lista_producto=lista_producto.filter(fecha__icontains=hoy)
