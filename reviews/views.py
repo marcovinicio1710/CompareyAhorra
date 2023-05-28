@@ -917,19 +917,125 @@ def index_redirect(request):
         lista_categoria_2=[]
         lista_final_categoria=[]
         lista_final_productos=[]
-        lista_categoria_1=['ABARROTES','ALIMENTOS CONGELADOS','ALIMENTOS PREPARADOS ',
-                    'ARTICULOS PARA EL HOGAR','BEBES Y NINOS ','CARNES FRIAS',
-                    'CARNES Y PESCADOS','ELECTRONICA','FARMACIA','FRUTAS Y VERDURAS',
-                    'HIGIENE Y BELLEZA ','JUGOS Y BEBIDAS','LACTEOS','LICORES',
-                    'LIMPIEZA Y MASCOTA','LISTO PARA LLEVAR','OFICINA','OPTICA',
-                    'PANADERIA Y TORTILLERIA'
+        lista_categoria_1=[['ABARROTES',5734],['ALIMENTOS CONGELADOS',579],['ALIMENTOS PREPARADOS ',36],
+                    ['ARTICULOS PARA EL HOGAR',4503],['BEBES Y NINOS ',697],['CARNES FRIAS',154],
+                    ['CARNES Y PESCADOS',625],['ELECTRONICA',1096],['FARMACIA',605],['FRUTAS Y VERDURAS',685],
+                    ['HIGIENE Y BELLEZA ',3287],['JUGOS Y BEBIDAS',1324],['LACTEOS',1150],['LICORES',1116],
+                    ['LIMPIEZA Y MASCOTA',2345],['LISTO PARA LLEVAR',88],['OFICINA',22],['OPTICA',81],
+                    ['PANADERIA Y TORTILLERIA',617]
                     ]
         new_lista=[]
         lista_final_productos_commas=[]
         for i in lista_categoria_1:
-            new_lista.append(i.capitalize)
+            categ=i[0].capitalize
+            lista_final_categoria.append([categ,i[1]])
+        
+        lista_producto=Productos_Super.objects.filter(fecha__icontains=hoy,producto__icontains='Arroz blanco')
+        lista_producto=lista_producto[:1]
+        for i in range(len(lista_producto)):
+            cat=str(lista_producto[i].categoria)
+            cat=cat.capitalize()
+            lista_prod.append([lista_producto[i].super,cat,lista_producto[i].producto,lista_producto[i].precio,'arrozBlanco.webp',lista_producto[i].peso_kg,round(float(lista_producto[i].precio_kg),2),lista_producto[i].peso_lt,round(float(lista_producto[i].precio_lt),2),lista_producto[i].peso_unidad, round(float(lista_producto[i].precio_unidad),2),lista_producto[i].pk])
+        
+        lista_producto=Productos_Super.objects.filter(fecha__icontains=hoy,producto__icontains='coca cola')
+        lista_producto=lista_producto[:1]
+        for i in range(len(lista_producto)):
+            cat=str(lista_producto[i].categoria)
+            cat=cat.capitalize()
+            lista_prod.append([lista_producto[i].super,cat,lista_producto[i].producto,lista_producto[i].precio,'CocaCola.webp',lista_producto[i].peso_kg,round(float(lista_producto[i].precio_kg),2),lista_producto[i].peso_lt,round(float(lista_producto[i].precio_lt),2),lista_producto[i].peso_unidad, round(float(lista_producto[i].precio_unidad),2),lista_producto[i].pk])
+        
+        lista_producto=Productos_Super.objects.filter(fecha__icontains=hoy,producto__icontains='muslo pollo')
+        lista_producto=lista_producto[:1]
+        for i in range(len(lista_producto)):
+            cat=str(lista_producto[i].categoria)
+            cat=cat.capitalize()
+            lista_prod.append([lista_producto[i].super,cat,lista_producto[i].producto,lista_producto[i].precio,'muslopollo.webp',lista_producto[i].peso_kg,round(float(lista_producto[i].precio_kg),2),lista_producto[i].peso_lt,round(float(lista_producto[i].precio_lt),2),lista_producto[i].peso_unidad, round(float(lista_producto[i].precio_unidad),2),lista_producto[i].pk])
+        
     
-        lista_producto=Productos_Super.objects.all()
+        lista_producto=Productos_Super.objects.filter(fecha__icontains=hoy,producto__icontains='tilapia')
+        lista_producto=lista_producto[:1]
+        for i in range(len(lista_producto)):
+            cat=str(lista_producto[i].categoria)
+            cat=cat.capitalize()
+            lista_prod.append([lista_producto[i].super,cat,lista_producto[i].producto,lista_producto[i].precio,'Tilapia.webp',lista_producto[i].peso_kg,round(float(lista_producto[i].precio_kg),2),lista_producto[i].peso_lt,round(float(lista_producto[i].precio_lt),2),lista_producto[i].peso_unidad, round(float(lista_producto[i].precio_unidad),2),lista_producto[i].pk])
+        
+        lista_producto=Productos_Super.objects.filter(fecha__icontains=hoy,producto__icontains='Atun Lomo Trozos Aceite')
+        lista_producto=lista_producto[:1]
+        for i in range(len(lista_producto)):
+            cat=str(lista_producto[i].categoria)
+            cat=cat.capitalize()
+            lista_prod.append([lista_producto[i].super,cat,lista_producto[i].producto,lista_producto[i].precio,'Atun.webp',lista_producto[i].peso_kg,round(float(lista_producto[i].precio_kg),2),lista_producto[i].peso_lt,round(float(lista_producto[i].precio_lt),2),lista_producto[i].peso_unidad, round(float(lista_producto[i].precio_unidad),2),lista_producto[i].pk])
+        
+        lista_producto=Productos_Super.objects.filter(fecha__icontains=hoy,producto__icontains='red bull')
+        lista_producto=lista_producto[:1]
+        for i in range(len(lista_producto)):
+            cat=str(lista_producto[i].categoria)
+            cat=cat.capitalize()
+            lista_prod.append([lista_producto[i].super,cat,lista_producto[i].producto,lista_producto[i].precio,'redbull.webp',lista_producto[i].peso_kg,round(float(lista_producto[i].precio_kg),2),lista_producto[i].peso_lt,round(float(lista_producto[i].precio_lt),2),lista_producto[i].peso_unidad, round(float(lista_producto[i].precio_unidad),2),lista_producto[i].pk])
+        
+        lista_producto=Productos_Super.objects.filter(fecha__icontains=hoy,producto__icontains='banano',categoria='FRUTAS Y VERDURAS')
+        lista_producto=lista_producto[:1]
+        for i in range(len(lista_producto)):
+            cat=str(lista_producto[i].categoria)
+            cat=cat.capitalize()
+            lista_prod.append([lista_producto[i].super,cat,lista_producto[i].producto,lista_producto[i].precio,'banano.webp',lista_producto[i].peso_kg,round(float(lista_producto[i].precio_kg),2),lista_producto[i].peso_lt,round(float(lista_producto[i].precio_lt),2),lista_producto[i].peso_unidad, round(float(lista_producto[i].precio_unidad),2),lista_producto[i].pk])
+        
+        lista_producto=Productos_Super.objects.filter(fecha__icontains=hoy,producto__icontains='tomate che',categoria='FRUTAS Y VERDURAS')
+        lista_producto=lista_producto[:1]
+        for i in range(len(lista_producto)):
+            cat=str(lista_producto[i].categoria)
+            cat=cat.capitalize()
+            lista_prod.append([lista_producto[i].super,cat,lista_producto[i].producto,lista_producto[i].precio,'tomate.webp',lista_producto[i].peso_kg,round(float(lista_producto[i].precio_kg),2),lista_producto[i].peso_lt,round(float(lista_producto[i].precio_lt),2),lista_producto[i].peso_unidad, round(float(lista_producto[i].precio_unidad),2),lista_producto[i].pk])
+        
+        lista_producto=Productos_Super.objects.filter(fecha__icontains=hoy,producto__icontains='doritos')
+        lista_producto=lista_producto[:1]
+        for i in range(len(lista_producto)):
+            cat=str(lista_producto[i].categoria)
+            cat=cat.capitalize()
+            lista_prod.append([lista_producto[i].super,cat,lista_producto[i].producto,lista_producto[i].precio,'doritos.webp',lista_producto[i].peso_kg,round(float(lista_producto[i].precio_kg),2),lista_producto[i].peso_lt,round(float(lista_producto[i].precio_lt),2),lista_producto[i].peso_unidad, round(float(lista_producto[i].precio_unidad),2),lista_producto[i].pk])
+        
+        lista_producto=Productos_Super.objects.filter(fecha__icontains=hoy,producto__icontains='Pera Verde Importada')
+        lista_producto=lista_producto[:1]
+        for i in range(len(lista_producto)):
+            cat=str(lista_producto[i].categoria)  
+            cat=cat.capitalize()
+            lista_prod.append([lista_producto[i].super,cat,lista_producto[i].producto,lista_producto[i].precio,'pera.webp',lista_producto[i].peso_kg,round(float(lista_producto[i].precio_kg),2),lista_producto[i].peso_lt,round(float(lista_producto[i].precio_lt),2),lista_producto[i].peso_unidad, round(float(lista_producto[i].precio_unidad),2),lista_producto[i].pk])
+        
+
+        lista_producto=Productos_Super.objects.filter(fecha__icontains=hoy,producto__icontains='Del Prado Queso Turrialba')
+        lista_producto=lista_producto[:1]
+        for i in range(len(lista_producto)):
+            cat=str(lista_producto[i].categoria)
+            lista_prod.append([lista_producto[i].super,cat,lista_producto[i].producto,lista_producto[i].precio,'quesodelprado.webp',lista_producto[i].peso_kg,round(float(lista_producto[i].precio_kg),2),lista_producto[i].peso_lt,round(float(lista_producto[i].precio_lt),2),lista_producto[i].peso_unidad, round(float(lista_producto[i].precio_unidad),2),lista_producto[i].pk])
+        
+        lista_producto=Productos_Super.objects.filter(fecha__icontains=hoy,producto__icontains='Huevos de 40 Unidades')
+        lista_producto=lista_producto[:1]
+        for i in range(len(lista_producto)):
+            cat=str(lista_producto[i].categoria)   
+            cat=cat.capitalize()
+            lista_prod.append([lista_producto[i].super,cat,lista_producto[i].producto,lista_producto[i].precio,'huevo.webp',lista_producto[i].peso_kg,round(float(lista_producto[i].precio_kg),2),lista_producto[i].peso_lt,round(float(lista_producto[i].precio_lt),2),lista_producto[i].peso_unidad, round(float(lista_producto[i].precio_unidad),2),lista_producto[i].pk])
+        
+        lista_producto=Productos_Super.objects.filter(fecha__icontains=hoy,producto__icontains="Member's Selection Panales Premium")
+        lista_producto=lista_producto[:1]
+        for i in range(len(lista_producto)):
+            cat=str(lista_producto[i].categoria)
+            lista_prod.append([lista_producto[i].super,cat,lista_producto[i].producto,lista_producto[i].precio,'panales.webp',lista_producto[i].peso_kg,round(float(lista_producto[i].precio_kg),2),lista_producto[i].peso_lt,round(float(lista_producto[i].precio_lt),2),lista_producto[i].peso_unidad, round(float(lista_producto[i].precio_unidad),2),lista_producto[i].pk])
+        
+        lista_producto=Productos_Super.objects.filter(fecha__icontains=hoy,producto__icontains="leche semi descr",categoria='LACTEOS')
+        lista_producto=lista_producto[:1]
+        for i in range(len(lista_producto)):
+            cat=str(lista_producto[i].categoria)
+            lista_prod.append([lista_producto[i].super,cat,lista_producto[i].producto,lista_producto[i].precio,'leche.webp',lista_producto[i].peso_kg,round(float(lista_producto[i].precio_kg),2),lista_producto[i].peso_lt,round(float(lista_producto[i].precio_lt),2),lista_producto[i].peso_unidad, round(float(lista_producto[i].precio_unidad),2),lista_producto[i].pk])
+        
+         
+        lista_producto=Productos_Super.objects.filter(fecha__icontains=hoy,producto__icontains="colgate")
+        lista_producto=lista_producto[:1]
+        for i in range(len(lista_producto)):
+            cat=str(lista_producto[i].categoria)
+            lista_prod.append([lista_producto[i].super,cat,lista_producto[i].producto,lista_producto[i].precio,'colgate.webp',lista_producto[i].peso_kg,round(float(lista_producto[i].precio_kg),2),lista_producto[i].peso_lt,round(float(lista_producto[i].precio_lt),2),lista_producto[i].peso_unidad, round(float(lista_producto[i].precio_unidad),2),lista_producto[i].pk])
+        
+    
+        '''lista_producto=Productos_Super.objects.all()
         lista_producto=lista_producto.filter(fecha__icontains=hoy)
         #lista_producto = get_list_or_404(Productos_Super, fecha=hoy)
         for i in range(len(lista_producto)):
@@ -944,7 +1050,8 @@ def index_redirect(request):
         lista_categoria_2=sorted(lista_categoria_2)
         for cat in lista_categoria_2:
             num=lista_categoria.count(cat)
-            lista_final_categoria.append([cat,num])
+            lista_final_categoria.append([cat,num])'''
+        
         num_prod=len(lista_prod)
         lista_precio=sorted(lista_prod, key=itemgetter(3))
         for i in range(len(lista_precio)):
@@ -983,7 +1090,7 @@ def index_redirect(request):
           
 
 
-        return render(request, "index_page.html", {"categoria":"all","name": name, "lista_categoria":lista_final_categoria , 'num_prod':num_prod,'lista_productos':lista_final_productos_commas,'super':'all', "nombre_pila":nombre_pila})
+        return render(request, "index_pagee.html", {"categoria":"all","name": name, "lista_categoria":lista_final_categoria , 'num_prod':num_prod,'lista_productos':lista_final_productos_commas,'super':'all', "nombre_pila":nombre_pila})
 
     elif request.method=='POST':
         if request.user.is_authenticated:
