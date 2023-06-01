@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path , include
 from reviews.views import index_redirect
+from reviews.views import index
 from django.conf.urls import handler404
 import reviews
 
@@ -23,7 +24,7 @@ import reviews
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', index_redirect, name='home-page-main'),
+    path('', index, name='home-page-main'),
     path('', include('reviews.urls'))
     
     
