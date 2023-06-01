@@ -971,16 +971,16 @@ def index_redirect(request):
             cat=str(lista_producto[i].categoria)
             cat=cat.capitalize()
             lista_prod.append([lista_producto[i].super,cat,lista_producto[i].producto,lista_producto[i].precio,'Atun.webp',lista_producto[i].peso_kg,round(float(lista_producto[i].precio_kg),2),lista_producto[i].peso_lt,round(float(lista_producto[i].precio_lt),2),lista_producto[i].peso_unidad, round(float(lista_producto[i].precio_unidad),2),lista_producto[i].pk])
-        print('*****************   atun    *************')
-        print(lista_prod)
-        '''
+        
+        
         lista_producto=Productos_Super.objects.filter(fecha__icontains=hoy,producto__icontains='red bull')
         lista_producto=lista_producto[:1]
         for i in range(len(lista_producto)):
             cat=str(lista_producto[i].categoria)
             cat=cat.capitalize()
             lista_prod.append([lista_producto[i].super,cat,lista_producto[i].producto,lista_producto[i].precio,'redbull.webp',lista_producto[i].peso_kg,round(float(lista_producto[i].precio_kg),2),lista_producto[i].peso_lt,round(float(lista_producto[i].precio_lt),2),lista_producto[i].peso_unidad, round(float(lista_producto[i].precio_unidad),2),lista_producto[i].pk])
-        print('*****************   red bull    *************')
+        
+        
         lista_producto=Productos_Super.objects.filter(fecha__icontains=hoy,producto__icontains='banano',categoria='FRUTAS Y VERDURAS')
         lista_producto=lista_producto[:1]
         for i in range(len(lista_producto)):
@@ -988,6 +988,8 @@ def index_redirect(request):
             cat=cat.capitalize()
             lista_prod.append([lista_producto[i].super,cat,lista_producto[i].producto,lista_producto[i].precio,'banano.webp',lista_producto[i].peso_kg,round(float(lista_producto[i].precio_kg),2),lista_producto[i].peso_lt,round(float(lista_producto[i].precio_lt),2),lista_producto[i].peso_unidad, round(float(lista_producto[i].precio_unidad),2),lista_producto[i].pk])
         print('*****************   banao    *************')
+        print(lista_prod)
+        '''
         lista_producto=Productos_Super.objects.filter(fecha__icontains=hoy,producto__icontains='tomate che',categoria='FRUTAS Y VERDURAS')
         lista_producto=lista_producto[:1]
         for i in range(len(lista_producto)):
