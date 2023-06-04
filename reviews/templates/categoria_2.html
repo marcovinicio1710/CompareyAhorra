@@ -6,6 +6,12 @@
     </div>
 
     <ul class="list-unstyled px-2">
+        <div class="ad-hm-slot">
+            <div id="hm-trivia" class="ad-slot"></div>
+            <div id="hm-all-shapes" class="ad-slot"></div>
+            <div id="hm-native" class="ad-slot"></div>
+            
+        </div>
         {% for prod in lista_categoria %}
         <li class=""><a href="{% url 'search-producto/' %}?searched={{name}}&categoria={{prod.0}}" class="text-decoration-none px-3 py-2 d-block"><span class="text-white link-primary">{{ prod.0 }}</span><span class="text-white link-primary align-items-rightt">{{ prod.1 }}</span></a></li>
 
