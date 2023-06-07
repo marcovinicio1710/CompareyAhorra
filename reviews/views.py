@@ -1167,4 +1167,6 @@ def hooligan(request):
 
     return render(request, "ads.html")
 
+def test_ads(request):
+    return render(request, "test_ads.html")
 
