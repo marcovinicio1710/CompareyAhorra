@@ -414,8 +414,9 @@ def search_prod(request, searched='',categoria='all',price_kg='no',price_lt='no'
         except:
             nombre_pila='AnonymousUser'
         name=searched
-
+        num=0
         for i in lista_final_productos:
+            num+=1
             superr=i[0]
             categoriaa=i[1]
             productoo=i[2]
@@ -435,7 +436,7 @@ def search_prod(request, searched='',categoria='all',price_kg='no',price_lt='no'
             preciolt="{:,}".format(preciolt)
             pesoU="{:,}".format(pesoU)
             precioU="{:,}".format(precioU)
-            lista_final_productos_commas.append([superr,categoriaa,productoo,str(preciooo),pic,pesokg,preciokg,pesolt,preciolt,pesoU,precioU,PK])
+            lista_final_productos_commas.append([superr,categoriaa,productoo,str(preciooo),pic,pesokg,preciokg,pesolt,preciolt,pesoU,precioU,PK,num])
             
         
         return render(request, "search_producto.html", {"categoria":categoria, "name": name, "lista_categoria":lista_final_categoria , 'num_prod':num_prod,'lista_productos':lista_final_productos_commas,"page":page, "page_bool":page_bool, "lista_pagina":lista_pagina , "lista_param_page":lista_param_page, "price_kg":price_kg,"price_lt":price_lt, "price_uni":price_uni, "nombre_pila":nombre_pila })
