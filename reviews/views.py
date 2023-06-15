@@ -108,8 +108,8 @@ def index(request):
             preciolt="{:,}".format(preciolt)
             pesoU="{:,}".format(pesoU)
             precioU="{:,}".format(precioU)
-            lista_final_productos_commas.append([superr,categoriaa,productoo,str(preciooo),pic,pesokg,preciokg,pesolt,preciolt,pesoU,precioU,PK])
-          
+            lista_final_productos_commas.append([superr,categoriaa,productoo,str(preciooo),pic,pesokg,preciokg,pesolt,preciolt,pesoU,precioU,PK,str(num)])
+            
 
 
         return render(request, "index_page.html", {"categoria":"all","name": name, "lista_categoria":lista_final_categoria , 'num_prod':num_prod,'lista_productos':lista_final_productos_commas,'super':'all', "nombre_pila":nombre_pila})
@@ -1098,8 +1098,8 @@ def index_redirect(request):
             preciolt="{:,}".format(preciolt)
             pesoU="{:,}".format(pesoU)
             precioU="{:,}".format(precioU)
-            lista_final_productos_commas.append([superr,categoriaa,productoo,str(preciooo),pic,pesokg,preciokg,pesolt,preciolt,pesoU,precioU,PK])
-          
+            lista_final_productos_commas.append([superr,categoriaa,productoo,str(preciooo),pic,pesokg,preciokg,pesolt,preciolt,pesoU,precioU,PK,str(num)])
+            
 
 
         return render(request, "index_pagee.html", {"categoria":"all","name": name, "lista_categoria":lista_final_categoria , 'num_prod':num_prod,'lista_productos':lista_final_productos_commas,'super':'all', "nombre_pila":nombre_pila})
