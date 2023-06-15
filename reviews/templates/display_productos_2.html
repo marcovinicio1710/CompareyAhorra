@@ -69,7 +69,7 @@
         <div class="row productos ">
 
             
-
+            {% set count = 0 %}
             {% for produ in lista_productos %}
             <div class="producto-indiv bg-light p-1 shadow m-2">
                 <div class="row mt-3">
@@ -149,6 +149,24 @@
 
 
             </div>
+
+            {% if count == 10 %}
+            <div class="producto-indiv bg-light p-1 shadow m-2">
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7502926443959805"
+                    crossorigin="anonymous">
+                </script>
+                    <!-- publicidad_prod -->
+                    <ins class="adsbygoogle"
+                    style="display:inline-block;width:170px;height:560px"
+                    data-ad-client="ca-pub-7502926443959805"
+                    data-ad-slot="7297761584"></ins>
+                        <script>
+                            (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+            </div>
+            {% endif %}
+
+            {% set count = count + 1 %}
             {% endfor %}
 
            
