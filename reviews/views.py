@@ -87,8 +87,9 @@ def index(request):
         except:
             nombre_pila='AnonymousUser'
 
-    
+        num=0
         for i in lista_final_productos:
+            num+=1
             superr=i[0]
             categoriaa=i[1]
             productoo=i[2]
@@ -1077,8 +1078,9 @@ def index_redirect(request):
         except:
             nombre_pila='AnonymousUser'
 
-    
+        num=0
         for i in lista_final_productos:
+            num+=1
             superr=i[0]
             categoriaa=i[1]
             productoo=i[2]
