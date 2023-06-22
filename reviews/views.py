@@ -12,6 +12,7 @@ from django.shortcuts import get_list_or_404
 from math import ceil
 import locale
 from datetime import datetime, timedelta
+import ramdom
 # Create your views here.
 def index(request):
 
@@ -57,10 +58,9 @@ def index(request):
         lista_final_productos_commas=[]
         for i in lista_categoria_1:
             new_lista.append(i.capitalize)
-    
-        lista_producto=Productos_Super.objects.all()
-        lista_producto=lista_producto.filter(fecha__icontains=hoy)
-        #lista_producto = get_list_or_404(Productos_Super, fecha=hoy)
+        
+        lista_producto=Productos_Super.objects.filter(fecha__icontains=hoy)
+        num_prod=len(lista_producto)
         for i in range(len(lista_producto)):
             cat=str(lista_producto[i].categoria)
             cat=cat.capitalize()
@@ -74,7 +74,11 @@ def index(request):
         for cat in lista_categoria_2:
             num=lista_categoria.count(cat)
             lista_final_categoria.append([cat,num])
-        num_prod=len(lista_prod)
+        lista_prod=[]
+        for i in range(31):
+            ramdom_num=random.randint(1,len(lista_producto))
+            lista_prod.append([lista_producto[ramdom_num].super,lista_producto[ramdom_num].categoria,lista_producto[ramdom_num].producto,lista_producto[ramdom_num].precio,lista_producto[ramdom_num].picture,lista_producto[ramdom_num].peso_kg,round(float(lista_producto[ramdom_num].precio_kg),2),lista_producto[ramdom_num].peso_lt,round(float(lista_producto[ramdom_num].precio_lt),2),lista_producto[ramdom_num].peso_unidad, round(float(lista_producto[ramdom_num].precio_unidad),2),lista_producto[ramdom_num].pk])
+
         lista_precio=sorted(lista_prod, key=itemgetter(3))
         for i in range(len(lista_precio)):
             if i>29:
@@ -86,7 +90,7 @@ def index(request):
             nombre_pila=request.user.first_name
         except:
             nombre_pila='AnonymousUser'
-
+        
         num=0
         for i in lista_final_productos:
             num+=1
@@ -114,6 +118,7 @@ def index(request):
 
 
         return render(request, "index_page.html", {"categoria":"all","name": name, "lista_categoria":lista_final_categoria , 'num_prod':num_prod,'lista_productos':lista_final_productos_commas,'super':'all', "nombre_pila":nombre_pila})
+
 
     elif request.method=='POST':
         if request.user.is_authenticated:
