@@ -12,7 +12,7 @@ from django.shortcuts import get_list_or_404
 from math import ceil
 import locale
 from datetime import datetime, timedelta
-import ramdom
+import random
 # Create your views here.
 def index(request):
 
