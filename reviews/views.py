@@ -39,7 +39,7 @@ def index(request):
             lista_d=d.split()
             hoy=lista_d[0]
 
-        hoy='2023-09-30'
+        hoy='2023-10-08'
         name = " "
         lista_prod=[]
         lista_producto=[]
@@ -228,7 +228,7 @@ def search_prod(request, searched='',categoria='all',price_kg='no',price_lt='no'
             d = str(noww - timedelta(days=9))
             lista_d=d.split()
             hoy=lista_d[0]
-    hoy='2023-09-30'
+    hoy='2023-10-08'
     lista_prod=[]
     lista_categoria=[]
     lista_categoria_2=[]
@@ -919,7 +919,7 @@ def index_redirect(request):
             lista_d=d.split()
             hoy=lista_d[0]
         
-        hoy='2023-09-30'
+        hoy='2023-10-08'
 
         name = " "
         lista_prod=[]
